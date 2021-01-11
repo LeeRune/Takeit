@@ -1,0 +1,22 @@
+-- 建立場次資料
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(1, 1, '2021-01-10 09:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(1, 1, '2021-01-10 12:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(1, 1, '2021-01-10 14:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(1, 1, '2021-01-10 16:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(1, 1, '2021-01-10 18:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(1, 1, '2021-01-10 20:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(1, 1, '2021-01-10 22:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(2, 1, '2021-01-10 09:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(2, 1, '2021-01-10 12:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(2, 1, '2021-01-10 14:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(2, 1, '2021-01-10 16:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(2, 1, '2021-01-10 18:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(2, 1, '2021-01-10 20:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(2, 1, '2021-01-10 22:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(3, 1, '2021-01-10 09:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(3, 1, '2021-01-10 12:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(3, 1, '2021-01-10 14:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(3, 1, '2021-01-10 16:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(3, 1, '2021-01-10 18:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(3, 1, '2021-01-10 20:00', 1);
+insert into Session(Hall_ID, Movie_ID, Period, On_Shelf) values(3, 1, '2021-01-10 22:00', 1);

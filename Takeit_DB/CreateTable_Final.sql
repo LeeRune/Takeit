@@ -1,3 +1,6 @@
+-- Drop Table
+DROP TABLE `Takeit`.`Area`, `Takeit`.`City`, `Takeit`.`Comment`, `Takeit`.`Creditcard`, `Takeit`.`Favorite`, `Takeit`.`Grade_Type`, `Takeit`.`Hall`, `Takeit`.`Hall_Seat`, `Takeit`.`Hall_Type`, `Takeit`.`Member`, `Takeit`.`Message`, `Takeit`.`Message_Type`, `Takeit`.`Movie`, `Takeit`.`Movie_Type`, `Takeit`.`Order`, `Takeit`.`Order_Detail`, `Takeit`.`Order_Product_Detail`, `Takeit`.`Product`, `Takeit`.`Question`, `Takeit`.`Score`, `Takeit`.`Session`, `Takeit`.`Theater`;
+
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
@@ -275,29 +278,6 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `Takeit`.`Hall_Seat`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Takeit`.`Hall_Seat` (
-  `ID` INT NOT NULL AUTO_INCREMENT COMMENT '影廳座位流水號(PK)',
-  `Hall_ID` INT NULL COMMENT '影廳ID(FK)',
-  `Row` INT NOT NULL COMMENT '排數',
-  `Column` INT NOT NULL COMMENT '列數',
-  `Hall_Seat_Status` BIT(1) NULL DEFAULT NULL COMMENT '狀態，0未選擇，1已選擇',
-  UNIQUE INDEX `Row_UNIQUE` (`Row` ASC) VISIBLE,
-  UNIQUE INDEX `Column_UNIQUE` (`Column` ASC) VISIBLE,
-  PRIMARY KEY (`ID`),
-  INDEX `FK_Hall_Seat_Hall_ID_idx` (`Hall_ID` ASC) VISIBLE,
-  CONSTRAINT `FK_Hall_Seat_Hall_ID`
-    FOREIGN KEY (`Hall_ID`)
-    REFERENCES `Takeit`.`Hall` (`ID`)
-    ON DELETE SET NULL
-    ON UPDATE SET NULL)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
-
-
--- -----------------------------------------------------
 -- Table `Takeit`.`Hall_Type`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Takeit`.`Hall_Type` (
@@ -317,6 +297,8 @@ CREATE TABLE IF NOT EXISTS `Takeit`.`Theater` (
   `Name` VARCHAR(50) NOT NULL COMMENT '影城名稱',
   `Phone` CHAR(10) NULL DEFAULT NULL COMMENT '影城電話',
   `Address` VARCHAR(200) NULL DEFAULT NULL COMMENT '影城地址',
+  `Longitude` DOUBLE NOT NULL COMMENT '經度',
+  `Latitude` DOUBLE NOT NULL COMMENT '緯度',
   `Photo` LONGBLOB NULL DEFAULT NULL COMMENT '影城照片',
   `Intro` VARCHAR(500) NULL DEFAULT NULL COMMENT '影城簡介',
   `City_ID` INT NULL COMMENT '縣市ID',
@@ -362,7 +344,6 @@ COLLATE = utf8mb4_0900_ai_ci;
 CREATE TABLE IF NOT EXISTS `Takeit`.`Hall` (
   `ID` INT NOT NULL AUTO_INCREMENT COMMENT '影廳流水號(PK)',
   `Theater_ID` INT NULL COMMENT '影城ID(FK)',
-  `Hall_Seat_ID` INT NULL COMMENT '影廳座位ID(FK)',
   `Hall_Type_ID` INT NULL COMMENT '影廳類型',
   `Name` VARCHAR(50) NOT NULL COMMENT '影廳名稱',
   `Ticket_Price` INT NOT NULL COMMENT '影廳票價',
@@ -373,18 +354,12 @@ CREATE TABLE IF NOT EXISTS `Takeit`.`Hall` (
   `Modify_User` INT NULL DEFAULT NULL COMMENT '修改人',
   PRIMARY KEY (`ID`),
   INDEX `FK_Hall_Theater_ID` (`Theater_ID` ASC) VISIBLE,
-  INDEX `FK_Hall_Hall_Seat_ID` (`Hall_Seat_ID` ASC) VISIBLE,
   INDEX `FK_Hall_Hall_Type_ID` (`Hall_Type_ID` ASC) VISIBLE,
   INDEX `FK_Hall_Create_User` (`Create_User` ASC) VISIBLE,
   INDEX `FK_Hall_Modify_User` (`Modify_User` ASC) VISIBLE,
   CONSTRAINT `FK_Hall_Create_User`
     FOREIGN KEY (`Create_User`)
     REFERENCES `Takeit`.`Member` (`ID`)
-    ON DELETE SET NULL
-    ON UPDATE SET NULL,
-  CONSTRAINT `FK_Hall_Hall_Seat_ID`
-    FOREIGN KEY (`Hall_Seat_ID`)
-    REFERENCES `Takeit`.`Hall_Seat` (`ID`)
     ON DELETE SET NULL
     ON UPDATE SET NULL,
   CONSTRAINT `FK_Hall_Hall_Type_ID`
@@ -400,6 +375,29 @@ CREATE TABLE IF NOT EXISTS `Takeit`.`Hall` (
   CONSTRAINT `FK_Hall_Theater_ID`
     FOREIGN KEY (`Theater_ID`)
     REFERENCES `Takeit`.`Theater` (`ID`)
+    ON DELETE SET NULL
+    ON UPDATE SET NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `Takeit`.`Hall_Seat`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Takeit`.`Hall_Seat` (
+  `ID` INT NOT NULL AUTO_INCREMENT COMMENT '影廳座位流水號(PK)',
+  `Hall_ID` INT NULL COMMENT '影廳ID(FK)',
+  `Row` INT NOT NULL COMMENT '排數',
+  `Column` INT NOT NULL COMMENT '列數',
+  `Hall_Seat_Status` BIT(1) NULL DEFAULT NULL COMMENT '狀態，0未選擇，1已選擇',
+  UNIQUE INDEX `Row_UNIQUE` (`Row` ASC) VISIBLE,
+  UNIQUE INDEX `Column_UNIQUE` (`Column` ASC) VISIBLE,
+  PRIMARY KEY (`ID`),
+  INDEX `FK_Hall_Seat_Hall_ID_idx` (`Hall_ID` ASC) VISIBLE,
+  CONSTRAINT `FK_Hall_Seat_Hall_ID`
+    FOREIGN KEY (`Hall_ID`)
+    REFERENCES `Takeit`.`Hall` (`ID`)
     ON DELETE SET NULL
     ON UPDATE SET NULL)
 ENGINE = InnoDB
@@ -519,19 +517,50 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
+-- Table `Takeit`.`Order`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Takeit`.`Order` (
+  `ID` INT NOT NULL AUTO_INCREMENT COMMENT '訂單ID',
+  `Member_ID` INT NULL COMMENT '會員ID(FK)',
+  `Session_ID` INT NULL COMMENT '場次ID(FK)',
+  `Create_Time` DATETIME NULL DEFAULT NULL COMMENT '新增時間(下單時間)',
+  `Create_User` INT NULL DEFAULT NULL COMMENT '新增人',
+  `Modify_Time` DATETIME NULL DEFAULT NULL COMMENT '修改時間',
+  `Modify_User` INT NULL DEFAULT NULL COMMENT '修改人',
+  PRIMARY KEY (`ID`),
+  INDEX `ID_idx` (`Member_ID` ASC) VISIBLE,
+  INDEX `FK_Order_Modify_User` (`Modify_User` ASC) VISIBLE,
+  INDEX `FK_Order_Session_ID_idx` (`Session_ID` ASC) VISIBLE,
+  CONSTRAINT `FK_Order_Member_ID`
+    FOREIGN KEY (`Member_ID`)
+    REFERENCES `Takeit`.`Member` (`ID`)
+    ON DELETE SET NULL
+    ON UPDATE SET NULL,
+  CONSTRAINT `FK_Order_Modify_User`
+    FOREIGN KEY (`Modify_User`)
+    REFERENCES `Takeit`.`Member` (`ID`)
+    ON DELETE SET NULL
+    ON UPDATE SET NULL,
+  CONSTRAINT `FK_Order_Session_ID`
+    FOREIGN KEY (`Session_ID`)
+    REFERENCES `Takeit`.`Session` (`ID`)
+    ON DELETE SET NULL
+    ON UPDATE SET NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
 -- Table `Takeit`.`Order_Detail`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Takeit`.`Order_Detail` (
   `ID` INT NOT NULL AUTO_INCREMENT COMMENT '訂單明細流水號(PK)',
   `Order_ID` INT NULL COMMENT '訂單ID(FK)',
-  `Movie_ID` INT NULL COMMENT '電影ID(FK)',
-  `Hall_ID` INT NULL COMMENT '影廳ID(FK)',
-  `Seesion_ID` INT NULL COMMENT '場次ID(FK)',
   `Hall_Seat_Row` INT NULL COMMENT '選取排號',
   `Hall_Seat_Column` INT NULL COMMENT '選取列號',
   `Quantity` INT NOT NULL COMMENT '電影票數量',
   `QR` LONGBLOB NOT NULL COMMENT 'QRcode圖檔',
-  `Order_Status` BIT(1) NOT NULL COMMENT '狀態，0未使用，1已使用，2已過期，3已取消',
   `Create_Time` DATETIME NULL DEFAULT NULL COMMENT '新增時間',
   `Create_User` INT NULL DEFAULT NULL COMMENT '新增人',
   `Modify_Time` DATETIME NULL DEFAULT NULL COMMENT '修改時間',
@@ -540,9 +569,6 @@ CREATE TABLE IF NOT EXISTS `Takeit`.`Order_Detail` (
   INDEX `Row_idx` (`Hall_Seat_Row` ASC) VISIBLE,
   INDEX `Column_idx` (`Hall_Seat_Column` ASC) VISIBLE,
   INDEX `FK_Order_Detail_Order_ID` (`Order_ID` ASC) VISIBLE,
-  INDEX `FK_Order_Detail_Movie_ID` (`Movie_ID` ASC) VISIBLE,
-  INDEX `FK_Order_Detail_Hall_ID` (`Hall_ID` ASC) VISIBLE,
-  INDEX `FK_Order_Detail_Session_ID` (`Seesion_ID` ASC) VISIBLE,
   INDEX `FK_Order_Detail_Create_User` (`Create_User` ASC) VISIBLE,
   INDEX `FK_Order_Detail_Modify_User` (`Modify_User` ASC) VISIBLE,
   CONSTRAINT `FK_Order_Detail_Column`
@@ -555,19 +581,9 @@ CREATE TABLE IF NOT EXISTS `Takeit`.`Order_Detail` (
     REFERENCES `Takeit`.`Member` (`ID`)
     ON DELETE SET NULL
     ON UPDATE SET NULL,
-  CONSTRAINT `FK_Order_Detail_Hall_ID`
-    FOREIGN KEY (`Hall_ID`)
-    REFERENCES `Takeit`.`Hall` (`ID`)
-    ON DELETE SET NULL
-    ON UPDATE SET NULL,
   CONSTRAINT `FK_Order_Detail_Modify_User`
     FOREIGN KEY (`Modify_User`)
     REFERENCES `Takeit`.`Member` (`ID`)
-    ON DELETE SET NULL
-    ON UPDATE SET NULL,
-  CONSTRAINT `FK_Order_Detail_Movie_ID`
-    FOREIGN KEY (`Movie_ID`)
-    REFERENCES `Takeit`.`Movie` (`ID`)
     ON DELETE SET NULL
     ON UPDATE SET NULL,
   CONSTRAINT `FK_Order_Detail_Order_ID`
@@ -578,11 +594,6 @@ CREATE TABLE IF NOT EXISTS `Takeit`.`Order_Detail` (
   CONSTRAINT `FK_Order_Detail_Row`
     FOREIGN KEY (`Hall_Seat_Row`)
     REFERENCES `Takeit`.`Hall_Seat` (`Row`)
-    ON DELETE SET NULL
-    ON UPDATE SET NULL,
-  CONSTRAINT `FK_Order_Detail_Session_ID`
-    FOREIGN KEY (`Seesion_ID`)
-    REFERENCES `Takeit`.`Session` (`ID`)
     ON DELETE SET NULL
     ON UPDATE SET NULL)
 ENGINE = InnoDB
@@ -635,31 +646,19 @@ CREATE TABLE IF NOT EXISTS `Takeit`.`Order_Product_Detail` (
   `ID` INT NOT NULL AUTO_INCREMENT COMMENT '訂單商品流水號(PK)',
   `Order_ID` INT NULL COMMENT '訂單ID(FK)',
   `Product_ID` INT NULL COMMENT '商品ID(FK)',
-  `Hall_ID` INT NULL COMMENT '影廳ID(FK)',
-  `Seesion_ID` INT NULL COMMENT '場次ID(FK)',
-  `Movie_ID` INT NULL COMMENT '電影ID(FK)',
   `Quantity` INT NOT NULL COMMENT '商品數量',
-  `Order_Product_Status` BIT(1) NOT NULL COMMENT '狀態，0未使用，1已使用，2已過期，3已取消',
   `Create_Time` DATETIME NULL DEFAULT NULL COMMENT '新增時間',
   `Create_User` INT NULL DEFAULT NULL COMMENT '新增人',
   `Modify_Time` DATETIME NULL DEFAULT NULL COMMENT '修改時間',
   `Modify_User` INT NULL DEFAULT NULL COMMENT '修改人',
   PRIMARY KEY (`ID`),
-  INDEX `SessionID_idx` (`Seesion_ID` ASC) VISIBLE,
   INDEX `MAccount_idx` (`Modify_User` ASC) VISIBLE,
   INDEX `FK_Order_Product_Detail_Order_ID` (`Order_ID` ASC) VISIBLE,
   INDEX `FK_Order_Product_Detail_Product_ID` (`Product_ID` ASC) VISIBLE,
-  INDEX `FK_Order_Product_Detail_Hall_ID` (`Hall_ID` ASC) VISIBLE,
   INDEX `FK_Order_Product_Detail_Create_User` (`Create_User` ASC) VISIBLE,
-  INDEX `FK_Order_Product_Detail_Movie_ID_idx` (`Movie_ID` ASC) VISIBLE,
   CONSTRAINT `FK_Order_Product_Detail_Create_User`
     FOREIGN KEY (`Create_User`)
     REFERENCES `Takeit`.`Member` (`ID`)
-    ON DELETE SET NULL
-    ON UPDATE SET NULL,
-  CONSTRAINT `FK_Order_Product_Detail_Hall_ID`
-    FOREIGN KEY (`Hall_ID`)
-    REFERENCES `Takeit`.`Hall` (`ID`)
     ON DELETE SET NULL
     ON UPDATE SET NULL,
   CONSTRAINT `FK_Order_Product_Detail_Modify_User`
@@ -675,64 +674,6 @@ CREATE TABLE IF NOT EXISTS `Takeit`.`Order_Product_Detail` (
   CONSTRAINT `FK_Order_Product_Detail_Product_ID`
     FOREIGN KEY (`Product_ID`)
     REFERENCES `Takeit`.`Product` (`ID`)
-    ON DELETE SET NULL
-    ON UPDATE SET NULL,
-  CONSTRAINT `FK_Order_Product_Detail_Session_ID`
-    FOREIGN KEY (`Seesion_ID`)
-    REFERENCES `Takeit`.`Session` (`ID`)
-    ON DELETE SET NULL
-    ON UPDATE SET NULL,
-  CONSTRAINT `FK_Order_Product_Detail_Movie_ID`
-    FOREIGN KEY (`Movie_ID`)
-    REFERENCES `Takeit`.`Movie` (`ID`)
-    ON DELETE SET NULL
-    ON UPDATE SET NULL)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
-
-
--- -----------------------------------------------------
--- Table `Takeit`.`Order`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Takeit`.`Order` (
-  `ID` INT NOT NULL AUTO_INCREMENT COMMENT '訂單ID',
-  `Member_ID` INT NULL COMMENT '會員ID(FK)',
-  `Order_Detail_ID` INT NULL COMMENT '訂單明細ID(FK)',
-  `Order_Product_Detail_ID` INT NULL DEFAULT NULL COMMENT '訂單商品明細ID(FK)',
-  `Create_Time` DATETIME NULL DEFAULT NULL COMMENT '新增時間(下單時間)',
-  `Create_User` INT NULL DEFAULT NULL COMMENT '新增人',
-  `Modify_Time` DATETIME NULL DEFAULT NULL COMMENT '修改時間',
-  `Modify_User` INT NULL DEFAULT NULL COMMENT '修改人',
-  PRIMARY KEY (`ID`),
-  INDEX `ID_idx` (`Member_ID` ASC) VISIBLE,
-  INDEX `FK_Order_Create_User` (`Create_User` ASC) VISIBLE,
-  INDEX `FK_Order_Modify_User` (`Modify_User` ASC) VISIBLE,
-  INDEX `FK_Order_Order_Detail_ID_idx` (`Order_Detail_ID` ASC) VISIBLE,
-  INDEX `FK_Order_Order_Product_Detail_ID_idx` (`Order_Product_Detail_ID` ASC) VISIBLE,
-  CONSTRAINT `FK_Order_Create_User`
-    FOREIGN KEY (`Create_User`)
-    REFERENCES `Takeit`.`Member` (`ID`)
-    ON DELETE SET NULL
-    ON UPDATE SET NULL,
-  CONSTRAINT `FK_Order_Member_ID`
-    FOREIGN KEY (`Member_ID`)
-    REFERENCES `Takeit`.`Member` (`ID`)
-    ON DELETE SET NULL
-    ON UPDATE SET NULL,
-  CONSTRAINT `FK_Order_Modify_User`
-    FOREIGN KEY (`Modify_User`)
-    REFERENCES `Takeit`.`Member` (`ID`)
-    ON DELETE SET NULL
-    ON UPDATE SET NULL,
-  CONSTRAINT `FK_Order_Order_Detail_ID`
-    FOREIGN KEY (`Order_Detail_ID`)
-    REFERENCES `Takeit`.`Order_Detail` (`ID`)
-    ON DELETE SET NULL
-    ON UPDATE SET NULL,
-  CONSTRAINT `FK_Order_Order_Product_Detail_ID`
-    FOREIGN KEY (`Order_Product_Detail_ID`)
-    REFERENCES `Takeit`.`Order_Product_Detail` (`ID`)
     ON DELETE SET NULL
     ON UPDATE SET NULL)
 ENGINE = InnoDB

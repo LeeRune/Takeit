@@ -1,0 +1,628 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14A7D02225CBED2D0094143E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7D02125CBED2D0094143E /* AppDelegate.swift */; };
+		14A7D02425CBED2D0094143E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7D02325CBED2D0094143E /* SceneDelegate.swift */; };
+		14A7D02925CBED2D0094143E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A7D02725CBED2D0094143E /* Main.storyboard */; };
+		14A7D02B25CBED2E0094143E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14A7D02A25CBED2E0094143E /* Assets.xcassets */; };
+		14A7D02E25CBED2E0094143E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A7D02C25CBED2E0094143E /* LaunchScreen.storyboard */; };
+		14A7D03925CBED2E0094143E /* Takeit_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7D03825CBED2E0094143E /* Takeit_iOSTests.swift */; };
+		14A7D04425CBED2E0094143E /* Takeit_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7D04325CBED2E0094143E /* Takeit_iOSUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14A7D03525CBED2E0094143E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14A7D01625CBED2D0094143E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14A7D01D25CBED2D0094143E;
+			remoteInfo = Takeit_iOS;
+		};
+		14A7D04025CBED2E0094143E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14A7D01625CBED2D0094143E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14A7D01D25CBED2D0094143E;
+			remoteInfo = Takeit_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14A7D01E25CBED2D0094143E /* Takeit_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Takeit_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14A7D02125CBED2D0094143E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		14A7D02325CBED2D0094143E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		14A7D02825CBED2D0094143E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14A7D02A25CBED2E0094143E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14A7D02D25CBED2E0094143E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		14A7D02F25CBED2E0094143E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14A7D03425CBED2E0094143E /* Takeit_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Takeit_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14A7D03825CBED2E0094143E /* Takeit_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Takeit_iOSTests.swift; sourceTree = "<group>"; };
+		14A7D03A25CBED2E0094143E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14A7D03F25CBED2E0094143E /* Takeit_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Takeit_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14A7D04325CBED2E0094143E /* Takeit_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Takeit_iOSUITests.swift; sourceTree = "<group>"; };
+		14A7D04525CBED2E0094143E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14A7D01B25CBED2D0094143E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14A7D03125CBED2E0094143E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14A7D03C25CBED2E0094143E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14A7D01525CBED2D0094143E = {
+			isa = PBXGroup;
+			children = (
+				14A7D02025CBED2D0094143E /* Takeit_iOS */,
+				14A7D03725CBED2E0094143E /* Takeit_iOSTests */,
+				14A7D04225CBED2E0094143E /* Takeit_iOSUITests */,
+				14A7D01F25CBED2D0094143E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14A7D01F25CBED2D0094143E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14A7D01E25CBED2D0094143E /* Takeit_iOS.app */,
+				14A7D03425CBED2E0094143E /* Takeit_iOSTests.xctest */,
+				14A7D03F25CBED2E0094143E /* Takeit_iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14A7D02025CBED2D0094143E /* Takeit_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				14A7D05E25CBEF930094143E /* Rune */,
+				14A7D05D25CBEF850094143E /* Richard */,
+				14A7D05C25CBEF680094143E /* PeiChen */,
+				14A7D05B25CBEF470094143E /* Yuan */,
+				14A7D05725CBED7C0094143E /* LeeWaiter */,
+				14A7D02125CBED2D0094143E /* AppDelegate.swift */,
+				14A7D02325CBED2D0094143E /* SceneDelegate.swift */,
+				14A7D02A25CBED2E0094143E /* Assets.xcassets */,
+				14A7D02C25CBED2E0094143E /* LaunchScreen.storyboard */,
+				14A7D02F25CBED2E0094143E /* Info.plist */,
+			);
+			path = Takeit_iOS;
+			sourceTree = "<group>";
+		};
+		14A7D03725CBED2E0094143E /* Takeit_iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				14A7D03825CBED2E0094143E /* Takeit_iOSTests.swift */,
+				14A7D03A25CBED2E0094143E /* Info.plist */,
+			);
+			path = Takeit_iOSTests;
+			sourceTree = "<group>";
+		};
+		14A7D04225CBED2E0094143E /* Takeit_iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				14A7D04325CBED2E0094143E /* Takeit_iOSUITests.swift */,
+				14A7D04525CBED2E0094143E /* Info.plist */,
+			);
+			path = Takeit_iOSUITests;
+			sourceTree = "<group>";
+		};
+		14A7D05725CBED7C0094143E /* LeeWaiter */ = {
+			isa = PBXGroup;
+			children = (
+				14A7D02725CBED2D0094143E /* Main.storyboard */,
+			);
+			path = LeeWaiter;
+			sourceTree = "<group>";
+		};
+		14A7D05B25CBEF470094143E /* Yuan */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Yuan;
+			sourceTree = "<group>";
+		};
+		14A7D05C25CBEF680094143E /* PeiChen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PeiChen;
+			sourceTree = "<group>";
+		};
+		14A7D05D25CBEF850094143E /* Richard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Richard;
+			sourceTree = "<group>";
+		};
+		14A7D05E25CBEF930094143E /* Rune */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Rune;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14A7D01D25CBED2D0094143E /* Takeit_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14A7D04825CBED2E0094143E /* Build configuration list for PBXNativeTarget "Takeit_iOS" */;
+			buildPhases = (
+				14A7D01A25CBED2D0094143E /* Sources */,
+				14A7D01B25CBED2D0094143E /* Frameworks */,
+				14A7D01C25CBED2D0094143E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Takeit_iOS;
+			productName = Takeit_iOS;
+			productReference = 14A7D01E25CBED2D0094143E /* Takeit_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		14A7D03325CBED2E0094143E /* Takeit_iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14A7D04B25CBED2E0094143E /* Build configuration list for PBXNativeTarget "Takeit_iOSTests" */;
+			buildPhases = (
+				14A7D03025CBED2E0094143E /* Sources */,
+				14A7D03125CBED2E0094143E /* Frameworks */,
+				14A7D03225CBED2E0094143E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14A7D03625CBED2E0094143E /* PBXTargetDependency */,
+			);
+			name = Takeit_iOSTests;
+			productName = Takeit_iOSTests;
+			productReference = 14A7D03425CBED2E0094143E /* Takeit_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		14A7D03E25CBED2E0094143E /* Takeit_iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14A7D04E25CBED2E0094143E /* Build configuration list for PBXNativeTarget "Takeit_iOSUITests" */;
+			buildPhases = (
+				14A7D03B25CBED2E0094143E /* Sources */,
+				14A7D03C25CBED2E0094143E /* Frameworks */,
+				14A7D03D25CBED2E0094143E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14A7D04125CBED2E0094143E /* PBXTargetDependency */,
+			);
+			name = Takeit_iOSUITests;
+			productName = Takeit_iOSUITests;
+			productReference = 14A7D03F25CBED2E0094143E /* Takeit_iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14A7D01625CBED2D0094143E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					14A7D01D25CBED2D0094143E = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					14A7D03325CBED2E0094143E = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 14A7D01D25CBED2D0094143E;
+					};
+					14A7D03E25CBED2E0094143E = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 14A7D01D25CBED2D0094143E;
+					};
+				};
+			};
+			buildConfigurationList = 14A7D01925CBED2D0094143E /* Build configuration list for PBXProject "Takeit_iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14A7D01525CBED2D0094143E;
+			productRefGroup = 14A7D01F25CBED2D0094143E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14A7D01D25CBED2D0094143E /* Takeit_iOS */,
+				14A7D03325CBED2E0094143E /* Takeit_iOSTests */,
+				14A7D03E25CBED2E0094143E /* Takeit_iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14A7D01C25CBED2D0094143E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14A7D02E25CBED2E0094143E /* LaunchScreen.storyboard in Resources */,
+				14A7D02B25CBED2E0094143E /* Assets.xcassets in Resources */,
+				14A7D02925CBED2D0094143E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14A7D03225CBED2E0094143E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14A7D03D25CBED2E0094143E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14A7D01A25CBED2D0094143E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14A7D02225CBED2D0094143E /* AppDelegate.swift in Sources */,
+				14A7D02425CBED2D0094143E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14A7D03025CBED2E0094143E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14A7D03925CBED2E0094143E /* Takeit_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14A7D03B25CBED2E0094143E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14A7D04425CBED2E0094143E /* Takeit_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14A7D03625CBED2E0094143E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14A7D01D25CBED2D0094143E /* Takeit_iOS */;
+			targetProxy = 14A7D03525CBED2E0094143E /* PBXContainerItemProxy */;
+		};
+		14A7D04125CBED2E0094143E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14A7D01D25CBED2D0094143E /* Takeit_iOS */;
+			targetProxy = 14A7D04025CBED2E0094143E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		14A7D02725CBED2D0094143E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14A7D02825CBED2D0094143E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		14A7D02C25CBED2E0094143E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14A7D02D25CBED2E0094143E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14A7D04625CBED2E0094143E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		14A7D04725CBED2E0094143E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14A7D04925CBED2E0094143E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Takeit_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LeeRune.Takeit-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		14A7D04A25CBED2E0094143E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Takeit_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LeeRune.Takeit-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		14A7D04C25CBED2E0094143E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Takeit_iOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LeeRune.Takeit-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Takeit_iOS.app/Takeit_iOS";
+			};
+			name = Debug;
+		};
+		14A7D04D25CBED2E0094143E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Takeit_iOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LeeRune.Takeit-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Takeit_iOS.app/Takeit_iOS";
+			};
+			name = Release;
+		};
+		14A7D04F25CBED2E0094143E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Takeit_iOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LeeRune.Takeit-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Takeit_iOS;
+			};
+			name = Debug;
+		};
+		14A7D05025CBED2E0094143E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Takeit_iOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LeeRune.Takeit-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Takeit_iOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14A7D01925CBED2D0094143E /* Build configuration list for PBXProject "Takeit_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14A7D04625CBED2E0094143E /* Debug */,
+				14A7D04725CBED2E0094143E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14A7D04825CBED2E0094143E /* Build configuration list for PBXNativeTarget "Takeit_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14A7D04925CBED2E0094143E /* Debug */,
+				14A7D04A25CBED2E0094143E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14A7D04B25CBED2E0094143E /* Build configuration list for PBXNativeTarget "Takeit_iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14A7D04C25CBED2E0094143E /* Debug */,
+				14A7D04D25CBED2E0094143E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14A7D04E25CBED2E0094143E /* Build configuration list for PBXNativeTarget "Takeit_iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14A7D04F25CBED2E0094143E /* Debug */,
+				14A7D05025CBED2E0094143E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14A7D01625CBED2D0094143E /* Project object */;
+}

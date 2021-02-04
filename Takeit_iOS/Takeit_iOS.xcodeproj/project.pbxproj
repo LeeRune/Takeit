@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		147181CE25CC0773009886CD /* Temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147181CD25CC0773009886CD /* Temp.storyboard */; };
+		147181D425CC078B009886CD /* Temp2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147181D325CC078B009886CD /* Temp2.storyboard */; };
+		147181DA25CC07AE009886CD /* Temp3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147181D925CC07AE009886CD /* Temp3.storyboard */; };
+		147181E025CC07C6009886CD /* Seat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147181DF25CC07C6009886CD /* Seat.storyboard */; };
 		14A7D02225CBED2D0094143E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7D02125CBED2D0094143E /* AppDelegate.swift */; };
 		14A7D02425CBED2D0094143E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7D02325CBED2D0094143E /* SceneDelegate.swift */; };
 		14A7D02925CBED2D0094143E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A7D02725CBED2D0094143E /* Main.storyboard */; };
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		147181CD25CC0773009886CD /* Temp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Temp.storyboard; sourceTree = "<group>"; };
+		147181D325CC078B009886CD /* Temp2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Temp2.storyboard; sourceTree = "<group>"; };
+		147181D925CC07AE009886CD /* Temp3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Temp3.storyboard; sourceTree = "<group>"; };
+		147181DF25CC07C6009886CD /* Seat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Seat.storyboard; sourceTree = "<group>"; };
 		14A7D01E25CBED2D0094143E /* Takeit_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Takeit_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A7D02125CBED2D0094143E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14A7D02325CBED2D0094143E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +82,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		147181CC25CC0760009886CD /* Yuan */ = {
+			isa = PBXGroup;
+			children = (
+				147181CD25CC0773009886CD /* Temp.storyboard */,
+			);
+			path = Yuan;
+			sourceTree = "<group>";
+		};
+		147181D225CC077A009886CD /* PeiChen */ = {
+			isa = PBXGroup;
+			children = (
+				147181D325CC078B009886CD /* Temp2.storyboard */,
+			);
+			path = PeiChen;
+			sourceTree = "<group>";
+		};
+		147181D825CC079E009886CD /* Richard */ = {
+			isa = PBXGroup;
+			children = (
+				147181D925CC07AE009886CD /* Temp3.storyboard */,
+			);
+			path = Richard;
+			sourceTree = "<group>";
+		};
+		147181DE25CC07BC009886CD /* Rune */ = {
+			isa = PBXGroup;
+			children = (
+				147181DF25CC07C6009886CD /* Seat.storyboard */,
+			);
+			path = Rune;
+			sourceTree = "<group>";
+		};
 		14A7D01525CBED2D0094143E = {
 			isa = PBXGroup;
 			children = (
@@ -97,10 +137,10 @@
 		14A7D02025CBED2D0094143E /* Takeit_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				14A7D05E25CBEF930094143E /* Rune */,
-				14A7D05D25CBEF850094143E /* Richard */,
-				14A7D05C25CBEF680094143E /* PeiChen */,
-				14A7D05B25CBEF470094143E /* Yuan */,
+				147181DE25CC07BC009886CD /* Rune */,
+				147181D825CC079E009886CD /* Richard */,
+				147181D225CC077A009886CD /* PeiChen */,
+				147181CC25CC0760009886CD /* Yuan */,
 				14A7D05725CBED7C0094143E /* LeeWaiter */,
 				14A7D02125CBED2D0094143E /* AppDelegate.swift */,
 				14A7D02325CBED2D0094143E /* SceneDelegate.swift */,
@@ -135,34 +175,6 @@
 				14A7D02725CBED2D0094143E /* Main.storyboard */,
 			);
 			path = LeeWaiter;
-			sourceTree = "<group>";
-		};
-		14A7D05B25CBEF470094143E /* Yuan */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Yuan;
-			sourceTree = "<group>";
-		};
-		14A7D05C25CBEF680094143E /* PeiChen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PeiChen;
-			sourceTree = "<group>";
-		};
-		14A7D05D25CBEF850094143E /* Richard */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Richard;
-			sourceTree = "<group>";
-		};
-		14A7D05E25CBEF930094143E /* Rune */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Rune;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +280,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147181D425CC078B009886CD /* Temp2.storyboard in Resources */,
+				147181CE25CC0773009886CD /* Temp.storyboard in Resources */,
 				14A7D02E25CBED2E0094143E /* LaunchScreen.storyboard in Resources */,
+				147181E025CC07C6009886CD /* Seat.storyboard in Resources */,
 				14A7D02B25CBED2E0094143E /* Assets.xcassets in Resources */,
+				147181DA25CC07AE009886CD /* Temp3.storyboard in Resources */,
 				14A7D02925CBED2D0094143E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

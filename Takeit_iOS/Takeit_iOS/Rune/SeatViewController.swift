@@ -44,7 +44,7 @@ class SeatViewController: UIViewController,UICollectionViewDelegate,UICollection
         screen.layer.cornerRadius = 3
         screen.layer.masksToBounds = true
         
-        addScrollFood()
+//        addScrollFood()
 
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1424644E25CC194D001DD7C5 /* Seat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1424644C25CC194D001DD7C5 /* Seat.storyboard */; };
+		144749E325E3DD4B005B28D4 /* OrderRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144749E225E3DD4B005B28D4 /* OrderRulesViewController.swift */; };
+		144749F225E51F65005B28D4 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144749F125E51F65005B28D4 /* CommentDetailViewController.swift */; };
+		144749F725E523AC005B28D4 /* CommentDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144749F625E523AC005B28D4 /* CommentDetailTableViewCell.swift */; };
+		146A0AFC25E6693B009FA623 /* SeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A0AFB25E6693B009FA623 /* SeatCell.swift */; };
+		146A0B0A25E68B3A009FA623 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A0B0925E68B3A009FA623 /* Comment.swift */; };
 		147181CE25CC0773009886CD /* Temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147181CD25CC0773009886CD /* Temp.storyboard */; };
 		147181D425CC078B009886CD /* Temp2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147181D325CC078B009886CD /* Temp2.storyboard */; };
 		147181DA25CC07AE009886CD /* Temp3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147181D925CC07AE009886CD /* Temp3.storyboard */; };
 		147181E825CC0A31009886CD /* SeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147181E725CC0A31009886CD /* SeatViewController.swift */; };
-		147181ED25CC0BAD009886CD /* seatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147181EC25CC0BAD009886CD /* seatCell.swift */; };
 		14A7D02225CBED2D0094143E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7D02125CBED2D0094143E /* AppDelegate.swift */; };
 		14A7D02425CBED2D0094143E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7D02325CBED2D0094143E /* SceneDelegate.swift */; };
 		14A7D02925CBED2D0094143E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A7D02725CBED2D0094143E /* Main.storyboard */; };
@@ -41,11 +45,15 @@
 
 /* Begin PBXFileReference section */
 		1424644D25CC194D001DD7C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../../../Desktop/seatexample/SeatTest/SeatTest/Base.lproj/Seat.storyboard; sourceTree = "<group>"; };
+		144749E225E3DD4B005B28D4 /* OrderRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRulesViewController.swift; sourceTree = "<group>"; };
+		144749F125E51F65005B28D4 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
+		144749F625E523AC005B28D4 /* CommentDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDetailTableViewCell.swift; sourceTree = "<group>"; };
+		146A0AFB25E6693B009FA623 /* SeatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatCell.swift; sourceTree = "<group>"; };
+		146A0B0925E68B3A009FA623 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		147181CD25CC0773009886CD /* Temp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Temp.storyboard; sourceTree = "<group>"; };
 		147181D325CC078B009886CD /* Temp2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Temp2.storyboard; sourceTree = "<group>"; };
 		147181D925CC07AE009886CD /* Temp3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Temp3.storyboard; sourceTree = "<group>"; };
 		147181E725CC0A31009886CD /* SeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatViewController.swift; sourceTree = "<group>"; };
-		147181EC25CC0BAD009886CD /* seatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = seatCell.swift; path = ../../../../../iOSProject/SeatTest/SeatTest/seatCell.swift; sourceTree = "<group>"; };
 		14A7D01E25CBED2D0094143E /* Takeit_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Takeit_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A7D02125CBED2D0094143E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14A7D02325CBED2D0094143E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,8 +122,12 @@
 			isa = PBXGroup;
 			children = (
 				1424644C25CC194D001DD7C5 /* Seat.storyboard */,
-				147181EC25CC0BAD009886CD /* seatCell.swift */,
+				144749F125E51F65005B28D4 /* CommentDetailViewController.swift */,
+				144749F625E523AC005B28D4 /* CommentDetailTableViewCell.swift */,
+				144749E225E3DD4B005B28D4 /* OrderRulesViewController.swift */,
 				147181E725CC0A31009886CD /* SeatViewController.swift */,
+				146A0AFB25E6693B009FA623 /* SeatCell.swift */,
+				146A0B0925E68B3A009FA623 /* Comment.swift */,
 			);
 			path = Rune;
 			sourceTree = "<group>";
@@ -151,6 +163,7 @@
 				14A7D02125CBED2D0094143E /* AppDelegate.swift */,
 				14A7D02325CBED2D0094143E /* SceneDelegate.swift */,
 				14A7D02A25CBED2E0094143E /* Assets.xcassets */,
+				14A7D02725CBED2D0094143E /* Main.storyboard */,
 				14A7D02C25CBED2E0094143E /* LaunchScreen.storyboard */,
 				14A7D02F25CBED2E0094143E /* Info.plist */,
 			);
@@ -178,7 +191,6 @@
 		14A7D05725CBED7C0094143E /* LeeWaiter */ = {
 			isa = PBXGroup;
 			children = (
-				14A7D02725CBED2D0094143E /* Main.storyboard */,
 			);
 			path = LeeWaiter;
 			sourceTree = "<group>";
@@ -317,9 +329,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				144749F725E523AC005B28D4 /* CommentDetailTableViewCell.swift in Sources */,
 				147181E825CC0A31009886CD /* SeatViewController.swift in Sources */,
+				144749F225E51F65005B28D4 /* CommentDetailViewController.swift in Sources */,
+				146A0B0A25E68B3A009FA623 /* Comment.swift in Sources */,
 				14A7D02225CBED2D0094143E /* AppDelegate.swift in Sources */,
-				147181ED25CC0BAD009886CD /* seatCell.swift in Sources */,
+				144749E325E3DD4B005B28D4 /* OrderRulesViewController.swift in Sources */,
+				146A0AFC25E6693B009FA623 /* SeatCell.swift in Sources */,
 				14A7D02425CBED2D0094143E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

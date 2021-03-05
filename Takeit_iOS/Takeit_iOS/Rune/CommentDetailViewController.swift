@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CommentDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class CommentDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var comment: UIButton!
@@ -41,17 +41,18 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
         return reportRes[row]
     }
     
-
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let report = UIContextualAction(style: .normal, title: "檢舉") { (action, view, bool) in
+            tableView.setEditing(false, animated: true)
             let alert = UIAlertController(title: "檢舉原因", message: "", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
             let ok = UIAlertAction(title: "送出", style: .default, handler: { (_) in
                 let checkalert = UIAlertController(title: "檢舉成功", message: "", preferredStyle: .alert)
                 let check = UIAlertAction(title: "確認", style: .default, handler: nil)
-                tableView.setEditing(false, animated: true)
+                
                 checkalert.addAction(check)
-    
+                
                 self.present(checkalert, animated: true, completion: nil)
             })
             let pickerView = UIPickerView()
@@ -60,7 +61,7 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
             pickerView.selectRow(0, inComponent: 0, animated: true)
             pickerView.frame = CGRect(x: 73, y: 40, width: 120, height: 110)
             let height:NSLayoutConstraint = NSLayoutConstraint(item: alert.view!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 200)
-                    alert.view.addConstraint(height)
+            alert.view.addConstraint(height)
             alert.view.addSubview(pickerView)
             alert.addAction(cancel)
             alert.addAction(ok)
@@ -72,7 +73,7 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
         swipeActions.performsFirstActionWithFullSwipe = false
         return swipeActions
     }
- 
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return commentPersons.count
     }
@@ -93,10 +94,12 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
         xOffset = 40
         commentStars = 0
         ratingStar.removeAll()
-//        performSegue(withIdentifier: "CommentSegue", sender: 0)
+        //        performSegue(withIdentifier: "CommentSegue", sender: 0)
         let commentAlert = UIAlertController(title: "", message: "喜歡這部電影嗎？\n給個評分跟評論吧！", preferredStyle: .alert)
         commentAlert.addTextField(configurationHandler: { textField in
             textField.placeholder = "請輸入評論..."
+            textField.delegate = self
+            textField.returnKeyType = .done
         })
         for i in 0...4{
             let star = UIButton()
@@ -116,14 +119,15 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         let ok = UIAlertAction(title: "送出", style: .default, handler: { (_) in
             self.commentPersons.append(Comment(comment: commentAlert.textFields?[0].text ?? "", imageName: "d", star: self.commentStars))
+            self.tableView.reloadData()
             let checkalert = UIAlertController(title: "評論成功", message: "", preferredStyle: .alert)
             let check = UIAlertAction(title: "確認", style: .default, handler: { (_) in
                 print(self.commentPersons[3])
-                self.tableView.reloadData()
-
+                
+                
             })
             checkalert.addAction(check)
-
+            
             self.present(checkalert, animated: true, completion: nil)
         })
         
@@ -131,22 +135,27 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
         commentAlert.addAction(ok)
         
         let height:NSLayoutConstraint = NSLayoutConstraint(item: commentAlert.view!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 210)
-                commentAlert.view.addConstraint(height)
+        commentAlert.view.addConstraint(height)
         self.present(commentAlert, animated: true, completion: nil)
-
+        
     }
     @objc func rating(_ sender: UIButton) {
-
-            for i in 0...sender.tag{
-                let rating = ratingStar[i]
-                rating.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            }
+        
+        for i in 0...sender.tag{
+            let rating = ratingStar[i]
+            rating.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
         for i in sender.tag + 1..<5{
             let rating = ratingStar[i]
             rating.setImage(UIImage(systemName: "star"), for: .normal)
         }
         
         
-
+        
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
     }
 }

@@ -10,13 +10,13 @@
 		1445A6E325F7A5AA00E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E225F7A5AA00E140E0 /* Storyboard.storyboard */; };
 		1445A6E625F7A5B800E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E525F7A5B800E140E0 /* Storyboard.storyboard */; };
 		1445A6E925F7A5C100E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E825F7A5C100E140E0 /* Storyboard.storyboard */; };
-		1445A6F325F7A5EC00E140E0 /* CommentDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A6EB25F7A5EC00E140E0 /* CommentDetailTableViewCell.swift */; };
-		1445A6F425F7A5EC00E140E0 /* SeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A6EC25F7A5EC00E140E0 /* SeatViewController.swift */; };
-		1445A6F525F7A5EC00E140E0 /* SeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A6ED25F7A5EC00E140E0 /* SeatCell.swift */; };
-		1445A6F625F7A5EC00E140E0 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A6EE25F7A5EC00E140E0 /* CommentDetailViewController.swift */; };
-		1445A6F725F7A5EC00E140E0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A6EF25F7A5EC00E140E0 /* Comment.swift */; };
 		1445A6F825F7A5EC00E140E0 /* Seat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6F025F7A5EC00E140E0 /* Seat.storyboard */; };
-		1445A6F925F7A5EC00E140E0 /* OrderRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A6F225F7A5EC00E140E0 /* OrderRulesViewController.swift */; };
+		1445A70325F7A8D100E140E0 /* CommentDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A6FD25F7A8D100E140E0 /* CommentDetailTableViewCell.swift */; };
+		1445A70425F7A8D100E140E0 /* OrderRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A6FE25F7A8D100E140E0 /* OrderRulesViewController.swift */; };
+		1445A70525F7A8D100E140E0 /* SeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A6FF25F7A8D100E140E0 /* SeatViewController.swift */; };
+		1445A70625F7A8D100E140E0 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A70025F7A8D100E140E0 /* CommentDetailViewController.swift */; };
+		1445A70725F7A8D100E140E0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A70125F7A8D100E140E0 /* Comment.swift */; };
+		1445A70825F7A8D100E140E0 /* SeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A70225F7A8D100E140E0 /* SeatCell.swift */; };
 		47C1F53EDB92E96B8115586E /* Pods_TakeItLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E91E573E4C1981EFC1A3885 /* Pods_TakeItLogin.framework */; };
 		922A557025F3E85C00A38E0E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A556F25F3E85C00A38E0E /* SignUpViewController.swift */; };
 		9250EAB625F35C5A00801C54 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 9250EAB525F35C5A00801C54 /* FacebookLogin */; };
@@ -39,13 +39,13 @@
 		1445A6E225F7A5AA00E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		1445A6E525F7A5B800E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		1445A6E825F7A5C100E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		1445A6EB25F7A5EC00E140E0 /* CommentDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentDetailTableViewCell.swift; path = ../../../Takeit_iOS/Takeit_iOS/Rune/CommentDetailTableViewCell.swift; sourceTree = "<group>"; };
-		1445A6EC25F7A5EC00E140E0 /* SeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeatViewController.swift; path = ../../../Takeit_iOS/Takeit_iOS/Rune/SeatViewController.swift; sourceTree = "<group>"; };
-		1445A6ED25F7A5EC00E140E0 /* SeatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeatCell.swift; path = ../../../Takeit_iOS/Takeit_iOS/Rune/SeatCell.swift; sourceTree = "<group>"; };
-		1445A6EE25F7A5EC00E140E0 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentDetailViewController.swift; path = ../../../Takeit_iOS/Takeit_iOS/Rune/CommentDetailViewController.swift; sourceTree = "<group>"; };
-		1445A6EF25F7A5EC00E140E0 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = ../../../Takeit_iOS/Takeit_iOS/Rune/Comment.swift; sourceTree = "<group>"; };
 		1445A6F125F7A5EC00E140E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../Takeit_iOS/Takeit_iOS/Rune/Base.lproj/Seat.storyboard; sourceTree = "<group>"; };
-		1445A6F225F7A5EC00E140E0 /* OrderRulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderRulesViewController.swift; path = ../../../Takeit_iOS/Takeit_iOS/Rune/OrderRulesViewController.swift; sourceTree = "<group>"; };
+		1445A6FD25F7A8D100E140E0 /* CommentDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentDetailTableViewCell.swift; path = ../../../Takeit_iOS/Takeit_iOS/Rune/CommentDetailTableViewCell.swift; sourceTree = "<group>"; };
+		1445A6FE25F7A8D100E140E0 /* OrderRulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderRulesViewController.swift; path = ../../../Takeit_iOS/Takeit_iOS/Rune/OrderRulesViewController.swift; sourceTree = "<group>"; };
+		1445A6FF25F7A8D100E140E0 /* SeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeatViewController.swift; path = ../../../Takeit_iOS/Takeit_iOS/Rune/SeatViewController.swift; sourceTree = "<group>"; };
+		1445A70025F7A8D100E140E0 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentDetailViewController.swift; path = ../../../Takeit_iOS/Takeit_iOS/Rune/CommentDetailViewController.swift; sourceTree = "<group>"; };
+		1445A70125F7A8D100E140E0 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = ../../../Takeit_iOS/Takeit_iOS/Rune/Comment.swift; sourceTree = "<group>"; };
+		1445A70225F7A8D100E140E0 /* SeatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeatCell.swift; path = ../../../Takeit_iOS/Takeit_iOS/Rune/SeatCell.swift; sourceTree = "<group>"; };
 		4816E5AAD29BB9939362D471 /* Pods-TakeItLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItLogin.debug.xcconfig"; path = "Target Support Files/Pods-TakeItLogin/Pods-TakeItLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		5E91E573E4C1981EFC1A3885 /* Pods_TakeItLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeItLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		922A556F25F3E85C00A38E0E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -83,13 +83,13 @@
 		1488046925F7A28300375C30 /* Rune */ = {
 			isa = PBXGroup;
 			children = (
-				1445A6EF25F7A5EC00E140E0 /* Comment.swift */,
-				1445A6EB25F7A5EC00E140E0 /* CommentDetailTableViewCell.swift */,
-				1445A6EE25F7A5EC00E140E0 /* CommentDetailViewController.swift */,
+				1445A70125F7A8D100E140E0 /* Comment.swift */,
+				1445A6FD25F7A8D100E140E0 /* CommentDetailTableViewCell.swift */,
+				1445A70025F7A8D100E140E0 /* CommentDetailViewController.swift */,
+				1445A6FE25F7A8D100E140E0 /* OrderRulesViewController.swift */,
+				1445A70225F7A8D100E140E0 /* SeatCell.swift */,
+				1445A6FF25F7A8D100E140E0 /* SeatViewController.swift */,
 				1445A6F025F7A5EC00E140E0 /* Seat.storyboard */,
-				1445A6F225F7A5EC00E140E0 /* OrderRulesViewController.swift */,
-				1445A6ED25F7A5EC00E140E0 /* SeatCell.swift */,
-				1445A6EC25F7A5EC00E140E0 /* SeatViewController.swift */,
 			);
 			path = Rune;
 			sourceTree = "<group>";
@@ -323,17 +323,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1445A6F425F7A5EC00E140E0 /* SeatViewController.swift in Sources */,
-				1445A6F325F7A5EC00E140E0 /* CommentDetailTableViewCell.swift in Sources */,
+				1445A70425F7A8D100E140E0 /* OrderRulesViewController.swift in Sources */,
+				1445A70325F7A8D100E140E0 /* CommentDetailTableViewCell.swift in Sources */,
+				1445A70825F7A8D100E140E0 /* SeatCell.swift in Sources */,
 				92FA51C325EFD4D100539D9C /* LogInViewController.swift in Sources */,
 				922A557025F3E85C00A38E0E /* SignUpViewController.swift in Sources */,
-				1445A6F625F7A5EC00E140E0 /* CommentDetailViewController.swift in Sources */,
-				1445A6F525F7A5EC00E140E0 /* SeatCell.swift in Sources */,
+				1445A70625F7A8D100E140E0 /* CommentDetailViewController.swift in Sources */,
 				92FA519825EFCACC00539D9C /* AppDelegate.swift in Sources */,
-				1445A6F925F7A5EC00E140E0 /* OrderRulesViewController.swift in Sources */,
-				1445A6F725F7A5EC00E140E0 /* Comment.swift in Sources */,
 				92FA519A25EFCACC00539D9C /* SceneDelegate.swift in Sources */,
+				1445A70725F7A8D100E140E0 /* Comment.swift in Sources */,
 				92FA51CC25EFD7D600539D9C /* ForgetPasswordViewController.swift in Sources */,
+				1445A70525F7A8D100E140E0 /* SeatViewController.swift in Sources */,
 				92FA51C625EFD52F00539D9C /* MemberViewController.swift in Sources */,
 				92FA51BF25EFD48900539D9C /* HomeViewController.swift in Sources */,
 			);

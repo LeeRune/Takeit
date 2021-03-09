@@ -5,7 +5,6 @@
 //  Created by 李易潤 on 2021/1/31.
 //
 
-
 import UIKit
 
 class SeatViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {

@@ -12,18 +12,27 @@
 		144749F725E523AC005B28D4 /* CommentDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144749F625E523AC005B28D4 /* CommentDetailTableViewCell.swift */; };
 		146A0AFC25E6693B009FA623 /* SeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A0AFB25E6693B009FA623 /* SeatCell.swift */; };
 		146A0B0A25E68B3A009FA623 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A0B0925E68B3A009FA623 /* Comment.swift */; };
-		146C151E25F24C34009B677A /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146C151D25F24C34009B677A /* Storyboard.storyboard */; };
+		146C151E25F24C34009B677A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146C151D25F24C34009B677A /* Main.storyboard */; };
 		147181CE25CC0773009886CD /* Temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147181CD25CC0773009886CD /* Temp.storyboard */; };
-		147181D425CC078B009886CD /* Temp2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147181D325CC078B009886CD /* Temp2.storyboard */; };
 		147181DA25CC07AE009886CD /* Temp3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147181D925CC07AE009886CD /* Temp3.storyboard */; };
 		147181E825CC0A31009886CD /* SeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147181E725CC0A31009886CD /* SeatViewController.swift */; };
 		14A7D02225CBED2D0094143E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7D02125CBED2D0094143E /* AppDelegate.swift */; };
 		14A7D02425CBED2D0094143E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7D02325CBED2D0094143E /* SceneDelegate.swift */; };
-		14A7D02925CBED2D0094143E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A7D02725CBED2D0094143E /* Main.storyboard */; };
+		14A7D02925CBED2D0094143E /* Seat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A7D02725CBED2D0094143E /* Seat.storyboard */; };
 		14A7D02B25CBED2E0094143E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14A7D02A25CBED2E0094143E /* Assets.xcassets */; };
 		14A7D02E25CBED2E0094143E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A7D02C25CBED2E0094143E /* LaunchScreen.storyboard */; };
 		14A7D03925CBED2E0094143E /* Takeit_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7D03825CBED2E0094143E /* Takeit_iOSTests.swift */; };
 		14A7D04425CBED2E0094143E /* Takeit_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7D04325CBED2E0094143E /* Takeit_iOSUITests.swift */; };
+		E74CE5DC25F616870006FDD6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CE5D325F616870006FDD6 /* CardView.swift */; };
+		E74CE5DD25F616870006FDD6 /* WwTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CE5D425F616870006FDD6 /* WwTableViewController.swift */; };
+		E74CE5DE25F616870006FDD6 /* Temp2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74CE5D525F616870006FDD6 /* Temp2.storyboard */; };
+		E74CE5DF25F616870006FDD6 /* WwTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CE5D625F616870006FDD6 /* WwTableViewCell.swift */; };
+		E74CE5E025F616870006FDD6 /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CE5D725F616870006FDD6 /* CardTableViewController.swift */; };
+		E74CE5E125F616870006FDD6 /* TakeitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CE5D825F616870006FDD6 /* TakeitViewController.swift */; };
+		E74CE5E225F616870006FDD6 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CE5D925F616870006FDD6 /* EditViewController.swift */; };
+		E74CE5E325F616870006FDD6 /* TicketTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CE5DA25F616870006FDD6 /* TicketTableViewController.swift */; };
+		E74CE5E425F616870006FDD6 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CE5DB25F616870006FDD6 /* Movie.swift */; };
+		E7D7C71E25F646B000D25EAA /* MovieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D7C71D25F646B000D25EAA /* MovieImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,15 +58,14 @@
 		144749F625E523AC005B28D4 /* CommentDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDetailTableViewCell.swift; sourceTree = "<group>"; };
 		146A0AFB25E6693B009FA623 /* SeatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatCell.swift; sourceTree = "<group>"; };
 		146A0B0925E68B3A009FA623 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		146C151D25F24C34009B677A /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		146C151D25F24C34009B677A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		147181CD25CC0773009886CD /* Temp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Temp.storyboard; sourceTree = "<group>"; };
-		147181D325CC078B009886CD /* Temp2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Temp2.storyboard; sourceTree = "<group>"; };
 		147181D925CC07AE009886CD /* Temp3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Temp3.storyboard; sourceTree = "<group>"; };
 		147181E725CC0A31009886CD /* SeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatViewController.swift; sourceTree = "<group>"; };
 		14A7D01E25CBED2D0094143E /* Takeit_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Takeit_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A7D02125CBED2D0094143E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14A7D02325CBED2D0094143E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		14A7D02825CBED2D0094143E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14A7D02825CBED2D0094143E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Seat.storyboard; sourceTree = "<group>"; };
 		14A7D02A25CBED2E0094143E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14A7D02D25CBED2E0094143E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14A7D02F25CBED2E0094143E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +75,16 @@
 		14A7D03F25CBED2E0094143E /* Takeit_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Takeit_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A7D04325CBED2E0094143E /* Takeit_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Takeit_iOSUITests.swift; sourceTree = "<group>"; };
 		14A7D04525CBED2E0094143E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E74CE5D325F616870006FDD6 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E74CE5D425F616870006FDD6 /* WwTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WwTableViewController.swift; sourceTree = "<group>"; };
+		E74CE5D525F616870006FDD6 /* Temp2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Temp2.storyboard; sourceTree = "<group>"; };
+		E74CE5D625F616870006FDD6 /* WwTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WwTableViewCell.swift; sourceTree = "<group>"; };
+		E74CE5D725F616870006FDD6 /* CardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
+		E74CE5D825F616870006FDD6 /* TakeitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeitViewController.swift; sourceTree = "<group>"; };
+		E74CE5D925F616870006FDD6 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		E74CE5DA25F616870006FDD6 /* TicketTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTableViewController.swift; sourceTree = "<group>"; };
+		E74CE5DB25F616870006FDD6 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		E7D7C71D25F646B000D25EAA /* MovieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +123,16 @@
 		147181D225CC077A009886CD /* PeiChen */ = {
 			isa = PBXGroup;
 			children = (
-				147181D325CC078B009886CD /* Temp2.storyboard */,
+				E74CE5D725F616870006FDD6 /* CardTableViewController.swift */,
+				E74CE5D325F616870006FDD6 /* CardView.swift */,
+				E74CE5D925F616870006FDD6 /* EditViewController.swift */,
+				E7D7C71D25F646B000D25EAA /* MovieImage.swift */,
+				E74CE5D525F616870006FDD6 /* Temp2.storyboard */,
+				E74CE5DB25F616870006FDD6 /* Movie.swift */,
+				E74CE5D825F616870006FDD6 /* TakeitViewController.swift */,
+				E74CE5DA25F616870006FDD6 /* TicketTableViewController.swift */,
+				E74CE5D625F616870006FDD6 /* WwTableViewCell.swift */,
+				E74CE5D425F616870006FDD6 /* WwTableViewController.swift */,
 			);
 			path = PeiChen;
 			sourceTree = "<group>";
@@ -121,7 +148,7 @@
 		147181DE25CC07BC009886CD /* Rune */ = {
 			isa = PBXGroup;
 			children = (
-				14A7D02725CBED2D0094143E /* Main.storyboard */,
+				14A7D02725CBED2D0094143E /* Seat.storyboard */,
 				144749F125E51F65005B28D4 /* CommentDetailViewController.swift */,
 				144749F625E523AC005B28D4 /* CommentDetailTableViewCell.swift */,
 				144749E225E3DD4B005B28D4 /* OrderRulesViewController.swift */,
@@ -190,7 +217,7 @@
 		14A7D05725CBED7C0094143E /* LeeWaiter */ = {
 			isa = PBXGroup;
 			children = (
-				146C151D25F24C34009B677A /* Storyboard.storyboard */,
+				146C151D25F24C34009B677A /* Main.storyboard */,
 			);
 			path = LeeWaiter;
 			sourceTree = "<group>";
@@ -298,13 +325,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				147181D425CC078B009886CD /* Temp2.storyboard in Resources */,
 				147181CE25CC0773009886CD /* Temp.storyboard in Resources */,
 				14A7D02E25CBED2E0094143E /* LaunchScreen.storyboard in Resources */,
 				14A7D02B25CBED2E0094143E /* Assets.xcassets in Resources */,
+				E74CE5DE25F616870006FDD6 /* Temp2.storyboard in Resources */,
 				147181DA25CC07AE009886CD /* Temp3.storyboard in Resources */,
-				146C151E25F24C34009B677A /* Storyboard.storyboard in Resources */,
-				14A7D02925CBED2D0094143E /* Main.storyboard in Resources */,
+				146C151E25F24C34009B677A /* Main.storyboard in Resources */,
+				14A7D02925CBED2D0094143E /* Seat.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,11 +357,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				144749F725E523AC005B28D4 /* CommentDetailTableViewCell.swift in Sources */,
+				E74CE5DC25F616870006FDD6 /* CardView.swift in Sources */,
+				E74CE5E125F616870006FDD6 /* TakeitViewController.swift in Sources */,
 				147181E825CC0A31009886CD /* SeatViewController.swift in Sources */,
+				E7D7C71E25F646B000D25EAA /* MovieImage.swift in Sources */,
 				144749F225E51F65005B28D4 /* CommentDetailViewController.swift in Sources */,
 				146A0B0A25E68B3A009FA623 /* Comment.swift in Sources */,
+				E74CE5E425F616870006FDD6 /* Movie.swift in Sources */,
+				E74CE5E225F616870006FDD6 /* EditViewController.swift in Sources */,
+				E74CE5E025F616870006FDD6 /* CardTableViewController.swift in Sources */,
 				14A7D02225CBED2D0094143E /* AppDelegate.swift in Sources */,
 				144749E325E3DD4B005B28D4 /* OrderRulesViewController.swift in Sources */,
+				E74CE5DF25F616870006FDD6 /* WwTableViewCell.swift in Sources */,
+				E74CE5DD25F616870006FDD6 /* WwTableViewController.swift in Sources */,
+				E74CE5E325F616870006FDD6 /* TicketTableViewController.swift in Sources */,
 				146A0AFC25E6693B009FA623 /* SeatCell.swift in Sources */,
 				14A7D02425CBED2D0094143E /* SceneDelegate.swift in Sources */,
 			);
@@ -372,12 +408,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		14A7D02725CBED2D0094143E /* Main.storyboard */ = {
+		14A7D02725CBED2D0094143E /* Seat.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				14A7D02825CBED2D0094143E /* Base */,
 			);
-			name = Main.storyboard;
+			name = Seat.storyboard;
 			sourceTree = "<group>";
 		};
 		14A7D02C25CBED2E0094143E /* LaunchScreen.storyboard */ = {
@@ -442,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -497,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

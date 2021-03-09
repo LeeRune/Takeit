@@ -11,6 +11,13 @@
 		1445A6E625F7A5B800E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E525F7A5B800E140E0 /* Storyboard.storyboard */; };
 		1445A6E925F7A5C100E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E825F7A5C100E140E0 /* Storyboard.storyboard */; };
 		1445A72B25F7ACE700E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A72A25F7ACE700E140E0 /* Storyboard.storyboard */; };
+		1445A74025F7CA7D00E140E0 /* Seat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A73F25F7CA7D00E140E0 /* Seat.storyboard */; };
+		1445A74A25F7CB3300E140E0 /* CommentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A74425F7CB3100E140E0 /* CommentDetailVC.swift */; };
+		1445A74B25F7CB3300E140E0 /* OrderRulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A74525F7CB3200E140E0 /* OrderRulesVC.swift */; };
+		1445A74C25F7CB3300E140E0 /* SeatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A74625F7CB3200E140E0 /* SeatVC.swift */; };
+		1445A74D25F7CB3300E140E0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A74725F7CB3200E140E0 /* Comment.swift */; };
+		1445A74E25F7CB3300E140E0 /* CommentDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A74825F7CB3200E140E0 /* CommentDetailCell.swift */; };
+		1445A74F25F7CB3300E140E0 /* SeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A74925F7CB3200E140E0 /* SeatCell.swift */; };
 		47C1F53EDB92E96B8115586E /* Pods_TakeItLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E91E573E4C1981EFC1A3885 /* Pods_TakeItLogin.framework */; };
 		922A557025F3E85C00A38E0E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A556F25F3E85C00A38E0E /* SignUpViewController.swift */; };
 		9250EAB625F35C5A00801C54 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 9250EAB525F35C5A00801C54 /* FacebookLogin */; };
@@ -34,6 +41,13 @@
 		1445A6E525F7A5B800E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		1445A6E825F7A5C100E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		1445A72A25F7ACE700E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		1445A73F25F7CA7D00E140E0 /* Seat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Seat.storyboard; sourceTree = "<group>"; };
+		1445A74425F7CB3100E140E0 /* CommentDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailVC.swift; sourceTree = "<group>"; };
+		1445A74525F7CB3200E140E0 /* OrderRulesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderRulesVC.swift; sourceTree = "<group>"; };
+		1445A74625F7CB3200E140E0 /* SeatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatVC.swift; sourceTree = "<group>"; };
+		1445A74725F7CB3200E140E0 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		1445A74825F7CB3200E140E0 /* CommentDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailCell.swift; sourceTree = "<group>"; };
+		1445A74925F7CB3200E140E0 /* SeatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatCell.swift; sourceTree = "<group>"; };
 		4816E5AAD29BB9939362D471 /* Pods-TakeItLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItLogin.debug.xcconfig"; path = "Target Support Files/Pods-TakeItLogin/Pods-TakeItLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		5E91E573E4C1981EFC1A3885 /* Pods_TakeItLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeItLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		922A556F25F3E85C00A38E0E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +86,13 @@
 			isa = PBXGroup;
 			children = (
 				1445A72A25F7ACE700E140E0 /* Storyboard.storyboard */,
+				1445A73F25F7CA7D00E140E0 /* Seat.storyboard */,
+				1445A74725F7CB3200E140E0 /* Comment.swift */,
+				1445A74825F7CB3200E140E0 /* CommentDetailCell.swift */,
+				1445A74425F7CB3100E140E0 /* CommentDetailVC.swift */,
+				1445A74525F7CB3200E140E0 /* OrderRulesVC.swift */,
+				1445A74925F7CB3200E140E0 /* SeatCell.swift */,
+				1445A74625F7CB3200E140E0 /* SeatVC.swift */,
 			);
 			path = Rune;
 			sourceTree = "<group>";
@@ -234,6 +255,7 @@
 				92FA519F25EFCACC00539D9C /* Main.storyboard in Resources */,
 				1445A6E325F7A5AA00E140E0 /* Storyboard.storyboard in Resources */,
 				1445A72B25F7ACE700E140E0 /* Storyboard.storyboard in Resources */,
+				1445A74025F7CA7D00E140E0 /* Seat.storyboard in Resources */,
 				1445A6E925F7A5C100E140E0 /* Storyboard.storyboard in Resources */,
 				1445A6E625F7A5B800E140E0 /* Storyboard.storyboard in Resources */,
 			);
@@ -307,11 +329,17 @@
 			files = (
 				92FA51C325EFD4D100539D9C /* LogInViewController.swift in Sources */,
 				922A557025F3E85C00A38E0E /* SignUpViewController.swift in Sources */,
+				1445A74F25F7CB3300E140E0 /* SeatCell.swift in Sources */,
+				1445A74B25F7CB3300E140E0 /* OrderRulesVC.swift in Sources */,
+				1445A74C25F7CB3300E140E0 /* SeatVC.swift in Sources */,
 				92FA519825EFCACC00539D9C /* AppDelegate.swift in Sources */,
 				92FA519A25EFCACC00539D9C /* SceneDelegate.swift in Sources */,
 				92FA51CC25EFD7D600539D9C /* ForgetPasswordViewController.swift in Sources */,
 				92FA51C625EFD52F00539D9C /* MemberViewController.swift in Sources */,
+				1445A74E25F7CB3300E140E0 /* CommentDetailCell.swift in Sources */,
 				92FA51BF25EFD48900539D9C /* HomeViewController.swift in Sources */,
+				1445A74D25F7CB3300E140E0 /* Comment.swift in Sources */,
+				1445A74A25F7CB3300E140E0 /* CommentDetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

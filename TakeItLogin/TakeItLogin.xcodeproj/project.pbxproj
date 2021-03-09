@@ -10,14 +10,7 @@
 		1445A6E325F7A5AA00E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E225F7A5AA00E140E0 /* Storyboard.storyboard */; };
 		1445A6E625F7A5B800E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E525F7A5B800E140E0 /* Storyboard.storyboard */; };
 		1445A6E925F7A5C100E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E825F7A5C100E140E0 /* Storyboard.storyboard */; };
-		1445A71525F7AA7B00E140E0 /* OrderRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A70F25F7AA7B00E140E0 /* OrderRulesViewController.swift */; };
-		1445A71625F7AA7B00E140E0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A71025F7AA7B00E140E0 /* Comment.swift */; };
-		1445A71725F7AA7B00E140E0 /* SeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A71125F7AA7B00E140E0 /* SeatViewController.swift */; };
-		1445A71825F7AA7B00E140E0 /* CommentDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A71225F7AA7B00E140E0 /* CommentDetailTableViewCell.swift */; };
-		1445A71925F7AA7B00E140E0 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A71325F7AA7B00E140E0 /* CommentDetailViewController.swift */; };
-		1445A71A25F7AA7B00E140E0 /* SeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A71425F7AA7B00E140E0 /* SeatCell.swift */; };
-		1445A71E25F7AABA00E140E0 /* Seat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A71C25F7AABA00E140E0 /* Seat.storyboard */; };
-		1445A72125F7AACC00E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A72025F7AACC00E140E0 /* Storyboard.storyboard */; };
+		1445A72B25F7ACE700E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A72A25F7ACE700E140E0 /* Storyboard.storyboard */; };
 		47C1F53EDB92E96B8115586E /* Pods_TakeItLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E91E573E4C1981EFC1A3885 /* Pods_TakeItLogin.framework */; };
 		922A557025F3E85C00A38E0E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A556F25F3E85C00A38E0E /* SignUpViewController.swift */; };
 		9250EAB625F35C5A00801C54 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 9250EAB525F35C5A00801C54 /* FacebookLogin */; };
@@ -40,14 +33,7 @@
 		1445A6E225F7A5AA00E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		1445A6E525F7A5B800E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		1445A6E825F7A5C100E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		1445A70F25F7AA7B00E140E0 /* OrderRulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderRulesViewController.swift; sourceTree = "<group>"; };
-		1445A71025F7AA7B00E140E0 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		1445A71125F7AA7B00E140E0 /* SeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatViewController.swift; sourceTree = "<group>"; };
-		1445A71225F7AA7B00E140E0 /* CommentDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailTableViewCell.swift; sourceTree = "<group>"; };
-		1445A71325F7AA7B00E140E0 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
-		1445A71425F7AA7B00E140E0 /* SeatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatCell.swift; sourceTree = "<group>"; };
-		1445A71D25F7AABA00E140E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../../../Desktop/seatexample/SeatTest/SeatTest/Base.lproj/Seat.storyboard; sourceTree = "<group>"; };
-		1445A72025F7AACC00E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		1445A72A25F7ACE700E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		4816E5AAD29BB9939362D471 /* Pods-TakeItLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItLogin.debug.xcconfig"; path = "Target Support Files/Pods-TakeItLogin/Pods-TakeItLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		5E91E573E4C1981EFC1A3885 /* Pods_TakeItLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeItLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		922A556F25F3E85C00A38E0E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -82,20 +68,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1445A70E25F7AA7B00E140E0 /* Rune */ = {
+		1445A72825F7ACD700E140E0 /* Rune */ = {
 			isa = PBXGroup;
 			children = (
-				1445A71C25F7AABA00E140E0 /* Seat.storyboard */,
-				1445A70F25F7AA7B00E140E0 /* OrderRulesViewController.swift */,
-				1445A71025F7AA7B00E140E0 /* Comment.swift */,
-				1445A71125F7AA7B00E140E0 /* SeatViewController.swift */,
-				1445A71225F7AA7B00E140E0 /* CommentDetailTableViewCell.swift */,
-				1445A71325F7AA7B00E140E0 /* CommentDetailViewController.swift */,
-				1445A71425F7AA7B00E140E0 /* SeatCell.swift */,
-				1445A72025F7AACC00E140E0 /* Storyboard.storyboard */,
+				1445A72A25F7ACE700E140E0 /* Storyboard.storyboard */,
 			);
-			name = Rune;
-			path = ../../Takeit_iOS/Takeit_iOS/Rune;
+			path = Rune;
 			sourceTree = "<group>";
 		};
 		1488046B25F7A2A800375C30 /* PeiChen */ = {
@@ -151,7 +129,7 @@
 		92FA519625EFCACC00539D9C /* TakeItLogin */ = {
 			isa = PBXGroup;
 			children = (
-				1445A70E25F7AA7B00E140E0 /* Rune */,
+				1445A72825F7ACD700E140E0 /* Rune */,
 				1488046E25F7A30200375C30 /* LeeWaiter */,
 				1488046C25F7A2ED00375C30 /* Yuan */,
 				1488046B25F7A2A800375C30 /* PeiChen */,
@@ -252,11 +230,10 @@
 			files = (
 				92FA51A425EFCACF00539D9C /* LaunchScreen.storyboard in Resources */,
 				92FA51AD25EFCAFC00539D9C /* GoogleService-Info.plist in Resources */,
-				1445A72125F7AACC00E140E0 /* Storyboard.storyboard in Resources */,
 				92FA51A125EFCACF00539D9C /* Assets.xcassets in Resources */,
-				1445A71E25F7AABA00E140E0 /* Seat.storyboard in Resources */,
 				92FA519F25EFCACC00539D9C /* Main.storyboard in Resources */,
 				1445A6E325F7A5AA00E140E0 /* Storyboard.storyboard in Resources */,
+				1445A72B25F7ACE700E140E0 /* Storyboard.storyboard in Resources */,
 				1445A6E925F7A5C100E140E0 /* Storyboard.storyboard in Resources */,
 				1445A6E625F7A5B800E140E0 /* Storyboard.storyboard in Resources */,
 			);
@@ -330,31 +307,17 @@
 			files = (
 				92FA51C325EFD4D100539D9C /* LogInViewController.swift in Sources */,
 				922A557025F3E85C00A38E0E /* SignUpViewController.swift in Sources */,
-				1445A71A25F7AA7B00E140E0 /* SeatCell.swift in Sources */,
-				1445A71825F7AA7B00E140E0 /* CommentDetailTableViewCell.swift in Sources */,
 				92FA519825EFCACC00539D9C /* AppDelegate.swift in Sources */,
 				92FA519A25EFCACC00539D9C /* SceneDelegate.swift in Sources */,
 				92FA51CC25EFD7D600539D9C /* ForgetPasswordViewController.swift in Sources */,
 				92FA51C625EFD52F00539D9C /* MemberViewController.swift in Sources */,
-				1445A71925F7AA7B00E140E0 /* CommentDetailViewController.swift in Sources */,
 				92FA51BF25EFD48900539D9C /* HomeViewController.swift in Sources */,
-				1445A71725F7AA7B00E140E0 /* SeatViewController.swift in Sources */,
-				1445A71625F7AA7B00E140E0 /* Comment.swift in Sources */,
-				1445A71525F7AA7B00E140E0 /* OrderRulesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1445A71C25F7AABA00E140E0 /* Seat.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1445A71D25F7AABA00E140E0 /* Base */,
-			);
-			name = Seat.storyboard;
-			sourceTree = "<group>";
-		};
 		92FA519D25EFCACC00539D9C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

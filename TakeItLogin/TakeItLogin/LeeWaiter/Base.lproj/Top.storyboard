@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="odJ-04-RAt">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TAKEIT-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TopViewController" customModule="takeit_top" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AJV-6R-bLG">
+                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fci-OD-l0X" userLabel="CollectionInStackView">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="240"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="05Z-pq-Aln" userLabel="topPosterCollectionView">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="240"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="rWh-61-Vdn">
+                                                    <size key="itemSize" width="384" height="240"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CVCells" id="L9v-V7-9ry" customClass="CVCell" customModule="takeit_top" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="240"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="384" height="240"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="000.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Y2x-Xj-X9j">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="384" height="240"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </view>
+                                                        <size key="customSize" width="384" height="240"/>
+                                                        <connections>
+                                                            <outlet property="CVimageView" destination="Y2x-Xj-X9j" id="O8w-jZ-DUE"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="SZL-7c-hzq"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9SQ-JA-uKf"/>
+                                                </connections>
+                                            </collectionView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="240" id="HLI-9O-ySq"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rJ-s9-645">
+                                        <rect key="frame" x="0.0" y="240" width="390" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="dWx-XL-aQ1"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bHM-hU-nRn" userLabel="FilterStackView">
+                                        <rect key="frame" x="0.0" y="284" width="390" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="類型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouu-Qa-xUs">
+                                                <rect key="frame" x="8.0000000000000018" y="13.666666666666686" width="28.666666666666671" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="systemTealColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5JS-O3-zOp">
+                                                <rect key="frame" x="41.666666666666671" y="8" width="184.66666666666663" height="29"/>
+                                                <segments>
+                                                    <segment title="全部"/>
+                                                    <segment title="動畫"/>
+                                                    <segment title="非動畫"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="sortType:" destination="BYZ-38-t0r" eventType="valueChanged" id="dk9-xy-540"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="排序" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2C-LP-GMU">
+                                                <rect key="frame" x="231.33333333333334" y="13.666666666666686" width="28.666666666666657" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="systemTealColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hRs-nv-HjL">
+                                                <rect key="frame" x="265" y="8" width="117" height="29"/>
+                                                <segments>
+                                                    <segment title="上映日"/>
+                                                    <segment title="評分"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="sortTimeAndScore:" destination="BYZ-38-t0r" eventType="valueChanged" id="Rfi-z1-qTR"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="qqX-5K-sCB"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6s3-rY-lxU" userLabel="SegmentWithTableViewSV">
+                                        <rect key="frame" x="0.0" y="328" width="390" height="350"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bordered" selectedSegmentIndex="0" id="1yF-18-KB8" userLabel="segNewLast">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <segments>
+                                                    <segment title="NEW"/>
+                                                    <segment title="OLD"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="sortRelease:" destination="BYZ-38-t0r" eventType="valueChanged" id="yae-pB-WLR"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Td-Dv-UNN" userLabel="MoviesTableView">
+                                                <rect key="frame" x="0.0" y="31" width="390" height="319"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tvCell" rowHeight="128" id="YCf-Id-fme" userLabel="tvCell" customClass="TVCells" customModule="takeit_top" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="390" height="128"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YCf-Id-fme" id="6Ac-7B-0Ef">
+                                                            <rect key="frame" x="0.0" y="0.0" width="390" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="67F-VY-I5L">
+                                                                    <rect key="frame" x="182" y="0.0" width="207" height="160"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                </textView>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c8f-3n-XoN">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="160"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </tableViewCellContentView>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <outlet property="imageViewCell" destination="c8f-3n-XoN" id="uAD-7n-FgH"/>
+                                                            <outlet property="textViewCell" destination="67F-VY-I5L" id="AP0-px-hS6"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="01e-a7-rrK"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="VHd-zi-XFC"/>
+                                                </connections>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                    <searchBar contentMode="redraw" horizontalHuggingPriority="240" verticalHuggingPriority="240" horizontalCompressionResistancePriority="740" verticalCompressionResistancePriority="740" insetsLayoutMarginsFromSafeArea="NO" placeholder="可在此輸入電影名稱搜尋..." translatesAutoresizingMaskIntoConstraints="NO" id="jsL-QR-9Ql">
+                                        <rect key="frame" x="0.0" y="678" width="390" height="44"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="xpH-fC-uJh"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="searchField.leftView.tintColor">
+                                                <color key="value" systemColor="systemTealColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="l1d-lv-6Ph"/>
+                                            <outletCollection property="gestureRecognizers" destination="J6G-CV-ZGT" appends="YES" id="xd3-xF-AJc"/>
+                                        </connections>
+                                    </searchBar>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1rJ-s9-645" firstAttribute="top" secondItem="Fci-OD-l0X" secondAttribute="bottom" id="FO4-lk-xza"/>
+                                    <constraint firstItem="Fci-OD-l0X" firstAttribute="leading" secondItem="AJV-6R-bLG" secondAttribute="leading" id="O0T-dw-dRu"/>
+                                    <constraint firstItem="1rJ-s9-645" firstAttribute="leading" secondItem="AJV-6R-bLG" secondAttribute="leading" id="aKB-x5-P58"/>
+                                    <constraint firstItem="Fci-OD-l0X" firstAttribute="top" secondItem="AJV-6R-bLG" secondAttribute="top" id="ueF-xY-CHQ"/>
+                                    <constraint firstItem="6s3-rY-lxU" firstAttribute="bottom" secondItem="jsL-QR-9Ql" secondAttribute="top" id="vwY-zk-Zb6"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AJV-6R-bLG" secondAttribute="bottom" id="4J5-Vt-8bC"/>
+                            <constraint firstItem="AJV-6R-bLG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R80-tE-VxJ"/>
+                            <constraint firstItem="AJV-6R-bLG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fxw-fX-bB8"/>
+                            <constraint firstItem="AJV-6R-bLG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kMH-Bi-ieU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="TAKEIT" largeTitleDisplayMode="always" id="O6k-bJ-dVM"/>
+                    <connections>
+                        <outlet property="TopSearchBar" destination="jsL-QR-9Ql" id="NAq-08-toU"/>
+                        <outlet property="mainSV" destination="AJV-6R-bLG" id="Xcx-p4-Kws"/>
+                        <outlet property="movieTV" destination="5Td-Dv-UNN" id="AdH-kF-vgQ"/>
+                        <outlet property="topPosterCollectionView" destination="05Z-pq-Aln" id="Zc4-33-7xN"/>
+                        <outletCollection property="segmentStyle" destination="1yF-18-KB8" collectionClass="NSMutableArray" id="9zi-Mb-n92"/>
+                        <outletCollection property="segmentStyle" destination="5JS-O3-zOp" collectionClass="NSMutableArray" id="Vzy-u1-vay"/>
+                        <outletCollection property="segmentStyle" destination="hRs-nv-HjL" collectionClass="NSMutableArray" id="A86-eC-flZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="J6G-CV-ZGT"/>
+            </objects>
+            <point key="canvasLocation" x="3092.3076923076924" y="54.739336492890992"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fgf-KE-Hat">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="odJ-04-RAt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lq3-1f-Wqy">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LEd-9a-485"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gob-Q0-mWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2182.608695652174" y="55.580357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="000.jpg" width="2732" height="1821"/>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

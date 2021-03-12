@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1445A6E325F7A5AA00E140E0 /* Storyboard1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E225F7A5AA00E140E0 /* Storyboard1.storyboard */; };
 		1445A6E625F7A5B800E140E0 /* Storyboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E525F7A5B800E140E0 /* Storyboard2.storyboard */; };
 		1445A6E925F7A5C100E140E0 /* Storyboard3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E825F7A5C100E140E0 /* Storyboard3.storyboard */; };
 		1445A74025F7CA7D00E140E0 /* Seat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A73F25F7CA7D00E140E0 /* Seat.storyboard */; };
@@ -51,6 +50,11 @@
 		92FA51C325EFD4D100539D9C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FA51C225EFD4D100539D9C /* LogInViewController.swift */; };
 		92FA51C625EFD52F00539D9C /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FA51C525EFD52F00539D9C /* MemberViewController.swift */; };
 		92FA51CC25EFD7D600539D9C /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FA51CB25EFD7D600539D9C /* ForgetPasswordViewController.swift */; };
+		9B65550B25FBA42A00F536C8 /* TVCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550625FBA42900F536C8 /* TVCells.swift */; };
+		9B65550C25FBA42A00F536C8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550725FBA42900F536C8 /* Movie.swift */; };
+		9B65550D25FBA42A00F536C8 /* CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550825FBA42900F536C8 /* CVCell.swift */; };
+		9B65550E25FBA42A00F536C8 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B65550925FBA42A00F536C8 /* Top.storyboard */; };
+		9B65550F25FBA42A00F536C8 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550A25FBA42A00F536C8 /* TopViewController.swift */; };
 		E70FAA4F25F8D01400D10077 /* WwTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70FAA4C25F8D01400D10077 /* WwTableViewCell.swift */; };
 		E70FAA5025F8D01400D10077 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70FAA4D25F8D01400D10077 /* Movie.swift */; };
 		E70FAA5125F8D01400D10077 /* TicketTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70FAA4E25F8D01400D10077 /* TicketTableViewController.swift */; };
@@ -60,7 +64,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1445A6E225F7A5AA00E140E0 /* Storyboard1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard1.storyboard; sourceTree = "<group>"; };
 		1445A6E525F7A5B800E140E0 /* Storyboard2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard2.storyboard; sourceTree = "<group>"; };
 		1445A6E825F7A5C100E140E0 /* Storyboard3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard3.storyboard; sourceTree = "<group>"; };
 		1445A73F25F7CA7D00E140E0 /* Seat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Seat.storyboard; sourceTree = "<group>"; };
@@ -103,6 +106,11 @@
 		92FA51C225EFD4D100539D9C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		92FA51C525EFD52F00539D9C /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
 		92FA51CB25EFD7D600539D9C /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		9B65550625FBA42900F536C8 /* TVCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVCells.swift; sourceTree = "<group>"; };
+		9B65550725FBA42900F536C8 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		9B65550825FBA42900F536C8 /* CVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCell.swift; sourceTree = "<group>"; };
+		9B65550925FBA42A00F536C8 /* Top.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Top.storyboard; sourceTree = "<group>"; };
+		9B65550A25FBA42A00F536C8 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		AC75CCB938693BCCE0FA1B93 /* Pods-TakeItLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItLogin.release.xcconfig"; path = "Target Support Files/Pods-TakeItLogin/Pods-TakeItLogin.release.xcconfig"; sourceTree = "<group>"; };
 		E70FAA4C25F8D01400D10077 /* WwTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WwTableViewCell.swift; sourceTree = "<group>"; };
 		E70FAA4D25F8D01400D10077 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -192,7 +200,11 @@
 		1488046E25F7A30200375C30 /* LeeWaiter */ = {
 			isa = PBXGroup;
 			children = (
-				1445A6E225F7A5AA00E140E0 /* Storyboard1.storyboard */,
+				9B65550825FBA42900F536C8 /* CVCell.swift */,
+				9B65550725FBA42900F536C8 /* Movie.swift */,
+				9B65550925FBA42A00F536C8 /* Top.storyboard */,
+				9B65550A25FBA42A00F536C8 /* TopViewController.swift */,
+				9B65550625FBA42900F536C8 /* TVCells.swift */,
 			);
 			path = LeeWaiter;
 			sourceTree = "<group>";
@@ -335,11 +347,11 @@
 				1445A83925FB3B9700E140E0 /* card_amex@3x.png in Resources */,
 				92FA51AD25EFCAFC00539D9C /* GoogleService-Info.plist in Resources */,
 				1445A83725FB3B9700E140E0 /* card_amex@2x.png in Resources */,
+				9B65550E25FBA42A00F536C8 /* Top.storyboard in Resources */,
 				92FA51A125EFCACF00539D9C /* Assets.xcassets in Resources */,
 				1445A84325FB3B9700E140E0 /* card_visa@2x.png in Resources */,
 				92FA519F25EFCACC00539D9C /* Main.storyboard in Resources */,
 				1445A83F25FB3B9700E140E0 /* card_unknown@2x.png in Resources */,
-				1445A6E325F7A5AA00E140E0 /* Storyboard1.storyboard in Resources */,
 				1445A74025F7CA7D00E140E0 /* Seat.storyboard in Resources */,
 				1445A6E925F7A5C100E140E0 /* Storyboard3.storyboard in Resources */,
 				1445A84425FB3B9700E140E0 /* card_visa@3x.png in Resources */,
@@ -432,14 +444,18 @@
 				92FA519A25EFCACC00539D9C /* SceneDelegate.swift in Sources */,
 				92FA51CC25EFD7D600539D9C /* ForgetPasswordViewController.swift in Sources */,
 				92FA51C625EFD52F00539D9C /* MemberViewController.swift in Sources */,
+				9B65550F25FBA42A00F536C8 /* TopViewController.swift in Sources */,
 				1445A74E25F7CB3300E140E0 /* CommentDetailCell.swift in Sources */,
 				E70FAA5725F8D43B00D10077 /* DetailMovie.swift in Sources */,
 				92FA51BF25EFD48900539D9C /* HomeViewController.swift in Sources */,
 				E70FAA4F25F8D01400D10077 /* WwTableViewCell.swift in Sources */,
 				1445A74D25F7CB3300E140E0 /* Comment.swift in Sources */,
 				1445A74A25F7CB3300E140E0 /* CommentDetailVC.swift in Sources */,
+				9B65550B25FBA42A00F536C8 /* TVCells.swift in Sources */,
 				E70FAA5625F8D43B00D10077 /* WwTableViewController.swift in Sources */,
+				9B65550C25FBA42A00F536C8 /* Movie.swift in Sources */,
 				E70FAA5025F8D01400D10077 /* Movie.swift in Sources */,
+				9B65550D25FBA42A00F536C8 /* CVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

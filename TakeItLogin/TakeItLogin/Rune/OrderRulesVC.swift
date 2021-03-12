@@ -7,6 +7,9 @@
 
 import UIKit
 import TPDirect
+import Firebase
+import FirebaseFirestore
+import FirebaseStorage
 
 class OrderRulesVC: UIViewController {
     
@@ -26,6 +29,16 @@ class OrderRulesVC: UIViewController {
     var timeSelection: String = ""
     var amount: String = ""
     var seatSelection: String = ""
+    var tpdCard : TPDCard!
+    var tpdForm : TPDForm!
+    var merchant : TPDMerchant!
+    var consumer : TPDConsumer!
+    var cart     : TPDCart!
+    var movieID: String = ""
+    var db: Firestore!
+    var storage: Storage!
+    var ordersArray: [Order]!
+    var orders: Order!
     
     override func viewDidLoad() {
         
@@ -35,8 +48,18 @@ class OrderRulesVC: UIViewController {
         //預設按鈕預設圖案及被選取圖案
         self.checkButton.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
         self.checkButton.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .selected)
-        
-        loadData()
+        movieID = "2gqYScw0gbYnCQmPul7v"
+        movieName = "神力女超人"
+        stationSelection = "信義威秀影城"
+        dateSelection = "03/12"
+        timeSelection = "13:00"
+        amount = "600"
+        seatSelection = "第3排7號\n第3排8號"
+        db = Firestore.firestore()
+        storage = Storage.storage()
+        ordersArray = [Order]()
+        orders = Order()
+//        loadData()
     }
     
     @IBAction func checkButton(_ sender: UIButton) {
@@ -55,20 +78,67 @@ class OrderRulesVC: UIViewController {
     }
     
     @IBAction func agreeButton(_ sender: Any) {
-
+        
+        let alert = UIAlertController(title: "訂票資訊", message: "電影名稱：\(movieName)\n影城：\(stationSelection)\n日期：\(dateSelection)\n場次：\(timeSelection)\n金額：\(amount)\n座位：\(seatSelection)", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "確認", style: .default) { ACTION in
+            self.showPay()
+        }
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    //支付方式Alert
+    func showPay(){
         let alert = UIAlertController(title: "", message: "請選擇支付方式", preferredStyle: .actionSheet)
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         let creditCard = UIAlertAction(title: "信用卡", style: .default, handler: {
             ACTION in
-            let alert = UIAlertController(title: "", message: "付款成功", preferredStyle: .alert)
-                    let ok = UIAlertAction(title: "確定", style: .default, handler: {
-                        ACTION in
-                        
-                        //跳回首頁
-                        self.navigationController?.popToRootViewController(animated: true)
-                    })
-                    alert.addAction(ok)
-                    self.present(alert, animated: true, completion: nil)
+            let creditview = UIView()
+            creditview.frame = CGRect(x: 15, y: 60, width: 260, height: 80)
+            self.tpdForm = TPDForm.setup(withContainer: creditview)
+            let creditAlert = UIAlertController(title: "", message: "請輸入信用卡資訊", preferredStyle: .alert)
+            let creditOk = UIAlertAction(title: "確定", style: .default) { ACTION in
+                self.tpdCard = TPDCard.setup(self.tpdForm)
+                self.tpdCard.onSuccessCallback { (prime, cardInfo, cardIdentifier, merchantReferenceInfo) in
+                        self.generatePayByPrimeForSandBox(prime: prime!)
+                    }.onFailureCallback { (status, msg) in
+                        print("status : \(status), msg : \(msg)")
+                    }.getPrime()
+                let payOkAlert = UIAlertController(title: "", message: "付款成功", preferredStyle: .alert)
+                        let payOk = UIAlertAction(title: "確定", style: .default, handler: {
+                            ACTION in
+                            let id = self.db.collection("orders").document().documentID
+                //            let userUID = UserDefaults.standard.string(forKey: "user_uid_key")!
+                            let userID = "seLN7gL9GTcry5L1BKjZYMDoZnO2"
+                            let date = Date()
+                            let formatter = DateFormatter()
+                            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                            let result = formatter.string(from: date)
+                            self.orders.uid = userID
+                            self.orders.order_id = id
+                            self.orders.movie_id = self.movieID
+                            self.orders.movie_name = self.movieName
+                            self.orders.order_station = self.stationSelection
+                            self.orders.order_date = self.dateSelection
+                            self.orders.order_time = self.timeSelection
+                            self.orders.order_amount = self.amount
+                            self.orders.order_seat = self.seatSelection
+                            self.orders.order_updatetime = result
+                            self.addOrReplace(order: self.orders)
+                            //跳回首頁
+                            self.navigationController?.popToRootViewController(animated: true)
+                        })
+                payOkAlert.addAction(payOk)
+                        self.present(payOkAlert, animated: true, completion: nil)
+            }
+            let creditCancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+            let height:NSLayoutConstraint = NSLayoutConstraint(item: creditAlert.view!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 200)
+            
+            creditAlert.view.addConstraint(height)
+            creditAlert.view.addSubview(creditview)
+            creditAlert.addAction(creditOk)
+            creditAlert.addAction(creditCancel)
+            self.present(creditAlert, animated: true, completion: nil)
         })
         let apple = UIAlertAction(title: "ApplePay", style: .default, handler: {
             ACTION in
@@ -167,18 +237,6 @@ class OrderRulesVC: UIViewController {
         executeTask(url_TapPay!, paymentDic) { (data, response, error) in
             if error == nil {
                 if data != nil {
-                    if let result = try? JSONSerialization.jsonObject(with: data!) {
-                        if let resultDic = result as? [String: Any] {
-                            // 取得 payment_url，在前端使用TPDirect.redirect(payment_url)，讓使用者進行 LINE Pay付款
-                            let payment_url = resultDic["payment_url"] as! String
-                            self.linePay.redirect(payment_url, with: self, completion: { (linePayResult) in
-                                print("\n----------LINE Pay Result--------------")
-                                print(linePayResult)
-                            })
-                        }
-                    }
-                    
-                    
                     let text = String(data: data!, encoding: .utf8)!
                     print("\n----------Success--------------")
                     print(text)
@@ -205,4 +263,21 @@ class OrderRulesVC: UIViewController {
             print("executeTask error")
         }
     }
+    
+    func merchantSetting() {
+        merchant = TPDMerchant()
+        merchant.merchantName               = merchantName
+        merchant.countryCode                = "TW" // 國碼
+        merchant.currencyCode               = "TWD" // 交易貨幣
+        merchant.supportedNetworks          = [.amex, .masterCard, .visa]
+    }
+    func addOrReplace(order: Order) {
+        // 如果Firestore沒有該ID的Document就建立新的，已經有就更新內容
+        db.collection("orders").document(order.order_id).setData(order.documentData()) { (error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
 }

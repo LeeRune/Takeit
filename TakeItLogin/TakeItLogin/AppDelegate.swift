@@ -9,6 +9,9 @@ import UIKit
 import Firebase
 import FBSDKCoreKit
 import GoogleSignIn
+import AdSupport
+import TPDirect
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        TPDSetup.setWithAppId(19246, withAppKey: "app_Yk3iIg5Okb8HhWFqWnuaJhHgkaWnRtIEVNOycEAIaIiNNmbo4FOSGyv5RRTj", with: TPDServerType.sandBox)
+    
+        let IDFA = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+        
+        // Please setup Advertising  Identifier, to improve the accuracy of fraud detect.
+        TPDSetup.shareInstance().setupIDFA(IDFA)
+        
+        TPDSetup.shareInstance().serverSync()
+        
         ApplicationDelegate.shared.application( application, didFinishLaunchingWithOptions: launchOptions )
         FirebaseApp.configure()
         return true

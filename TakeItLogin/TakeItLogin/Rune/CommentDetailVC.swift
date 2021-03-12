@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
+import FirebaseStorage
 
 class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
@@ -15,28 +18,46 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     var xOffset:CGFloat = 35
     var ratingStar = [UIButton]()
     var commentStars = 0
-    var commentPersons = [
-        Comment(comment: "很棒！", imageName: "a", star: 4),
-        Comment(comment: "爛透了！", imageName: "b", star: 1),
-        Comment(comment: "好看！", imageName: "c", star: 5),
-        Comment(comment: "讚！", imageName: "d", star: 4),
-        Comment(comment: "Good！", imageName: "e", star: 5),
-        Comment(comment: "難看！", imageName: "f", star: 1),
-        Comment(comment: "值得二刷！", imageName: "g", star: 4),
-        Comment(comment: "無聊的電影！", imageName: "h", star: 1),
-        Comment(comment: "男主角好帥！", imageName: "i", star: 5),
-        Comment(comment: "女主角好帥！", imageName: "j", star: 4),
-        Comment(comment: "有夠爛！", imageName: "k", star: 1),
-    ]
     let reportRes = ["歧視語言","色情內容","散佈廣告","洩漏劇情","重複留言","攻擊他人","其他原因"]
-    var callback: ((Comment) -> Void)?
-    
+    var movieID: String = ""
+    var db: Firestore!
+    var storage: Storage!
+    var movies: [Movie]!
+    var commentsArray: [Commenta]!
+    var comments: Commenta!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         comment.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 30), forImageIn: .normal)
+        db = Firestore.firestore()
+        storage = Storage.storage()
+        movies = [Movie]()
+        commentsArray = [Commenta]()
+        comments = Commenta()
+        showAllComments()
+        movieID = "2gqYScw0gbYnCQmPul7v"
         
     }
+    
+    @objc func showAllComments() {
+        db.collection("movies").document("2gqYScw0gbYnCQmPul7v").collection("comments").getDocuments { (querySnapshot, error) in
+            guard let snapshot = querySnapshot else {
+                print("showAllComments() error: \(error!.localizedDescription)")
+                return
+            }
+            var comments = [Commenta]()
+//            var comments = [movie[comment]]
+            for document in snapshot.documents {
+                // 呼叫自訂Spot建構式可以將document data轉成spot
+                comments.append(Commenta(documentData: document.data()))
+            }
+            self.commentsArray = comments
+            self.commentsArray.sort  { $0.comment_updatetime > $1.comment_updatetime
+            }
+            self.tableView.reloadData()
+        }
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -92,17 +113,29 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return commentPersons.count
+        return commentsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentPersons", for: indexPath) as! CommentDetailCell
-        let comment = commentPersons[indexPath.row]
+        let commentb = commentsArray[indexPath.row]
+        cell.commentLabel.text = commentb.comment_detail
+        cell.starImage.image = UIImage(named: "\(commentb.comment_star)star")
         
-        cell.commentLabel.text = comment.comment
-        cell.starImage.image = UIImage(named: "\(comment.star)star")
-        cell.photoImage.image = UIImage(named: comment.imageName)
+        //取評論區大頭貼
+        let imageRef = Storage.storage().reference().child("userPhoto/\(commentb.uid)")
+        
+        // 設定最大可下載10M
+        imageRef.getData(maxSize: 10 * 1024 * 1024) { (data, error) in
+            if let imageData = data {
+                cell.photoImage.image = UIImage(data: imageData)
+            } else {
+                cell.photoImage.image = UIImage(named: "noImage")
+                print(error != nil ? error!.localizedDescription : "Downloading error!")
+            }
+        }
+
         return cell
     }
     
@@ -110,7 +143,7 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         xOffset = 40
         commentStars = 0
         ratingStar.removeAll()
-        //        performSegue(withIdentifier: "CommentSegue", sender: 0)
+
         let commentAlert = UIAlertController(title: "", message: "喜歡這部電影嗎？\n給個評分跟評論吧！", preferredStyle: .alert)
         commentAlert.addTextField(configurationHandler: { textField in
             
@@ -135,13 +168,24 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         let ok = UIAlertAction(title: "送出", style: .default, handler: { (_) in
-            self.commentPersons.append(Comment(comment: commentAlert.textFields?[0].text ?? "", imageName: "l", star: self.commentStars))
-            self.callback?(Comment(comment: commentAlert.textFields?[0].text ?? "", imageName: "l", star: self.commentStars))
-            
+            let id = self.db.collection("movies").document(self.movieID).collection("comments").document().documentID
+//            let userUID = UserDefaults.standard.string(forKey: "user_uid_key")!
+            let userID = "seLN7gL9GTcry5L1BKjZYMDoZnO2"
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let result = formatter.string(from: date)
+            self.comments.comment_id = id
+            self.comments.comment_detail = commentAlert.textFields?[0].text ?? ""
+            self.comments.comment_star = self.commentStars
+            self.comments.uid = userID
+            self.comments.comment_updatetime = result
+            self.addOrReplace(comment: self.comments)
             //評論後重整tableView
-            self.tableView.reloadData()
+            self.showAllComments()
             let checkalert = UIAlertController(title: "評論成功", message: "", preferredStyle: .alert)
             let check = UIAlertAction(title: "確認", style: .default, handler: { (_) in
+
             })
             checkalert.addAction(check)
             
@@ -175,4 +219,13 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         return true
     }
     
+    // 新增或修改Firestore上的景點
+    func addOrReplace(comment: Commenta) {
+        // 如果Firestore沒有該ID的Document就建立新的，已經有就更新內容
+        db.collection("movies").document(movieID).collection("comments").document(comment.comment_id).setData(comment.documentData()) { (error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
+import FirebaseStorage
 
 class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
@@ -29,7 +32,8 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     let buttonPadding:CGFloat = 10
     
     var classTitle = ["One","Two","Three"]
-    var seatLayout = ["One":[1,1,1,1,1,1,1,2,2,1],
+    var seatLayout = [
+        "One":[1,1,1,1,1,1,1,2,2,1],
                       "Two":[2,1,1,1,1,1,1,2,2,2,
                               1,2,1,1,1,1,1,2,2,1,
                               1,1,1,1,1,1,1,2,2,1],
@@ -39,6 +43,22 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
                                 1,1,1,1,2,1,1,1,1,1,
                                 1,1,2,2,2,2,1,1,1,1,
                                 1,2,2,1,1,1,2,2,2,1]]
+//    var seatLayout: [String:Any] = ["Station_ID": "aaa",
+//        "One":[1,1,1,1,1,1,1,2,2,1],
+//                      "Two":[2,1,1,1,1,1,1,2,2,2,
+//                              1,2,1,1,1,1,1,3,3,1,
+//                              1,1,1,1,1,1,1,2,2,1],
+//                      "Three":[1,1,1,1,1,1,1,2,2,1,
+//                                1,1,1,1,1,1,1,2,2,1,
+//                                1,1,1,1,1,1,1,2,2,1,
+//                                1,1,1,1,2,1,1,1,1,1,
+//                                1,1,2,2,2,2,1,1,1,1,
+//                                1,2,2,1,1,1,2,2,2,1]]
+//    guard let seatLayout = document.data() else { retur; }
+    
+//    guard let seatLayout["One"] = document.data()["One"] as? [Int] else {
+//        return;
+//    }
     var totalFoodCount: Int = 0
     var seatCount: Int = 0
     var selectCount: Int = 0
@@ -49,11 +69,23 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     var scView:UIScrollView!
     var xOffset:CGFloat = 10
     var foodCountArray = [UILabel]()
-    var foodSaleArray = [400,300,300,200,100,300,400,500,200,100]
+//    var foodSaleArray = [400,300,300,200,100,300,400,500,200,100]
     var seatRow: Int = 0
     var seatColumn: Int = 0
     var seatSelected: String = ""
+    var movieID: String = ""
+    var db: Firestore!
+    var storage: Storage!
+    var movies: [Movie]!
+    var foodArray: [Food]!
     
+    override func viewWillAppear(_ animated: Bool) {
+        movieID = "2gqYScw0gbYnCQmPul7v"
+        db = Firestore.firestore()
+        storage = Storage.storage()
+        foodArray = [Food]()
+        showAllFoods()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,8 +97,26 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
         screen.layer.cornerRadius = 3
         screen.layer.masksToBounds = true
         
-        addScrollFood()
 
+
+        
+    }
+    
+    func showAllFoods() {
+        db.collection("movies").document("2gqYScw0gbYnCQmPul7v").collection("foods").getDocuments { (querySnapshot, error) in
+            guard let snapshot = querySnapshot else {
+                print("showAllComments() error: \(error!.localizedDescription)")
+                return
+            }
+            var foods = [Food]()
+//            var comments = [movie[comment]]
+            for document in snapshot.documents {
+                // 呼叫自訂Spot建構式可以將document data轉成spot
+                foods.append(Food(documentData: document.data()))
+            }
+            self.foodArray = foods
+            self.addScrollFood()
+        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -102,6 +152,21 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
             cell.seat.image = #imageLiteral(resourceName: "selected")
         }
         
+        //儲存已選位置
+        if seatLayout[classTitle[indexPath.section]]![indexPath.row] == 3{
+            if(indexPath.row/10) > 0{
+                seatRow = (indexPath.section + 1) + (indexPath.row / 10)
+                seatColumn = (indexPath.row % 10) + 1
+                seatSelected = "第\(seatRow)排,第\(seatColumn)排"
+            }else{
+                
+                seatRow = indexPath.section + 1
+                seatColumn = indexPath.row + 1
+                seatSelected = "第\(seatRow)排,第\(seatColumn)排"
+            }
+            
+        }
+        
         return cell
     }
     
@@ -112,6 +177,7 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
             if seatLayout[classTitle[indexPath.section]]![indexPath.row] != 3{
                 
                 seatLayout[classTitle[indexPath.section]]![indexPath.row] = 3
+
                 seatCount += 1
                 if seatCount == 1{
                     
@@ -146,17 +212,7 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
             seatOrderLabel.text = String(seatCount)
             seatCollectionView.reloadData()
         }
-        if(indexPath.row/10) > 0{
-            
-            seatRow = (indexPath.section + 1) + (indexPath.row / 10)
-            seatColumn = (indexPath.row % 10) + 1
-            seatSelected.append("第\(seatRow)排\(seatColumn)號\n")
-        }else{
-            
-            seatRow = indexPath.section + 1
-            seatColumn = indexPath.row + 1
-            seatSelected.append("第\(seatRow)排\(seatColumn)號\n")
-        }
+        
     }
     
     func showBottomView(){
@@ -185,20 +241,19 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     
     //建立餐點ScrollView
     func addScrollFood(){
-        
+
         scView = UIScrollView(frame: CGRect(x: 0, y: 610, width: view.bounds.width, height: 140))
         view.addSubview(scView)
         scView.translatesAutoresizingMaskIntoConstraints = false
-        
-        for i in 0 ... 10 {
+//        print("foodArray1:\(foodArray)")
+        for i in 0 ... foodArray.count-1 {
             
             let foodButton = UIButton()
+//            let foodbutton = UIImage()
             let addFoodCountButton = UIButton()
             let minusFoodCountButton = UIButton()
             let foodCountLabel = UILabel()
             foodCountArray.append(foodCountLabel)
-            foodButton.backgroundColor = UIColor.darkGray
-            foodButton.setTitle("\(i)", for: .normal)
             
             //賦予按鈕tag值做為點擊判斷
             addFoodCountButton.tag = i
@@ -210,7 +265,17 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
             minusFoodCountButton.frame = CGRect(x: xOffset + addFoodCountButton.frame.width + 80, y: CGFloat(buttonPadding) + foodButton.frame.height, width: 30, height: 30)
             foodCountLabel.frame = CGRect(x: xOffset + addFoodCountButton.frame.width, y: CGFloat(buttonPadding) + foodButton.frame.height, width: 80, height: 30)
             
-            foodButton.setImage(UIImage(named: "1"), for: .normal)
+            let foodsArray = foodArray[i]
+            let imageRef = Storage.storage().reference().child("foodPhoto/\(foodsArray.food_id).jpg")
+
+            // 設定最大可下載10M
+            imageRef.getData(maxSize: 10 * 1024 * 1024) { (data, error) in
+                if let imageData = data {
+                    foodButton.setImage(UIImage(data: imageData), for: .normal)
+                }
+            }
+            
+//            foodButton.setImage(UIImage(named: "1"), for: .normal)
             addFoodCountButton.setImage(UIImage(systemName: "plus.circle"), for: .normal)
             minusFoodCountButton.setImage(UIImage(systemName: "minus.circle"), for: .normal)
             
@@ -314,36 +379,53 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     
     @objc func clickAdd(_ sender: UIButton) {
         
-        let foodCount = foodCountArray[sender.tag]
-        let foodSale = foodSaleArray[sender.tag]
-        var total: Int = 0
 
-        for i in 0...foodCountArray.count - 1{
-            
+        let foodSale = foodArray[sender.tag].food_price
+        let foodCount = foodCountArray[sender.tag]
+//        let foodSale = foodSaleArray[sender.tag]
+        var total: Int = 0
+//        var totalFoodCount: Int = 0
+        
+        for i in 0...foodArray.count - 1{
             total += Int(foodCountArray[i].text ?? "") ?? 0
+            
         }
         
         if total < Int(seatSelectLabel.text ?? "") ?? 0{
             
             totalFoodCount += 1
             foodCount.text = "\(totalFoodCount)"
-//            print("foodSale: \(foodSale)")
-//            print("foodCount: \(Int(foodCount.text ?? "") ?? 0)")
             foodAmount = (Int(foodCount.text ?? "") ?? 0) * foodSale
             seatID.text = "金額：\(seatAmount + foodAmount)"
+            print(total)
         }else{
             
             total = Int(seatSelectLabel.text ?? "") ?? 0
         }
+        
+//        if total < Int(seatSelectLabel.text ?? "") ?? 0{
+//
+//            totalFoodCount += 1
+//            foodCount.text = "\(totalFoodCount)"
+//            print("foodSale: \(foodSale)")
+//            print("foodCount: \(Int(foodCount.text ?? "") ?? 0)")
+//            foodAmount = (Int(foodCount.text ?? "") ?? 0) * foodSale
+//            seatID.text = "金額：\(seatAmount + foodAmount)"
+//            print(total)
+//        }else{
+//
+//            total = Int(seatSelectLabel.text ?? "") ?? 0
+//        }
     }
     @objc func clickMinus(_ sender: UIButton) {
         
+        let foodSale = foodArray[sender.tag].food_price
         let foodCount = foodCountArray[sender.tag]
-        let foodSale = foodSaleArray[sender.tag]
         var total: Int = 0
-
+//        var totalFoodCount: Int = 0
+        
         for i in 0...foodCountArray.count - 1{
-            
+
             total += Int(foodCountArray[i].text ?? "") ?? 0
         }
         totalFoodCount -= 1
@@ -352,7 +434,7 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
             
             totalFoodCount = 0
         }
-        
+        print(total)
         foodCount.text = "\(totalFoodCount)"
         foodAmount = (Int(foodCount.text ?? "") ?? 0) * foodSale
         seatID.text = "金額：\(seatAmount + foodAmount)"

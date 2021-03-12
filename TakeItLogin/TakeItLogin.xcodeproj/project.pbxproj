@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1445A6E325F7A5AA00E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E225F7A5AA00E140E0 /* Storyboard.storyboard */; };
-		1445A6E625F7A5B800E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E525F7A5B800E140E0 /* Storyboard.storyboard */; };
-		1445A6E925F7A5C100E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E825F7A5C100E140E0 /* Storyboard.storyboard */; };
-		1445A72B25F7ACE700E140E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A72A25F7ACE700E140E0 /* Storyboard.storyboard */; };
+		1445A6E325F7A5AA00E140E0 /* Storyboard1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E225F7A5AA00E140E0 /* Storyboard1.storyboard */; };
+		1445A6E625F7A5B800E140E0 /* Storyboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E525F7A5B800E140E0 /* Storyboard2.storyboard */; };
+		1445A6E925F7A5C100E140E0 /* Storyboard3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E825F7A5C100E140E0 /* Storyboard3.storyboard */; };
 		1445A74025F7CA7D00E140E0 /* Seat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A73F25F7CA7D00E140E0 /* Seat.storyboard */; };
 		1445A74A25F7CB3300E140E0 /* CommentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A74425F7CB3100E140E0 /* CommentDetailVC.swift */; };
 		1445A74B25F7CB3300E140E0 /* OrderRulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A74525F7CB3200E140E0 /* OrderRulesVC.swift */; };
@@ -18,6 +17,24 @@
 		1445A74D25F7CB3300E140E0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A74725F7CB3200E140E0 /* Comment.swift */; };
 		1445A74E25F7CB3300E140E0 /* CommentDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A74825F7CB3200E140E0 /* CommentDetailCell.swift */; };
 		1445A74F25F7CB3300E140E0 /* SeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A74925F7CB3200E140E0 /* SeatCell.swift */; };
+		1445A82025FB3AF500E140E0 /* TPDirect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445A81F25FB3AF500E140E0 /* TPDirect.framework */; };
+		1445A82325FB3B5000E140E0 /* commen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A82225FB3B5000E140E0 /* commen.swift */; };
+		1445A83625FB3B9700E140E0 /* card_jcb.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A82625FB3B9700E140E0 /* card_jcb.png */; };
+		1445A83725FB3B9700E140E0 /* card_amex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A82725FB3B9700E140E0 /* card_amex@2x.png */; };
+		1445A83825FB3B9700E140E0 /* card_visa.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A82825FB3B9700E140E0 /* card_visa.png */; };
+		1445A83925FB3B9700E140E0 /* card_amex@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A82925FB3B9700E140E0 /* card_amex@3x.png */; };
+		1445A83A25FB3B9700E140E0 /* card_mastercard.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A82A25FB3B9700E140E0 /* card_mastercard.png */; };
+		1445A83B25FB3B9700E140E0 /* card_unknown@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A82B25FB3B9700E140E0 /* card_unknown@3x.png */; };
+		1445A83C25FB3B9700E140E0 /* card_jcb@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A82C25FB3B9700E140E0 /* card_jcb@3x.png */; };
+		1445A83D25FB3B9700E140E0 /* card_union_pay.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A82D25FB3B9700E140E0 /* card_union_pay.png */; };
+		1445A83E25FB3B9700E140E0 /* card_jcb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A82E25FB3B9700E140E0 /* card_jcb@2x.png */; };
+		1445A83F25FB3B9700E140E0 /* card_unknown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A82F25FB3B9700E140E0 /* card_unknown@2x.png */; };
+		1445A84025FB3B9700E140E0 /* card_amex.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A83025FB3B9700E140E0 /* card_amex.png */; };
+		1445A84125FB3B9700E140E0 /* card_unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A83125FB3B9700E140E0 /* card_unknown.png */; };
+		1445A84225FB3B9700E140E0 /* card_mastercard@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A83225FB3B9700E140E0 /* card_mastercard@3x.png */; };
+		1445A84325FB3B9700E140E0 /* card_visa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A83325FB3B9700E140E0 /* card_visa@2x.png */; };
+		1445A84425FB3B9700E140E0 /* card_visa@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A83425FB3B9700E140E0 /* card_visa@3x.png */; };
+		1445A84525FB3B9700E140E0 /* card_mastercard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1445A83525FB3B9700E140E0 /* card_mastercard@2x.png */; };
 		47C1F53EDB92E96B8115586E /* Pods_TakeItLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E91E573E4C1981EFC1A3885 /* Pods_TakeItLogin.framework */; };
 		922A557025F3E85C00A38E0E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A556F25F3E85C00A38E0E /* SignUpViewController.swift */; };
 		9250EAB625F35C5A00801C54 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 9250EAB525F35C5A00801C54 /* FacebookLogin */; };
@@ -43,10 +60,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1445A6E225F7A5AA00E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		1445A6E525F7A5B800E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		1445A6E825F7A5C100E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		1445A72A25F7ACE700E140E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		1445A6E225F7A5AA00E140E0 /* Storyboard1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard1.storyboard; sourceTree = "<group>"; };
+		1445A6E525F7A5B800E140E0 /* Storyboard2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard2.storyboard; sourceTree = "<group>"; };
+		1445A6E825F7A5C100E140E0 /* Storyboard3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard3.storyboard; sourceTree = "<group>"; };
 		1445A73F25F7CA7D00E140E0 /* Seat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Seat.storyboard; sourceTree = "<group>"; };
 		1445A74425F7CB3100E140E0 /* CommentDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailVC.swift; sourceTree = "<group>"; };
 		1445A74525F7CB3200E140E0 /* OrderRulesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderRulesVC.swift; sourceTree = "<group>"; };
@@ -54,6 +70,24 @@
 		1445A74725F7CB3200E140E0 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		1445A74825F7CB3200E140E0 /* CommentDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailCell.swift; sourceTree = "<group>"; };
 		1445A74925F7CB3200E140E0 /* SeatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatCell.swift; sourceTree = "<group>"; };
+		1445A81F25FB3AF500E140E0 /* TPDirect.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TPDirect.framework; sourceTree = "<group>"; };
+		1445A82225FB3B5000E140E0 /* commen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commen.swift; sourceTree = "<group>"; };
+		1445A82625FB3B9700E140E0 /* card_jcb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_jcb.png; sourceTree = "<group>"; };
+		1445A82725FB3B9700E140E0 /* card_amex@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card_amex@2x.png"; sourceTree = "<group>"; };
+		1445A82825FB3B9700E140E0 /* card_visa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_visa.png; sourceTree = "<group>"; };
+		1445A82925FB3B9700E140E0 /* card_amex@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card_amex@3x.png"; sourceTree = "<group>"; };
+		1445A82A25FB3B9700E140E0 /* card_mastercard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_mastercard.png; sourceTree = "<group>"; };
+		1445A82B25FB3B9700E140E0 /* card_unknown@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card_unknown@3x.png"; sourceTree = "<group>"; };
+		1445A82C25FB3B9700E140E0 /* card_jcb@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card_jcb@3x.png"; sourceTree = "<group>"; };
+		1445A82D25FB3B9700E140E0 /* card_union_pay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_union_pay.png; sourceTree = "<group>"; };
+		1445A82E25FB3B9700E140E0 /* card_jcb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card_jcb@2x.png"; sourceTree = "<group>"; };
+		1445A82F25FB3B9700E140E0 /* card_unknown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card_unknown@2x.png"; sourceTree = "<group>"; };
+		1445A83025FB3B9700E140E0 /* card_amex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_amex.png; sourceTree = "<group>"; };
+		1445A83125FB3B9700E140E0 /* card_unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_unknown.png; sourceTree = "<group>"; };
+		1445A83225FB3B9700E140E0 /* card_mastercard@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card_mastercard@3x.png"; sourceTree = "<group>"; };
+		1445A83325FB3B9700E140E0 /* card_visa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card_visa@2x.png"; sourceTree = "<group>"; };
+		1445A83425FB3B9700E140E0 /* card_visa@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card_visa@3x.png"; sourceTree = "<group>"; };
+		1445A83525FB3B9700E140E0 /* card_mastercard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card_mastercard@2x.png"; sourceTree = "<group>"; };
 		4816E5AAD29BB9939362D471 /* Pods-TakeItLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItLogin.debug.xcconfig"; path = "Target Support Files/Pods-TakeItLogin/Pods-TakeItLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		5E91E573E4C1981EFC1A3885 /* Pods_TakeItLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeItLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		922A556F25F3E85C00A38E0E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +122,7 @@
 				9250EABA25F35C5A00801C54 /* FacebookShare in Frameworks */,
 				47C1F53EDB92E96B8115586E /* Pods_TakeItLogin.framework in Frameworks */,
 				9250EABE25F37F4B00801C54 /* Kingfisher in Frameworks */,
+				1445A82025FB3AF500E140E0 /* TPDirect.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +132,6 @@
 		1445A72825F7ACD700E140E0 /* Rune */ = {
 			isa = PBXGroup;
 			children = (
-				1445A72A25F7ACE700E140E0 /* Storyboard.storyboard */,
 				1445A73F25F7CA7D00E140E0 /* Seat.storyboard */,
 				1445A74725F7CB3200E140E0 /* Comment.swift */,
 				1445A74825F7CB3200E140E0 /* CommentDetailCell.swift */,
@@ -105,8 +139,32 @@
 				1445A74525F7CB3200E140E0 /* OrderRulesVC.swift */,
 				1445A74925F7CB3200E140E0 /* SeatCell.swift */,
 				1445A74625F7CB3200E140E0 /* SeatVC.swift */,
+				1445A82225FB3B5000E140E0 /* commen.swift */,
 			);
 			path = Rune;
+			sourceTree = "<group>";
+		};
+		1445A82525FB3B9700E140E0 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				1445A82625FB3B9700E140E0 /* card_jcb.png */,
+				1445A82725FB3B9700E140E0 /* card_amex@2x.png */,
+				1445A82825FB3B9700E140E0 /* card_visa.png */,
+				1445A82925FB3B9700E140E0 /* card_amex@3x.png */,
+				1445A82A25FB3B9700E140E0 /* card_mastercard.png */,
+				1445A82B25FB3B9700E140E0 /* card_unknown@3x.png */,
+				1445A82C25FB3B9700E140E0 /* card_jcb@3x.png */,
+				1445A82D25FB3B9700E140E0 /* card_union_pay.png */,
+				1445A82E25FB3B9700E140E0 /* card_jcb@2x.png */,
+				1445A82F25FB3B9700E140E0 /* card_unknown@2x.png */,
+				1445A83025FB3B9700E140E0 /* card_amex.png */,
+				1445A83125FB3B9700E140E0 /* card_unknown.png */,
+				1445A83225FB3B9700E140E0 /* card_mastercard@3x.png */,
+				1445A83325FB3B9700E140E0 /* card_visa@2x.png */,
+				1445A83425FB3B9700E140E0 /* card_visa@3x.png */,
+				1445A83525FB3B9700E140E0 /* card_mastercard@2x.png */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		1488046B25F7A2A800375C30 /* PeiChen */ = {
@@ -118,7 +176,7 @@
 				E70FAA4D25F8D01400D10077 /* Movie.swift */,
 				E70FAA4E25F8D01400D10077 /* TicketTableViewController.swift */,
 				E70FAA4C25F8D01400D10077 /* WwTableViewCell.swift */,
-				1445A6E825F7A5C100E140E0 /* Storyboard.storyboard */,
+				1445A6E825F7A5C100E140E0 /* Storyboard3.storyboard */,
 			);
 			path = PeiChen;
 			sourceTree = "<group>";
@@ -126,7 +184,7 @@
 		1488046C25F7A2ED00375C30 /* Yuan */ = {
 			isa = PBXGroup;
 			children = (
-				1445A6E525F7A5B800E140E0 /* Storyboard.storyboard */,
+				1445A6E525F7A5B800E140E0 /* Storyboard2.storyboard */,
 			);
 			path = Yuan;
 			sourceTree = "<group>";
@@ -134,7 +192,7 @@
 		1488046E25F7A30200375C30 /* LeeWaiter */ = {
 			isa = PBXGroup;
 			children = (
-				1445A6E225F7A5AA00E140E0 /* Storyboard.storyboard */,
+				1445A6E225F7A5AA00E140E0 /* Storyboard1.storyboard */,
 			);
 			path = LeeWaiter;
 			sourceTree = "<group>";
@@ -168,6 +226,7 @@
 		92FA519625EFCACC00539D9C /* TakeItLogin */ = {
 			isa = PBXGroup;
 			children = (
+				1445A82525FB3B9700E140E0 /* Image */,
 				1445A72825F7ACD700E140E0 /* Rune */,
 				1488046E25F7A30200375C30 /* LeeWaiter */,
 				1488046C25F7A2ED00375C30 /* Yuan */,
@@ -182,6 +241,7 @@
 				92FA51C225EFD4D100539D9C /* LogInViewController.swift */,
 				922A556F25F3E85C00A38E0E /* SignUpViewController.swift */,
 				92FA51A225EFCACF00539D9C /* LaunchScreen.storyboard */,
+				1445A81F25FB3AF500E140E0 /* TPDirect.framework */,
 				92FA51AC25EFCAFC00539D9C /* GoogleService-Info.plist */,
 				92FA51A525EFCACF00539D9C /* Info.plist */,
 			);
@@ -267,15 +327,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1445A84125FB3B9700E140E0 /* card_unknown.png in Resources */,
+				1445A83D25FB3B9700E140E0 /* card_union_pay.png in Resources */,
+				1445A83625FB3B9700E140E0 /* card_jcb.png in Resources */,
+				1445A83C25FB3B9700E140E0 /* card_jcb@3x.png in Resources */,
 				92FA51A425EFCACF00539D9C /* LaunchScreen.storyboard in Resources */,
+				1445A83925FB3B9700E140E0 /* card_amex@3x.png in Resources */,
 				92FA51AD25EFCAFC00539D9C /* GoogleService-Info.plist in Resources */,
+				1445A83725FB3B9700E140E0 /* card_amex@2x.png in Resources */,
 				92FA51A125EFCACF00539D9C /* Assets.xcassets in Resources */,
+				1445A84325FB3B9700E140E0 /* card_visa@2x.png in Resources */,
 				92FA519F25EFCACC00539D9C /* Main.storyboard in Resources */,
-				1445A6E325F7A5AA00E140E0 /* Storyboard.storyboard in Resources */,
-				1445A72B25F7ACE700E140E0 /* Storyboard.storyboard in Resources */,
+				1445A83F25FB3B9700E140E0 /* card_unknown@2x.png in Resources */,
+				1445A6E325F7A5AA00E140E0 /* Storyboard1.storyboard in Resources */,
 				1445A74025F7CA7D00E140E0 /* Seat.storyboard in Resources */,
-				1445A6E925F7A5C100E140E0 /* Storyboard.storyboard in Resources */,
-				1445A6E625F7A5B800E140E0 /* Storyboard.storyboard in Resources */,
+				1445A6E925F7A5C100E140E0 /* Storyboard3.storyboard in Resources */,
+				1445A84425FB3B9700E140E0 /* card_visa@3x.png in Resources */,
+				1445A83B25FB3B9700E140E0 /* card_unknown@3x.png in Resources */,
+				1445A84225FB3B9700E140E0 /* card_mastercard@3x.png in Resources */,
+				1445A84525FB3B9700E140E0 /* card_mastercard@2x.png in Resources */,
+				1445A83E25FB3B9700E140E0 /* card_jcb@2x.png in Resources */,
+				1445A6E625F7A5B800E140E0 /* Storyboard2.storyboard in Resources */,
+				1445A83825FB3B9700E140E0 /* card_visa.png in Resources */,
+				1445A83A25FB3B9700E140E0 /* card_mastercard.png in Resources */,
+				1445A84025FB3B9700E140E0 /* card_amex.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +422,7 @@
 			files = (
 				92FA51C325EFD4D100539D9C /* LogInViewController.swift in Sources */,
 				922A557025F3E85C00A38E0E /* SignUpViewController.swift in Sources */,
+				1445A82325FB3B5000E140E0 /* commen.swift in Sources */,
 				E70FAA5825F8D43B00D10077 /* CardTableViewController.swift in Sources */,
 				1445A74F25F7CB3300E140E0 /* SeatCell.swift in Sources */,
 				1445A74B25F7CB3300E140E0 /* OrderRulesVC.swift in Sources */,
@@ -513,6 +589,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N4U75326T7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TakeItLogin",
+				);
 				INFOPLIST_FILE = TakeItLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -533,6 +613,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N4U75326T7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TakeItLogin",
+				);
 				INFOPLIST_FILE = TakeItLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

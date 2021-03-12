@@ -125,3 +125,60 @@ class Order {
         return documentData
     }
 }
+
+class Report {
+    var uid = ""
+    var report_id = ""
+    var report_uid = ""
+    var report_detail = ""
+    var report_updatetime = ""
+    
+    init() {
+        
+    }
+    
+    init(documentData: [String : Any]) {
+        uid = documentData["UID"] as? String ?? ""
+        report_id = documentData["Report_ID"] as? String ?? ""
+        report_uid = documentData["Report_UID"] as? String ?? ""
+        report_detail = documentData["Report_Detail"] as? String ?? ""
+        report_updatetime = documentData["Report_Updatetime"] as? String ?? ""
+    }
+    
+    func documentData() -> [String : Any] {
+        let documentData = ["UID":uid,
+        "Report_ID":report_id,
+        "Report_UID":report_uid,
+        "Report_Detail":report_detail,
+        "Report_Updatetime":report_updatetime]
+        
+        return documentData
+    }
+}
+
+class Station {
+    var station_id = ""
+    var one = [Int]()
+    var two = [Int]()
+    var three = [Int]()
+    
+    init() {
+        
+    }
+    
+    init(documentData: [String : Any]) {
+        station_id = documentData["Staion_ID"] as? String ?? ""
+        one = documentData["one"] as? [Int] ?? [0]
+        two = documentData["two"] as? [Int] ?? [0]
+        three = documentData["three"] as? [Int] ?? [0]
+    }
+    
+    func documentData() -> [String : Any] {
+        let documentData = ["Staion_ID":station_id,
+        "one":one,
+        "two":two,
+        "three":three] as [String : Any]
+        
+        return documentData
+    }
+}

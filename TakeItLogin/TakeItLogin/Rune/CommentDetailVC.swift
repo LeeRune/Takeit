@@ -25,6 +25,10 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     var movies: [Movie]!
     var commentsArray: [Commenta]!
     var comments: Commenta!
+    var reports: Report!
+//    var reporter: String = ""
+    var reportedPerson: String = ""
+    var reportDetail: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +38,7 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         movies = [Movie]()
         commentsArray = [Commenta]()
         comments = Commenta()
+        reports = Report()
         showAllComments()
         movieID = "2gqYScw0gbYnCQmPul7v"
         
@@ -65,10 +70,11 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return reportRes.count
     }
-    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        reportDetail = reportRes[row]
+        print(reportRes[row])
+    }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        test = reportRes[row]
-        print("reportRes[row]:\(reportRes[row])")
         return reportRes[row]
     }
     
@@ -80,7 +86,19 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
             let alert = UIAlertController(title: "檢舉原因", message: "", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
             let ok = UIAlertAction(title: "送出", style: .default, handler: { (_) in
-                
+                let id = self.db.collection("movies").document(self.movieID).collection("reports").document().documentID
+    //            let userUID = UserDefaults.standard.string(forKey: "user_uid_key")!
+                let userID = "seLN7gL9GTcry5L1BKjZYMDoZnO2"
+                let date = Date()
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let result = formatter.string(from: date)
+                self.reports.report_id = id
+                self.reports.uid = userID
+                self.reports.report_uid = self.reportedPerson
+                self.reports.report_detail = self.reportDetail
+                self.reports.report_updatetime = result
+                self.addReport(report: self.reports)
                 let checkalert = UIAlertController(title: "您的檢舉已送交審查", message: "", preferredStyle: .alert)
                 let check = UIAlertAction(title: "確認", style: .default, handler: nil)
                 checkalert.addAction(check)
@@ -120,6 +138,7 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentPersons", for: indexPath) as! CommentDetailCell
         let commentb = commentsArray[indexPath.row]
+        reportedPerson = commentb.uid
         cell.commentLabel.text = commentb.comment_detail
         cell.starImage.image = UIImage(named: "\(commentb.comment_star)star")
         
@@ -180,7 +199,7 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
             self.comments.comment_star = self.commentStars
             self.comments.uid = userID
             self.comments.comment_updatetime = result
-            self.addOrReplace(comment: self.comments)
+            self.addComment(comment: self.comments)
             //評論後重整tableView
             self.showAllComments()
             let checkalert = UIAlertController(title: "評論成功", message: "", preferredStyle: .alert)
@@ -220,9 +239,17 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     // 新增或修改Firestore上的景點
-    func addOrReplace(comment: Commenta) {
+    func addComment(comment: Commenta) {
         // 如果Firestore沒有該ID的Document就建立新的，已經有就更新內容
         db.collection("movies").document(movieID).collection("comments").document(comment.comment_id).setData(comment.documentData()) { (error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    func addReport(report: Report) {
+        // 如果Firestore沒有該ID的Document就建立新的，已經有就更新內容
+        db.collection("movies").document(movieID).collection("reports").document(reports.report_id).setData(reports.documentData()) { (error) in
             if let error = error {
                 print(error.localizedDescription)
             }

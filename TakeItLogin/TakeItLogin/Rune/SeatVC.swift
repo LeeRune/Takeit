@@ -32,8 +32,7 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     let buttonPadding:CGFloat = 10
     
     var classTitle = ["One","Two","Three"]
-    var seatLayout = [
-        "One":[1,1,1,1,1,1,1,2,2,1],
+    var seatLayout = ["One":[1,1,1,1,1,1,1,2,2,1],
                       "Two":[2,1,1,1,1,1,1,2,2,2,
                               1,2,1,1,1,1,1,2,2,1,
                               1,1,1,1,1,1,1,2,2,1],
@@ -43,6 +42,18 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
                                 1,1,1,1,2,1,1,1,1,1,
                                 1,1,2,2,2,2,1,1,1,1,
                                 1,2,2,1,1,1,2,2,2,1]]
+    var seatLayout2 = Dictionary<String, Array<Int>>()
+//        = [
+//        "One":[1,1,1,1,1,1,1,2,2,1],
+//                      "Two":[2,1,1,1,1,1,1,2,2,2,
+//                              1,2,1,1,1,1,1,2,2,1,
+//                              1,1,1,1,1,1,1,2,2,1],
+//                      "Three":[1,1,1,1,1,1,1,2,2,1,
+//                                1,1,1,1,1,1,1,2,2,1,
+//                                1,1,1,1,1,1,1,2,2,1,
+//                                1,1,1,1,2,1,1,1,1,1,
+//                                1,1,2,2,2,2,1,1,1,1,
+//                                1,2,2,1,1,1,2,2,2,1]]
 //    var seatLayout: [String:Any] = ["Station_ID": "aaa",
 //        "One":[1,1,1,1,1,1,1,2,2,1],
 //                      "Two":[2,1,1,1,1,1,1,2,2,2,
@@ -78,13 +89,11 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     var storage: Storage!
     var movies: [Movie]!
     var foodArray: [Food]!
+    var stationArray: [Station]!
+
     
     override func viewWillAppear(_ animated: Bool) {
-        movieID = "2gqYScw0gbYnCQmPul7v"
-        db = Firestore.firestore()
-        storage = Storage.storage()
-        foodArray = [Food]()
-        showAllFoods()
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,9 +105,14 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
         
         screen.layer.cornerRadius = 3
         screen.layer.masksToBounds = true
-        
-
-
+        movieID = "2gqYScw0gbYnCQmPul7v"
+        db = Firestore.firestore()
+        storage = Storage.storage()
+        foodArray = [Food]()
+        movies = [Movie]()
+        stationArray = [Station]()
+        showAllStations()
+        showAllFoods()
         
     }
     
@@ -117,6 +131,29 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
             self.foodArray = foods
             self.addScrollFood()
         }
+    }
+    
+    func showAllStations() {
+        db.collection("stations").getDocuments { (querySnapshot, error) in
+            guard let snapshot = querySnapshot else {
+                print("showAllStations() error: \(error!.localizedDescription)")
+                return
+            }
+            var stations = [Station]()
+//            var comments = [movie[comment]]
+            for document in snapshot.documents {
+                // 呼叫自訂Spot建構式可以將document data轉成spot
+                stations.append(Station(documentData: document.data()))
+//                self.seatLayout2 = document.data()
+            }
+            self.stationArray = stations
+            self.seatLayout2["one"]?.append(contentsOf: stations[0].one)
+            print(self.stationArray[0].one)
+            self.seatLayout2 = ["one" : self.stationArray[0].one]
+            self.seatLayout2 = ["two" : self.stationArray[0].two]
+            print(self.seatLayout2)
+        }
+        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -157,12 +194,12 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
             if(indexPath.row/10) > 0{
                 seatRow = (indexPath.section + 1) + (indexPath.row / 10)
                 seatColumn = (indexPath.row % 10) + 1
-                seatSelected = "第\(seatRow)排,第\(seatColumn)排"
+                seatSelected = "第\(seatRow)排\(seatColumn)號"
             }else{
                 
                 seatRow = indexPath.section + 1
                 seatColumn = indexPath.row + 1
-                seatSelected = "第\(seatRow)排,第\(seatColumn)排"
+                seatSelected = "第\(seatRow)排\(seatColumn)號"
             }
             
         }
@@ -382,9 +419,7 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
 
         let foodSale = foodArray[sender.tag].food_price
         let foodCount = foodCountArray[sender.tag]
-//        let foodSale = foodSaleArray[sender.tag]
         var total: Int = 0
-//        var totalFoodCount: Int = 0
         
         for i in 0...foodArray.count - 1{
             total += Int(foodCountArray[i].text ?? "") ?? 0
@@ -402,20 +437,6 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
             
             total = Int(seatSelectLabel.text ?? "") ?? 0
         }
-        
-//        if total < Int(seatSelectLabel.text ?? "") ?? 0{
-//
-//            totalFoodCount += 1
-//            foodCount.text = "\(totalFoodCount)"
-//            print("foodSale: \(foodSale)")
-//            print("foodCount: \(Int(foodCount.text ?? "") ?? 0)")
-//            foodAmount = (Int(foodCount.text ?? "") ?? 0) * foodSale
-//            seatID.text = "金額：\(seatAmount + foodAmount)"
-//            print(total)
-//        }else{
-//
-//            total = Int(seatSelectLabel.text ?? "") ?? 0
-//        }
     }
     @objc func clickMinus(_ sender: UIButton) {
         

@@ -97,6 +97,7 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                 self.reports.uid = userID
                 self.reports.report_uid = self.reportedPerson
                 self.reports.report_detail = self.reportDetail
+                self.reports.report_movie_id = self.movieID
                 self.reports.report_updatetime = result
                 self.addReport(report: self.reports)
                 let checkalert = UIAlertController(title: "您的檢舉已送交審查", message: "", preferredStyle: .alert)

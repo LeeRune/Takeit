@@ -109,7 +109,7 @@ class OrderRulesVC: UIViewController {
                             ACTION in
                             let id = self.db.collection("orders").document().documentID
                 //            let userUID = UserDefaults.standard.string(forKey: "user_uid_key")!
-                            let userID = "seLN7gL9GTcry5L1BKjZYMDoZnO2"
+                            let userID = "SJwwaqgTGiQRxjdlwYV6Yhj6Kb33"
                             let date = Date()
                             let formatter = DateFormatter()
                             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"

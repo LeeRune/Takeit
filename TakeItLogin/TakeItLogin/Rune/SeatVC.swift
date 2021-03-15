@@ -31,18 +31,18 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     
     let buttonPadding:CGFloat = 10
     
-    var classTitle = ["One","Two","Three"]
-    var seatLayout = ["One":[1,1,1,1,1,1,1,2,2,1],
-                      "Two":[2,1,1,1,1,1,1,2,2,2,
-                              1,2,1,1,1,1,1,2,2,1,
-                              1,1,1,1,1,1,1,2,2,1],
-                      "Three":[1,1,1,1,1,1,1,2,2,1,
-                                1,1,1,1,1,1,1,2,2,1,
-                                1,1,1,1,1,1,1,2,2,1,
-                                1,1,1,1,2,1,1,1,1,1,
-                                1,1,2,2,2,2,1,1,1,1,
-                                1,2,2,1,1,1,2,2,2,1]]
-    var seatLayout2 = Dictionary<String, Array<Int>>()
+    var classTitle = ["one","two","three"]
+//    var seatLayout = ["One":[1,1,1,1,1,1,1,2,2,1],
+//                      "Two":[2,1,1,1,1,1,1,2,2,2,
+//                              1,2,1,1,1,1,1,2,2,1,
+//                              1,1,1,1,1,1,1,2,2,1],
+//                      "Three":[1,1,1,1,1,1,1,2,2,1,
+//                                1,1,1,1,1,1,1,2,2,1,
+//                                1,1,1,1,1,1,1,2,2,1,
+//                                1,1,1,1,2,1,1,1,1,1,
+//                                1,1,2,2,2,2,1,1,1,1,
+//                                1,2,2,1,1,1,2,2,2,1]]
+    var seatLayout = Dictionary<String, Array<Int>>()
 //        = [
 //        "One":[1,1,1,1,1,1,1,2,2,1],
 //                      "Two":[2,1,1,1,1,1,1,2,2,2,
@@ -113,7 +113,6 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
         stationArray = [Station]()
         showAllStations()
         showAllFoods()
-        
     }
     
     func showAllFoods() {
@@ -123,7 +122,6 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
                 return
             }
             var foods = [Food]()
-//            var comments = [movie[comment]]
             for document in snapshot.documents {
                 // 呼叫自訂Spot建構式可以將document data轉成spot
                 foods.append(Food(documentData: document.data()))
@@ -140,18 +138,14 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
                 return
             }
             var stations = [Station]()
-//            var comments = [movie[comment]]
             for document in snapshot.documents {
                 // 呼叫自訂Spot建構式可以將document data轉成spot
                 stations.append(Station(documentData: document.data()))
-//                self.seatLayout2 = document.data()
             }
             self.stationArray = stations
-            self.seatLayout2["one"]?.append(contentsOf: stations[0].one)
-            print(self.stationArray[0].one)
-            self.seatLayout2 = ["one" : self.stationArray[0].one]
-            self.seatLayout2 = ["two" : self.stationArray[0].two]
-            print(self.seatLayout2)
+            self.seatLayout = ["one" : self.stationArray[0].one, "two" : self.stationArray[0].two, "three" : self.stationArray[0].three]
+            self.seatCollectionView.reloadData()
+
         }
         
     }
@@ -162,8 +156,9 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("3")
         
-        return (seatLayout[classTitle[section]]?.count)!
+        return (seatLayout[classTitle[section]]?.count) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -132,6 +132,7 @@ class Report {
     var report_uid = ""
     var report_detail = ""
     var report_updatetime = ""
+    var report_movie_id = ""
     
     init() {
         
@@ -143,6 +144,7 @@ class Report {
         report_uid = documentData["Report_UID"] as? String ?? ""
         report_detail = documentData["Report_Detail"] as? String ?? ""
         report_updatetime = documentData["Report_Updatetime"] as? String ?? ""
+        report_movie_id = documentData["Report_Movie_ID"] as? String ?? ""
     }
     
     func documentData() -> [String : Any] {
@@ -150,6 +152,7 @@ class Report {
         "Report_ID":report_id,
         "Report_UID":report_uid,
         "Report_Detail":report_detail,
+        "Report_Movie_ID":report_movie_id,
         "Report_Updatetime":report_updatetime]
         
         return documentData

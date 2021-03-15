@@ -39,6 +39,8 @@ class OrderRulesVC: UIViewController {
     var storage: Storage!
     var ordersArray: [Order]!
     var orders: Order!
+    var station: Station!
+    var seatArray: Station!
     
     override func viewDidLoad() {
         
@@ -59,7 +61,9 @@ class OrderRulesVC: UIViewController {
         storage = Storage.storage()
         ordersArray = [Order]()
         orders = Order()
-//        loadData()
+        station = Station()
+        
+        loadData()
     }
     
     @IBAction func checkButton(_ sender: UIButton) {
@@ -85,6 +89,11 @@ class OrderRulesVC: UIViewController {
         }
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
+        
+        station.station_id = self.db.collection("stations").document("EaIHFDOomX8cczurdJ7I").documentID
+
+        print(seatArray)
+        
     }
     
     //支付方式Alert
@@ -109,7 +118,7 @@ class OrderRulesVC: UIViewController {
                             ACTION in
                             let id = self.db.collection("orders").document().documentID
                 //            let userUID = UserDefaults.standard.string(forKey: "user_uid_key")!
-                            let userID = "seLN7gL9GTcry5L1BKjZYMDoZnO2"
+                            let userID = "SJwwaqgTGiQRxjdlwYV6Yhj6Kb33"
                             let date = Date()
                             let formatter = DateFormatter()
                             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -124,7 +133,9 @@ class OrderRulesVC: UIViewController {
                             self.orders.order_amount = self.amount
                             self.orders.order_seat = self.seatSelection
                             self.orders.order_updatetime = result
-                            self.addOrReplace(order: self.orders)
+                            self.addOrder(order: self.orders)
+                            
+                            
                             //跳回首頁
                             self.navigationController?.popToRootViewController(animated: true)
                         })
@@ -186,6 +197,7 @@ class OrderRulesVC: UIViewController {
     
     //讀取UserDefault資料
     func loadData() {
+
         let userDefaults = UserDefaults.standard
         if let movieName = userDefaults.string(forKey: "movieName") {
             self.movieName = movieName
@@ -205,11 +217,9 @@ class OrderRulesVC: UIViewController {
         if let amount = userDefaults.string(forKey: "amount") {
             self.amount = amount
         }
-        if let seatSelection = userDefaults.string(forKey: "seatSelection") {
-            self.seatSelection = seatSelection
-            
+        if let seatArray = userDefaults.object(forKey: "seatArray"){
+            self.seatArray = seatArray as! Station
         }
-        
     }
     
     func generatePayByPrimeForSandBox(prime: String) {
@@ -271,7 +281,18 @@ class OrderRulesVC: UIViewController {
         merchant.currencyCode               = "TWD" // 交易貨幣
         merchant.supportedNetworks          = [.amex, .masterCard, .visa]
     }
-    func addOrReplace(order: Order) {
+    func replaceBlock(station: Station) {
+        // 如果Firestore沒有該ID的Document就建立新的，已經有就更新內容
+        db.collection("stations").document("EaIHFDOomX8cczurdJ7I").setData(station.documentData()) { (error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                // 新增成功回前頁
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+    func addOrder(order: Order) {
         // 如果Firestore沒有該ID的Document就建立新的，已經有就更新內容
         db.collection("orders").document(order.order_id).setData(order.documentData()) { (error) in
             if let error = error {

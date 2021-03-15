@@ -90,7 +90,8 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     var movies: [Movie]!
     var foodArray: [Food]!
     var stationArray: [Station]!
-
+    var selectedSection: Int = 0
+    var selectedRow: Int = 0
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -156,7 +157,6 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("3")
         
         return (seatLayout[classTitle[section]]?.count) ?? 0
     }
@@ -190,14 +190,21 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
                 seatRow = (indexPath.section + 1) + (indexPath.row / 10)
                 seatColumn = (indexPath.row % 10) + 1
                 seatSelected = "第\(seatRow)排\(seatColumn)號"
+                selectedSection = indexPath.section
+                selectedRow = indexPath.row
+                print("\(selectedSection) \(selectedRow)")
             }else{
                 
                 seatRow = indexPath.section + 1
                 seatColumn = indexPath.row + 1
                 seatSelected = "第\(seatRow)排\(seatColumn)號"
+                selectedSection = indexPath.section
+                selectedRow = indexPath.row
+                print("\(selectedSection) \(selectedRow)")
             }
             
         }
+        
         
         return cell
     }

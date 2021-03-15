@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Movie {
+class Movie1 {
     var name: String!
     var detail: String!
     var image: UIImage!

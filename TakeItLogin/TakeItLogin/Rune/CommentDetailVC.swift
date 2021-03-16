@@ -100,6 +100,7 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                 self.reports.report_detail = cell.commentLabel.text ?? ""
                 self.reports.report_reason = self.reportReason
                 self.reports.report_movie_id = self.movieID
+                self.reports.report_comment_id = self.commentsArray[indexPath.row].comment_id
                 self.reports.report_updatetime = result
                 self.addReport(report: self.reports)
                 let checkalert = UIAlertController(title: "您的檢舉已送交審查", message: "", preferredStyle: .alert)

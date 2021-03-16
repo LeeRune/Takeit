@@ -89,6 +89,7 @@ class Order {
     var order_station = ""
     var order_date = ""
     var order_time = ""
+    var order_count = ""
     var order_amount = ""
     var order_seat = ""
     var order_updatetime = ""
@@ -105,6 +106,7 @@ class Order {
         order_station = documentData["Order_Station"] as? String ?? ""
         order_date = documentData["Order_Date"] as? String ?? ""
         order_time = documentData["Order_Time"] as? String ?? ""
+        order_count = documentData["Order_Count"] as? String ?? ""
         order_amount = documentData["Order_Amount"] as? String ?? ""
         order_seat = documentData["Order_Seat"] as? String ?? ""
         order_updatetime = documentData["Order_Updatetime"] as? String ?? ""
@@ -118,6 +120,7 @@ class Order {
         "Order_Station":order_station,
         "Order_Date":order_date,
         "Order_Time":order_time,
+        "Order_Count":order_count,
         "Order_Amount":order_amount,
         "Order_Seat":order_seat,
         "Order_Updatetime":order_updatetime]
@@ -131,8 +134,10 @@ class Report {
     var report_id = ""
     var report_uid = ""
     var report_detail = ""
+    var report_reason = ""
     var report_updatetime = ""
     var report_movie_id = ""
+    var report_comment_id = ""
     
     init() {
         
@@ -143,8 +148,11 @@ class Report {
         report_id = documentData["Report_ID"] as? String ?? ""
         report_uid = documentData["Report_UID"] as? String ?? ""
         report_detail = documentData["Report_Detail"] as? String ?? ""
-        report_updatetime = documentData["Report_Updatetime"] as? String ?? ""
+        report_reason = documentData["Report_Reason"] as? String ?? ""
         report_movie_id = documentData["Report_Movie_ID"] as? String ?? ""
+        report_comment_id = documentData["Report_Comment_ID"] as? String ?? ""
+        report_updatetime = documentData["Report_Updatetime"] as? String ?? ""
+        
     }
     
     func documentData() -> [String : Any] {
@@ -152,7 +160,9 @@ class Report {
         "Report_ID":report_id,
         "Report_UID":report_uid,
         "Report_Detail":report_detail,
+        "Report_Reason":report_reason,
         "Report_Movie_ID":report_movie_id,
+        "Report_Comment_ID":report_comment_id,
         "Report_Updatetime":report_updatetime]
         
         return documentData

@@ -28,6 +28,7 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     var reports: Report!
 //    var reporter: String = ""
     var reportedPerson: String = ""
+    var reportReason: String = ""
     var reportDetail: String = ""
     
     override func viewDidLoad() {
@@ -41,7 +42,14 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         reports = Report()
         showAllComments()
         movieID = "2gqYScw0gbYnCQmPul7v"
-        
+//        tableViewAddRefreshControl()
+    }
+    /// tableView加上下拉更新功能
+    func tableViewAddRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新")
+        refreshControl.addTarget(self, action: #selector(showAllComments), for: .valueChanged)
+        self.tableView.refreshControl = refreshControl
     }
     
     @objc func showAllComments() {
@@ -71,7 +79,7 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         return reportRes.count
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        reportDetail = reportRes[row]
+        reportReason = reportRes[row]
         print(reportRes[row])
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -81,7 +89,7 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let report = UIContextualAction(style: .normal, title: "檢舉") { (action, view, bool) in
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "commentPersons", for: indexPath) as! CommentDetailCell
             tableView.setEditing(false, animated: true)
             let alert = UIAlertController(title: "檢舉原因", message: "", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
@@ -95,9 +103,11 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                 let result = formatter.string(from: date)
                 self.reports.report_id = id
                 self.reports.uid = userID
-                self.reports.report_uid = self.reportedPerson
-                self.reports.report_detail = self.reportDetail
+                self.reports.report_uid = self.commentsArray[indexPath.row].uid
+                self.reports.report_detail = cell.commentLabel.text ?? ""
+                self.reports.report_reason = self.reportReason
                 self.reports.report_movie_id = self.movieID
+                self.reports.report_comment_id = self.commentsArray[indexPath.row].comment_id
                 self.reports.report_updatetime = result
                 self.addReport(report: self.reports)
                 let checkalert = UIAlertController(title: "您的檢舉已送交審查", message: "", preferredStyle: .alert)
@@ -188,6 +198,7 @@ class CommentDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         let ok = UIAlertAction(title: "送出", style: .default, handler: { (_) in
+            
             let id = self.db.collection("movies").document(self.movieID).collection("comments").document().documentID
 //            let userUID = UserDefaults.standard.string(forKey: "user_uid_key")!
             let userID = "SJwwaqgTGiQRxjdlwYV6Yhj6Kb33"

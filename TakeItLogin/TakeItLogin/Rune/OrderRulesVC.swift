@@ -29,6 +29,7 @@ class OrderRulesVC: UIViewController {
     var timeSelection: String = ""
     var amount: String = ""
     var seatSelection: String = ""
+    var orderCount: String = ""
     var tpdCard : TPDCard!
     var tpdForm : TPDForm!
     var merchant : TPDMerchant!
@@ -83,7 +84,7 @@ class OrderRulesVC: UIViewController {
     
     @IBAction func agreeButton(_ sender: Any) {
         
-        let alert = UIAlertController(title: "訂票資訊", message: "電影名稱：\(movieName)\n影城：\(stationSelection)\n日期：\(dateSelection)\n場次：\(timeSelection)\n金額：\(amount)\n座位：\(seatSelection)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "訂票資訊", message: "電影名稱：\(movieName)\n影城：\(stationSelection)\n日期：\(dateSelection)\n場次：\(timeSelection)\n張數：\(orderCount)\n金額：\(amount)\n座位：\(seatSelection)", preferredStyle: .alert)
         let ok = UIAlertAction(title: "確認", style: .default) { ACTION in
             self.showPay()
         }
@@ -130,6 +131,7 @@ class OrderRulesVC: UIViewController {
                             self.orders.order_station = self.stationSelection
                             self.orders.order_date = self.dateSelection
                             self.orders.order_time = self.timeSelection
+                            self.orders.order_count = self.orderCount
                             self.orders.order_amount = self.amount
                             self.orders.order_seat = self.seatSelection
                             self.orders.order_updatetime = result
@@ -217,8 +219,8 @@ class OrderRulesVC: UIViewController {
         if let amount = userDefaults.string(forKey: "amount") {
             self.amount = amount
         }
-        if let seatArray = userDefaults.object(forKey: "seatArray"){
-            self.seatArray = seatArray as! Station
+        if let orderCount = userDefaults.string(forKey: "orderCount") {
+            self.orderCount = orderCount
         }
     }
     
@@ -237,6 +239,8 @@ class OrderRulesVC: UIViewController {
         paymentDic["partner_key"] = partnerKey
         paymentDic["prime"] = prime
         paymentDic["merchant_id"] = merchantId
+        paymentDic["orderCount"] = orderCount
+        
         paymentDic["amount"] = amount
         paymentDic["currency"] = "TWD"
         paymentDic["order_number"] = "SN0001"

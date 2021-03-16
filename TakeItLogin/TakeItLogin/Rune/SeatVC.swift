@@ -510,9 +510,10 @@ class SeatVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
         let userDefaults = UserDefaults.standard
         let amount = seatAmount + foodAmount
         let seatSelection = seatSelected
+        let orderCount = seatOrderLabel.text
         userDefaults.set(amount, forKey: "amount")
         userDefaults.set(seatSelection, forKey: "seatSelection")
-   
+        userDefaults.set(orderCount, forKey: "orderCount")
     }
     
 }

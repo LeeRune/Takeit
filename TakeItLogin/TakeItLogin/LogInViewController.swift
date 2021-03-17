@@ -183,6 +183,11 @@ class LogInViewController: UIViewController, GIDSignInDelegate, UITextFieldDeleg
         password.attributedPlaceholder = NSAttributedString(string: "輸入密碼", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)])
         password.layer.addSublayer(bottomLine)
     }
+    
+    @IBAction func unwindToPageA(segue: UIStoryboardSegue) {
+            print("unwindToPageA...")
+        }
+    
 }
 
 extension String {

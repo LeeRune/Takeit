@@ -7,33 +7,55 @@
 
 import UIKit
 import Foundation
+import FirebaseFirestore
 
 class Movie {
-    internal init(name: String, type: String, grade: String, release: String, min: TimeInterval, url: String, image: UIImage) {
-        self.name = name
-        self.type = type
-        self.grade = grade
-        self.release = release
-        self.min = min
-        self.url = url
-        self.image = image
+    
+    init(documentData: [String : Any]) {
+        Movie_ID = documentData["Movie_ID"] as? String ?? ""
+        imdb = documentData["imdb"] as? String ?? ""
+        intro = documentData["intro"] as? String ?? ""
+        movieName = documentData["movieName"] as? String ?? ""
+        poster = documentData["poster"] as? String ?? ""
+        release = documentData["release"] as? String ?? ""
+        runtime = Int(documentData["runtime"] as? TimeInterval ?? 0)
+        type = documentData["type"] as? String ?? ""
+        viedourl = documentData["viedourl"] as? String ?? ""
     }
     
-    var name: String
-    var type: String
-    var grade: String
-    var release: String
-    var min: TimeInterval
-    var url: String
-    var image : UIImage
+    func documentData() -> [String : Any] {
+        let documentData = [
+        "Movie_ID":Movie_ID,
+        "imdb":imdb,
+        "intro":intro,
+        "movieName":movieName,
+        "poster":poster,
+        "release":release,
+        "runtime":runtime,
+        "type":type,
+        "viedourl":viedourl
+        ] as [String : Any]
+        return documentData
+    }
+    
+    var Movie_ID = ""
+    var imdb = ""
+    var intro = ""
+    var movieName = ""
+    var poster = ""
+    var release = ""
+    var runtime = 0
+    var type = ""
+    var viedourl = ""
+
     
     var info: String {
-        let text = "電影名: \(name)\n上映日: \(release)\n類型: \(type)\n級別: \(grade)\n片長: \(minTime(interval: min))"
+        let text = "電影名: \(movieName)\n上映日: \(release)\n類型: \(type)\nIMDB分數: \(imdb)\n片長: \(calTime(interval: TimeInterval(runtime)))"
         return text
     }
     
     
-    func minTime(interval: TimeInterval) -> NSString {
+    func calTime(interval: TimeInterval) -> NSString {
 
       let ti = NSInteger(interval)
         

@@ -5,16 +5,19 @@
 //  Created by Lee on 2021/2/4.
 //
 
-import Firebase
-import FirebaseFirestore
-import FirebaseStorage
 import UIKit
 import Foundation
+import FirebaseFirestore
+import FirebaseStorage
+import Firebase
+
 
 class TopViewController: UIViewController, UICollectionViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
     
-    var allMovie:[Movie]!
-    var searchedMovie : [Movie]!
+    var allMovie:[Movie] = []
+    var searchedMovie:[Movie] = []
+    var db: Firestore!
+    var storage: Storage!
     
     
     @IBOutlet weak var segtime: UISegmentedControl!
@@ -72,11 +75,13 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         TopSearchBar.barTintColor = UIColor.black
         TopSearchBar.tintColor = UIColor.white
         TopSearchBar.searchTextField.textColor = .white
         
-        
+        db = Firestore.firestore()
+        storage = Storage.storage()
 //        filteredData = data
 //
 //        if searchText.isEmpty {
@@ -100,11 +105,13 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
 //        navigationItem.hidesSearchBarWhenScrolling = false
 
         segStyle()
-        allMovie = getMovies()
-        searchedMovie = allMovie
-        
-        searchedMovie = searchedMovie.sorted { (m1, m2) -> Bool in
-            return m1.release > m2.release
+        getMovies { (movies) in
+            self.allMovie = movies
+            self.searchedMovie = self.allMovie
+            self.searchedMovie = self.searchedMovie.sorted { (m1, m2) -> Bool in
+                return m1.release > m2.release
+            }
+            self.movieTV.reloadData()
         }
         
         topPosterCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .top, animated: true)
@@ -113,8 +120,7 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
         let height = UIScreen.main.bounds.height
         flowLayout?.itemSize = CGSize(width: width, height: height/4)
         
-        
-        
+       
     }
     
     //navigation searchBar保留keyword
@@ -151,17 +157,40 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
     searchedMovie = searchedMovie.sorted {$0.release < $1.release}
         movieTV.reloadData()
     }
+    
+    func sorthigh(){
+        searchedMovie = searchedMovie.sorted {$0.imdb > $1.imdb}
+            movieTV.reloadData()
+    }
+    
+    func sortlow(){
+        searchedMovie = searchedMovie.sorted {$0.imdb < $1.imdb}
+            movieTV.reloadData()
+    }
+    
     func sortanime(){
-        
-        searchedMovie = searchedMovie.filter{$0.type == "動畫"}
+    
+        searchedMovie = searchedMovie.filter{$0.type.contains("動畫")}
         movieTV.reloadData()
+        
     }
    
-    func sortnonanime(){
+    func sortAct(){
         
-        searchedMovie = searchedMovie.filter{$0.type != "動畫"}
+        searchedMovie = searchedMovie.filter{$0.type.contains("動作")}
+        
         movieTV.reloadData()
     }
+    
+    func sortLove(){
+        searchedMovie = searchedMovie.filter{$0.type.contains("愛情")}
+        movieTV.reloadData()
+    }
+    func sortHor(){
+        searchedMovie = searchedMovie.filter{$0.type.contains("恐怖")}
+        movieTV.reloadData()
+    }
+    
     
     func search(){
         
@@ -179,7 +208,7 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
                     sortanime()
                 case 2:
                     sortNew()
-                    sortnonanime()
+                    sortAct()
                 default:
                     sortNew()
                 }
@@ -193,7 +222,7 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
                     sortanime()
                 case 2:
                     sortOld()
-                    sortnonanime()
+                    sortAct()
                 default:
                     sortOld()
                 }
@@ -201,7 +230,7 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
         }
         if TopSearchBar.text! != ""{
             searchedMovie = allMovie.filter{
-                $0.name.uppercased().contains(TopSearchBar.text!.uppercased())
+                $0.movieName.uppercased().contains(TopSearchBar.text!.uppercased())
             }
             
         if index == 0 {
@@ -213,7 +242,7 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
                 sortanime()
             case 2:
                 sortNew()
-                sortnonanime()
+                sortAct()
             default:
                 sortNew()
             }
@@ -227,7 +256,7 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
                 sortanime()
             case 2:
                 sortOld()
-                sortnonanime()
+                sortAct()
             default:
                 sortOld()
             }
@@ -253,11 +282,11 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
     
     @IBAction func sortType(_ segmentedControl: UISegmentedControl) {
         
-        
+        let time = segtime.selectedSegmentIndex
         let index = segindex.selectedSegmentIndex
         searchedMovie = allMovie
         
-        if index == 0{
+        if index == 0 && time == 0{
             switch segmentedControl.selectedSegmentIndex {
             case 0:
                 sortNew()
@@ -268,14 +297,22 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
                 search()
             case 2:
                 sortNew()
-                sortnonanime()
+                sortAct()
+                search()
+            case 3:
+                sortNew()
+                sortLove()
+                search()
+            case 4:
+                sortNew()
+                sortHor()
                 search()
             default:
                 sortNew()
                 search()
             }
         }
-        else {
+        else if index == 1 && time == 0{
             switch segmentedControl.selectedSegmentIndex {
             case 0:
                 sortOld()
@@ -286,36 +323,137 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
                 search()
             case 2:
                 sortOld()
-                sortnonanime()
+                sortAct()
                 search()
-            
+            case 3:
+                sortOld()
+                sortLove()
+                search()
+            case 4:
+                sortOld()
+                sortHor()
+                search()
             default:
                 sortOld()
                 search()
             }
-        }
+            }
+            else if index == 0 && time == 1{
+                switch segmentedControl.selectedSegmentIndex {
+                case 0:
+                    sorthigh()
+                    search()
+                case 1:
+                    sorthigh()
+                    sortanime()
+                    search()
+                case 2:
+                    sorthigh()
+                    sortAct()
+                    search()
+                case 3:
+                    sorthigh()
+                    sortLove()
+                    search()
+                case 4:
+                    sorthigh()
+                    sortHor()
+                    search()
+                default:
+                    sorthigh()
+                    search()
+                }
+            }
+            else if index == 1 && time == 1{
+                switch segmentedControl.selectedSegmentIndex {
+                case 0:
+                    sortlow()
+                    search()
+                case 1:
+                    sortlow()
+                    sortanime()
+                    search()
+                case 2:
+                    sortlow()
+                    sortAct()
+                    search()
+                case 3:
+                    sortlow()
+                    sortLove()
+                    search()
+                case 4:
+                    sortlow()
+                    sortHor()
+                    search()
+                default:
+                    sortlow()
+                    search()
+                }
+            }
         movieTV.reloadData()
+        }
+    
+
+
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    
     @IBAction func sortTimeAndScore(_ segmentedControl: UISegmentedControl) {
-//        let index = segmentStyle[0].selectedSegmentIndex
-//        let segtime = segmentStyle[1].selectedSegmentIndex
-//
-//        switch segmentedControl.selectedSegmentIndex {
-//        case 0:
-//            break
-//        case 1:
-//            break
-//        default:
-//            break
-//        }
+        search()
+       
+        let index = segindex.selectedSegmentIndex
+        let time = segtime.selectedSegmentIndex
+        
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            segindex.setTitle("最近上映", forSegmentAt: 0)
+            segindex.setTitle("最舊排序", forSegmentAt: 1)
+            
+        case 1:
+            segindex.setTitle("最高分", forSegmentAt: 0)
+            segindex.setTitle("最低分", forSegmentAt: 1)
+            
+        default:
+            break
+        }
+        
+        movieTV.reloadData()
+        if index == 0{
+            
+            if time == 0{
+                searchedMovie.sort { (m1, m2) -> Bool in
+                    return m1.release > m2.release
+                }
+            }else if time == 1{
+                searchedMovie.sort { (m1, m2) -> Bool in
+                    return m1.imdb > m2.imdb
+                }
+            }
+        }else if index == 1{
+            search()
+            if time == 0{
+                
+                searchedMovie.sort { (m1, m2) -> Bool in
+                    return m1.release < m2.release
+                }
+            }else if time == 1{
+                searchedMovie.sort { (m1, m2) -> Bool in
+                    return m1.imdb < m2.imdb
+                }
+            }
+            
+        }
+        movieTV.reloadData()
         
     }
     
     @IBAction func sortRelease(_ segmentedControl: UISegmentedControl) {
+        search()
         
-        
+        let time = segtime.selectedSegmentIndex
+        if time == 0{
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             searchedMovie.sort { (m1, m2) -> Bool in
@@ -329,32 +467,53 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
             break
         }
         movieTV.reloadData()
+        }else {
+            switch segmentedControl.selectedSegmentIndex {
+            case 0:
+                searchedMovie.sort { (m1, m2) -> Bool in
+                    return m1.imdb > m2.imdb
+                }
+            case 1:
+                searchedMovie.sort { (m1, m2) -> Bool in
+                    return m1.imdb < m2.imdb
+                }
+            default:
+                break
+            }
+        movieTV.reloadData()
+        }
     }
     
     
     func segStyle(){
         let font = UIFont.systemFont(ofSize: 16)
-        
+//        segtype.backgroundColor =
         for segment in segmentStyle{
             segment.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .selected)
             segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
-            segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+            segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemTeal], for: .normal)
+            segment.layer.borderWidth = 2
+            segment.layer.borderColor = CGColor(red: 0, green: 0.3, blue: 0.5, alpha: 1)
+    
         }
     }
-    func getMovies() -> [Movie] {
+    
+    
+    func getMovies(completion: @escaping ([Movie]) -> Void) {
         var movies = [Movie]()
-        
-        movies.append(Movie(name: "123", type: "動畫", grade: "非限制級", release: "2021-01-01", min: 151, url: "www.123.com", image: UIImage(named: "m000.png")!))
-        movies.append(Movie(name: "456", type: "劇情", grade: "非限制級", release: "2021-01-02", min: 140, url: "www.456.com", image: UIImage(named: "m001.png")!))
-        movies.append(Movie(name: "789", type: "懸疑", grade: "非限制級", release: "2021-01-23", min: 120, url: "www.789.com", image: UIImage(named: "m002.png")!))
-        movies.append(Movie(name: "356", type: "喜劇", grade: "非限制級", release: "2021-02-26", min: 151, url: "www.789.com", image: UIImage(named: "m003.png")!))
-        movies.append(Movie(name: "289", type: "劇情", grade: "非限制級", release: "2021-01-20", min: 100, url: "www.789.com", image: UIImage(named: "m004.png")!))
-        movies.append(Movie(name: "289", type: "動畫", grade: "非限制級", release: "2021-01-28", min: 200, url: "www.789.com", image: UIImage(named: "m005.png")!))
-        
-        return movies
+        db.collection("movies").getDocuments { (querySnapshot, error) in
+            guard let querySnapshot = querySnapshot else {
+               return
+            }
+            for document in querySnapshot.documents {
+                let movie = Movie(documentData: document.data())
+                movies.append(movie)
+            }
+            completion(movies)
+        }
     }
+    
 }
-
 
 extension TopViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -364,16 +523,41 @@ extension TopViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var searchmovie : Movie
-        searchmovie = searchedMovie[indexPath.row]
+        var showCell : Movie
+        showCell = searchedMovie[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "tvCell") as! TVCells
-        cell.imageViewCell.image = searchmovie.image
-        cell.textViewCell.text = searchmovie.info
-      
+        if showCell.poster.isEmpty{
+             cell.imageViewCell.image = UIImage(named: "noimage")
+        }else{
+//          cell.imageViewCell.image = showCell.image)
+//            let cell_Image = storage.reference().child(showCell.poster)
+//            print(cell_Image)
+//            cell_Image.getData(maxSize: 10*1024*1024) { (data, error) in
+//                if let imageData = data {
+//                    cell.imageViewCell.image = UIImage(data: imageData)
+//                }else{
+//                    cell.imageViewCell.image = UIImage(named: "noimage")
+//                }
+//            }
+            let task = URLSession.shared.dataTask(with:  URL(string: showCell.poster)!) { data, res, err in
+                if let data = data {
+                    DispatchQueue.main.async {
+                        cell.imageViewCell.image = UIImage(data: data)
+                    }
+                } else {
+//                    print("err: \(err)")
+                }
+            }
+            cell.task = task
+            task.resume()
+            
+//            cell.imageViewCell.image = try? UIImage(data: Data(contentsOf: URL(string: showCell.poster)!))
+            cell.textViewCell.text = showCell.info
+            
+            
+        }
         return cell
-        
     }
-   
-    
 }
+
 

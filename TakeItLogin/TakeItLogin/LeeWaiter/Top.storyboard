@@ -61,39 +61,43 @@
                                             <constraint firstAttribute="height" constant="240" id="HLI-9O-ySq"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rJ-s9-645">
-                                        <rect key="frame" x="0.0" y="240" width="390" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="dWx-XL-aQ1"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bHM-hU-nRn" userLabel="FilterStackView">
-                                        <rect key="frame" x="0.0" y="284" width="390" height="44"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1rJ-s9-645">
+                                        <rect key="frame" x="0.0" y="240" width="390" height="36"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="類型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouu-Qa-xUs">
-                                                <rect key="frame" x="8.0000000000000018" y="13.666666666666686" width="28.666666666666671" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" systemColor="systemTealColor"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" highlighted="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5JS-O3-zOp">
-                                                <rect key="frame" x="41.666666666666671" y="8" width="184.66666666666663" height="29"/>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" highlighted="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5JS-O3-zOp">
+                                                <rect key="frame" x="4" y="4" width="382" height="29"/>
                                                 <segments>
                                                     <segment title="全部"/>
                                                     <segment title="動畫"/>
-                                                    <segment title="非動畫"/>
+                                                    <segment title="動作片"/>
+                                                    <segment title="愛情片"/>
+                                                    <segment title="恐怖片"/>
                                                 </segments>
                                                 <connections>
                                                     <action selector="sortType:" destination="BYZ-38-t0r" eventType="valueChanged" id="dk9-xy-540"/>
                                                 </connections>
                                             </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="排序" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2C-LP-GMU">
-                                                <rect key="frame" x="231.33333333333334" y="13.666666666666686" width="28.666666666666657" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" systemColor="systemTealColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" tag="1" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hRs-nv-HjL">
-                                                <rect key="frame" x="265" y="8" width="117" height="29"/>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="dWx-XL-aQ1"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="4" left="4" bottom="4" right="4"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="bHM-hU-nRn" userLabel="FilterStackView">
+                                        <rect key="frame" x="0.0" y="276" width="390" height="36"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1yF-18-KB8" userLabel="segNewLast">
+                                                <rect key="frame" x="4" y="4" width="262" height="29"/>
+                                                <segments>
+                                                    <segment title="最近上映"/>
+                                                    <segment title="最舊排序"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="sortRelease:" destination="BYZ-38-t0r" eventType="valueChanged" id="yae-pB-WLR"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" highlighted="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hRs-nv-HjL">
+                                                <rect key="frame" x="269" y="4" width="117" height="29"/>
                                                 <segments>
                                                     <segment title="上映日"/>
                                                     <segment title="評分"/>
@@ -105,26 +109,15 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="qqX-5K-sCB"/>
+                                            <constraint firstAttribute="height" constant="36" id="qqX-5K-sCB"/>
                                         </constraints>
-                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <edgeInsets key="layoutMargins" top="4" left="4" bottom="4" right="4"/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6s3-rY-lxU" userLabel="SegmentWithTableViewSV">
-                                        <rect key="frame" x="0.0" y="328" width="390" height="350"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="6s3-rY-lxU" userLabel="SegmentWithTableViewSV">
+                                        <rect key="frame" x="0.0" y="312" width="390" height="366"/>
                                         <subviews>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" id="1yF-18-KB8" userLabel="segNewLast">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <segments>
-                                                    <segment title="NEW"/>
-                                                    <segment title="OLD"/>
-                                                </segments>
-                                                <connections>
-                                                    <action selector="sortRelease:" destination="BYZ-38-t0r" eventType="valueChanged" id="yae-pB-WLR"/>
-                                                </connections>
-                                            </segmentedControl>
                                             <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Td-Dv-UNN" userLabel="MoviesTableView">
-                                                <rect key="frame" x="0.0" y="31" width="390" height="319"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="366"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tvCell" rowHeight="128" id="YCf-Id-fme" userLabel="tvCell" customClass="TVCells" customModule="takeit_top" customModuleProvider="target">
@@ -207,9 +200,9 @@
                         <outlet property="segtime" destination="hRs-nv-HjL" id="EWP-L1-r2N"/>
                         <outlet property="segtype" destination="5JS-O3-zOp" id="sq9-SK-RjV"/>
                         <outlet property="topPosterCollectionView" destination="05Z-pq-Aln" id="Zc4-33-7xN"/>
-                        <outletCollection property="segmentStyle" destination="1yF-18-KB8" collectionClass="NSMutableArray" id="9zi-Mb-n92"/>
-                        <outletCollection property="segmentStyle" destination="5JS-O3-zOp" collectionClass="NSMutableArray" id="Vzy-u1-vay"/>
                         <outletCollection property="segmentStyle" destination="hRs-nv-HjL" collectionClass="NSMutableArray" id="A86-eC-flZ"/>
+                        <outletCollection property="segmentStyle" destination="5JS-O3-zOp" collectionClass="NSMutableArray" id="Vzy-u1-vay"/>
+                        <outletCollection property="segmentStyle" destination="1yF-18-KB8" collectionClass="NSMutableArray" id="9zi-Mb-n92"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

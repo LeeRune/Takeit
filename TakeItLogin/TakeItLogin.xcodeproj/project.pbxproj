@@ -53,8 +53,8 @@
 		9B65550B25FBA42A00F536C8 /* TVCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550625FBA42900F536C8 /* TVCells.swift */; };
 		9B65550C25FBA42A00F536C8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550725FBA42900F536C8 /* Movie.swift */; };
 		9B65550D25FBA42A00F536C8 /* CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550825FBA42900F536C8 /* CVCell.swift */; };
-		9B65550E25FBA42A00F536C8 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B65550925FBA42A00F536C8 /* Top.storyboard */; };
 		9B65550F25FBA42A00F536C8 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550A25FBA42A00F536C8 /* TopViewController.swift */; };
+		9B959B0F2601EFF6009F4AD7 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B959B0E2601EFF6009F4AD7 /* Top.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,8 +103,8 @@
 		9B65550625FBA42900F536C8 /* TVCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVCells.swift; sourceTree = "<group>"; };
 		9B65550725FBA42900F536C8 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		9B65550825FBA42900F536C8 /* CVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCell.swift; sourceTree = "<group>"; };
-		9B65550925FBA42A00F536C8 /* Top.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Top.storyboard; sourceTree = "<group>"; };
 		9B65550A25FBA42A00F536C8 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		9B959B0E2601EFF6009F4AD7 /* Top.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Top.storyboard; sourceTree = "<group>"; };
 		AC75CCB938693BCCE0FA1B93 /* Pods-TakeItLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItLogin.release.xcconfig"; path = "Target Support Files/Pods-TakeItLogin/Pods-TakeItLogin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,9 +182,9 @@
 		1488046E25F7A30200375C30 /* LeeWaiter */ = {
 			isa = PBXGroup;
 			children = (
+				9B959B0E2601EFF6009F4AD7 /* Top.storyboard */,
 				9B65550825FBA42900F536C8 /* CVCell.swift */,
 				9B65550725FBA42900F536C8 /* Movie.swift */,
-				9B65550925FBA42A00F536C8 /* Top.storyboard */,
 				9B65550A25FBA42A00F536C8 /* TopViewController.swift */,
 				9B65550625FBA42900F536C8 /* TVCells.swift */,
 			);
@@ -329,7 +329,7 @@
 				1445A83925FB3B9700E140E0 /* card_amex@3x.png in Resources */,
 				92FA51AD25EFCAFC00539D9C /* GoogleService-Info.plist in Resources */,
 				1445A83725FB3B9700E140E0 /* card_amex@2x.png in Resources */,
-				9B65550E25FBA42A00F536C8 /* Top.storyboard in Resources */,
+				9B959B0F2601EFF6009F4AD7 /* Top.storyboard in Resources */,
 				92FA51A125EFCACF00539D9C /* Assets.xcassets in Resources */,
 				1445A84325FB3B9700E140E0 /* card_visa@2x.png in Resources */,
 				92FA519F25EFCACC00539D9C /* Main.storyboard in Resources */,

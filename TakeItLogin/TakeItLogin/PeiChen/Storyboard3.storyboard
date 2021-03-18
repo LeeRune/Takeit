@@ -332,7 +332,7 @@
         <!--Navigation Controller-->
         <scene sceneID="aGE-qb-PMM">
             <objects>
-                <navigationController storyboardIdentifier="TakeitViewControllerNav" automaticallyAdjustsScrollViewInsets="NO" id="1WZ-Jt-2bs" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TakeitViewControllerNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1WZ-Jt-2bs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tQd-2T-8wq">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>

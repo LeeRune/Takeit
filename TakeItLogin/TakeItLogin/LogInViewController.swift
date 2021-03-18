@@ -41,7 +41,10 @@ class LogInViewController: UIViewController, GIDSignInDelegate, UITextFieldDeleg
             print(photoUrl3)
             UserDefaults.standard.set("1", forKey: "user_google_login")
             UserDefaults.standard.set(photoUrl3, forKey: "user_photo")
-            self.performSegue(withIdentifier: "LogIn", sender: nil)
+            let storyboard = UIStoryboard(name: "Top", bundle: nil)
+            let topvc = storyboard.instantiateViewController(identifier: "TopVC") as! TopViewController
+            self.navigationController?.pushViewController(topvc, animated: true)
+//            self.performSegue(withIdentifier: "LogIn", sender: nil)
         }
       })
     }
@@ -109,7 +112,10 @@ class LogInViewController: UIViewController, GIDSignInDelegate, UITextFieldDeleg
                 
                 UserDefaults.standard.set(Auth.auth().currentUser?.uid, forKey: "user_uid_key")
                 UserDefaults.standard.set("1", forKey: "user_email_login")
-                self.performSegue(withIdentifier: "LogIn", sender: nil)
+                let storyboard = UIStoryboard(name: "Top", bundle: nil)
+                let topvc = storyboard.instantiateViewController(identifier: "TopVC") as! TopViewController
+                self.navigationController?.pushViewController(topvc, animated: true)
+//                self.performSegue(withIdentifier: "LogIn", sender: nil)
             }
         }
     }
@@ -152,8 +158,10 @@ class LogInViewController: UIViewController, GIDSignInDelegate, UITextFieldDeleg
                                 
                             }
                         }
-                        
-                        self.performSegue(withIdentifier: "LogIn", sender: nil)
+                        let storyboard = UIStoryboard(name: "Top", bundle: nil)
+                        let topvc = storyboard.instantiateViewController(identifier: "TopVC") as! TopViewController
+                        self.navigationController?.pushViewController(topvc, animated: true)
+//                        self.performSegue(withIdentifier: "LogIn", sender: nil)
                     }
                 }
             }

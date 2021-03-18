@@ -48,6 +48,8 @@ class Movie {
     var type = ""
     var viedourl = ""
 
+    let originFont = UIFont(name: "System", size: 12)
+    let Font01 = UIFont(name: "System", size: 20)
     
     var info: String {
         let text = "電影名: \(movieName)\n上映日: \(release)\n類型: \(type)\nIMDB分數: \(imdb)\n片長: \(calTime(interval: TimeInterval(runtime)))"

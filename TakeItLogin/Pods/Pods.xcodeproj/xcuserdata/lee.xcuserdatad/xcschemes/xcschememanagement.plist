@@ -7,210 +7,122 @@
 		<key>AppAuth.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>21</integer>
-=======
-			<integer>3</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>0</integer>
 		</dict>
 		<key>BoringSSL-GRPC.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>9</integer>
-=======
-			<integer>19</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>17</integer>
 		</dict>
 		<key>Firebase.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>5</integer>
-=======
-			<integer>0</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>19</integer>
 		</dict>
 		<key>FirebaseAnalytics.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>6</integer>
-=======
-			<integer>2</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>10</integer>
 		</dict>
 		<key>FirebaseAuth.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>7</integer>
-=======
-			<integer>11</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>24</integer>
 		</dict>
 		<key>FirebaseCore.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>11</integer>
-=======
-			<integer>16</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>20</integer>
 		</dict>
 		<key>FirebaseCoreDiagnostics.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>23</integer>
-=======
-			<integer>12</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>4</integer>
 		</dict>
 		<key>FirebaseFirestore.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>16</integer>
-=======
-			<integer>21</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>6</integer>
 		</dict>
 		<key>FirebaseInstallations.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>19</integer>
-=======
-			<integer>10</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>23</integer>
 		</dict>
 		<key>FirebaseStorage.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>13</integer>
-=======
-			<integer>22</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>12</integer>
 		</dict>
 		<key>GTMAppAuth.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>3</integer>
-=======
-			<integer>5</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>2</integer>
 		</dict>
 		<key>GTMSessionFetcher.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>14</integer>
 		</dict>
 		<key>GoogleAppMeasurement.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>10</integer>
-=======
-			<integer>8</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>16</integer>
 		</dict>
 		<key>GoogleDataTransport.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>22</integer>
-=======
-			<integer>9</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>1</integer>
 		</dict>
 		<key>GoogleSignIn.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>21</integer>
 		</dict>
 		<key>GoogleUtilities.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>14</integer>
-=======
-			<integer>7</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>11</integer>
 		</dict>
 		<key>Pods-TakeItLogin.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>20</integer>
-=======
-			<integer>1</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>7</integer>
 		</dict>
 		<key>PromisesObjC.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>0</integer>
-=======
-			<integer>6</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>22</integer>
 		</dict>
 		<key>abseil.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>4</integer>
-=======
-			<integer>23</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>15</integer>
 		</dict>
 		<key>gRPC-C++-gRPCCertificates-Cpp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>15</integer>
-=======
 			<integer>13</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
 		</dict>
 		<key>gRPC-C++.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>17</integer>
-=======
-			<integer>24</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>5</integer>
 		</dict>
 		<key>gRPC-Core.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>2</integer>
-=======
-			<integer>14</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>8</integer>
 		</dict>
 		<key>leveldb-library.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>12</integer>
-=======
-			<integer>17</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>3</integer>
 		</dict>
 		<key>nanopb.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>1</integer>
-=======
-			<integer>20</integer>
->>>>>>> de3b05ee4b093e785b7068c852950df9d63bbad8
+			<integer>9</integer>
 		</dict>
 	</dict>
 </dict>

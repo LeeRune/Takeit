@@ -49,10 +49,15 @@
 		92FA51C325EFD4D100539D9C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FA51C225EFD4D100539D9C /* LogInViewController.swift */; };
 		92FA51C625EFD52F00539D9C /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FA51C525EFD52F00539D9C /* MemberViewController.swift */; };
 		92FA51CC25EFD7D600539D9C /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FA51CB25EFD7D600539D9C /* ForgetPasswordViewController.swift */; };
+		9B64F59C260367CC008EEE16 /* 002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B64F597260367C7008EEE16 /* 002.jpg */; };
+		9B64F59D260367CC008EEE16 /* 000.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B64F598260367C8008EEE16 /* 000.jpg */; };
+		9B64F59E260367CC008EEE16 /* 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B64F599260367CA008EEE16 /* 001.jpg */; };
+		9B64F59F260367CC008EEE16 /* 003.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B64F59A260367CB008EEE16 /* 003.png */; };
+		9B64F5A0260367CC008EEE16 /* 004.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B64F59B260367CC008EEE16 /* 004.png */; };
+		9B64F5A826036857008EEE16 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B64F5A626036857008EEE16 /* Top.storyboard */; };
 		9B65550B25FBA42A00F536C8 /* TVCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550625FBA42900F536C8 /* TVCells.swift */; };
 		9B65550C25FBA42A00F536C8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550725FBA42900F536C8 /* Movie.swift */; };
 		9B65550D25FBA42A00F536C8 /* CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550825FBA42900F536C8 /* CVCell.swift */; };
-		9B65550E25FBA42A00F536C8 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B65550925FBA42A00F536C8 /* Top.storyboard */; };
 		9B65550F25FBA42A00F536C8 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550A25FBA42A00F536C8 /* TopViewController.swift */; };
 		E746AA5426009FA2005FDB99 /* DetailMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746AA4726009F9F005FDB99 /* DetailMovie.swift */; };
 		E746AA5526009FA2005FDB99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E746AA4826009FA0005FDB99 /* Assets.xcassets */; };
@@ -111,10 +116,15 @@
 		92FA51C225EFD4D100539D9C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		92FA51C525EFD52F00539D9C /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
 		92FA51CB25EFD7D600539D9C /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		9B64F597260367C7008EEE16 /* 002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 002.jpg; sourceTree = "<group>"; };
+		9B64F598260367C8008EEE16 /* 000.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 000.jpg; sourceTree = "<group>"; };
+		9B64F599260367CA008EEE16 /* 001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 001.jpg; sourceTree = "<group>"; };
+		9B64F59A260367CB008EEE16 /* 003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 003.png; sourceTree = "<group>"; };
+		9B64F59B260367CC008EEE16 /* 004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 004.png; sourceTree = "<group>"; };
+		9B64F5A726036857008EEE16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../../../takeit_top/takeit_top/Base.lproj/Top.storyboard; sourceTree = "<group>"; };
 		9B65550625FBA42900F536C8 /* TVCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVCells.swift; sourceTree = "<group>"; };
 		9B65550725FBA42900F536C8 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		9B65550825FBA42900F536C8 /* CVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCell.swift; sourceTree = "<group>"; };
-		9B65550925FBA42A00F536C8 /* Top.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Top.storyboard; sourceTree = "<group>"; };
 		9B65550A25FBA42A00F536C8 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		AC75CCB938693BCCE0FA1B93 /* Pods-TakeItLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItLogin.release.xcconfig"; path = "Target Support Files/Pods-TakeItLogin/Pods-TakeItLogin.release.xcconfig"; sourceTree = "<group>"; };
 		E746AA4726009F9F005FDB99 /* DetailMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailMovie.swift; sourceTree = "<group>"; };
@@ -167,6 +177,11 @@
 		1445A82525FB3B9700E140E0 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				9B64F598260367C8008EEE16 /* 000.jpg */,
+				9B64F599260367CA008EEE16 /* 001.jpg */,
+				9B64F597260367C7008EEE16 /* 002.jpg */,
+				9B64F59A260367CB008EEE16 /* 003.png */,
+				9B64F59B260367CC008EEE16 /* 004.png */,
 				1445A82625FB3B9700E140E0 /* card_jcb.png */,
 				1445A82725FB3B9700E140E0 /* card_amex@2x.png */,
 				1445A82825FB3B9700E140E0 /* card_visa.png */,
@@ -220,7 +235,7 @@
 			children = (
 				9B65550825FBA42900F536C8 /* CVCell.swift */,
 				9B65550725FBA42900F536C8 /* Movie.swift */,
-				9B65550925FBA42A00F536C8 /* Top.storyboard */,
+				9B64F5A626036857008EEE16 /* Top.storyboard */,
 				9B65550A25FBA42A00F536C8 /* TopViewController.swift */,
 				9B65550625FBA42900F536C8 /* TVCells.swift */,
 			);
@@ -360,17 +375,21 @@
 				1445A84125FB3B9700E140E0 /* card_unknown.png in Resources */,
 				E746AA5A26009FA2005FDB99 /* Storyboard3.storyboard in Resources */,
 				1445A83D25FB3B9700E140E0 /* card_union_pay.png in Resources */,
+				9B64F59E260367CC008EEE16 /* 001.jpg in Resources */,
 				1445A83625FB3B9700E140E0 /* card_jcb.png in Resources */,
 				1445A83C25FB3B9700E140E0 /* card_jcb@3x.png in Resources */,
+				9B64F5A0260367CC008EEE16 /* 004.png in Resources */,
 				92FA51A425EFCACF00539D9C /* LaunchScreen.storyboard in Resources */,
 				1445A83925FB3B9700E140E0 /* card_amex@3x.png in Resources */,
 				92FA51AD25EFCAFC00539D9C /* GoogleService-Info.plist in Resources */,
 				1445A83725FB3B9700E140E0 /* card_amex@2x.png in Resources */,
-				9B65550E25FBA42A00F536C8 /* Top.storyboard in Resources */,
+				9B64F5A826036857008EEE16 /* Top.storyboard in Resources */,
+				9B64F59D260367CC008EEE16 /* 000.jpg in Resources */,
 				92FA51A125EFCACF00539D9C /* Assets.xcassets in Resources */,
 				1445A84325FB3B9700E140E0 /* card_visa@2x.png in Resources */,
 				92FA519F25EFCACC00539D9C /* Main.storyboard in Resources */,
 				1445A83F25FB3B9700E140E0 /* card_unknown@2x.png in Resources */,
+				9B64F59F260367CC008EEE16 /* 003.png in Resources */,
 				1445A74025F7CA7D00E140E0 /* Seat.storyboard in Resources */,
 				1445A84425FB3B9700E140E0 /* card_visa@3x.png in Resources */,
 				1445A83B25FB3B9700E140E0 /* card_unknown@3x.png in Resources */,
@@ -381,6 +400,7 @@
 				1445A83825FB3B9700E140E0 /* card_visa.png in Resources */,
 				1445A83A25FB3B9700E140E0 /* card_mastercard.png in Resources */,
 				E746AA5526009FA2005FDB99 /* Assets.xcassets in Resources */,
+				9B64F59C260367CC008EEE16 /* 002.jpg in Resources */,
 				1445A84025FB3B9700E140E0 /* card_amex.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +520,14 @@
 				92FA51A325EFCACF00539D9C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9B64F5A626036857008EEE16 /* Top.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B64F5A726036857008EEE16 /* Base */,
+			);
+			name = Top.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

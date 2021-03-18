@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="odJ-04-RAt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--TAKEIT-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TopViewController" customModule="takeit_top" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopVC" id="BYZ-38-t0r" customClass="TopViewController" customModule="takeit_top" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AJV-6R-bLG">
-                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fci-OD-l0X" userLabel="CollectionInStackView">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="270"/>
@@ -86,6 +87,16 @@
                                                     <action selector="segToAD:" destination="BYZ-38-t0r" eventType="valueChanged" id="dVa-AY-tfP"/>
                                                 </connections>
                                             </segmentedControl>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUf-mk-AE1">
+                                                <rect key="frame" x="300" y="-17" width="36" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="person.fill" catalog="system"/>
+                                                <connections>
+                                                    <segue destination="RgI-Sf-pTl" kind="show" id="TlP-YM-UO3"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -150,10 +161,10 @@
                                         <edgeInsets key="layoutMargins" top="4" left="4" bottom="4" right="4"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="6s3-rY-lxU" userLabel="SegmentWithTableViewSV">
-                                        <rect key="frame" x="0.0" y="372" width="390" height="306"/>
+                                        <rect key="frame" x="0.0" y="372" width="390" height="350"/>
                                         <subviews>
                                             <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Td-Dv-UNN" userLabel="MoviesTableView">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="306"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="350"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tvCell" rowHeight="128" id="YCf-Id-fme" userLabel="tvCell" customClass="TVCells" customModule="takeit_top" customModuleProvider="target">
@@ -192,7 +203,7 @@
                                         </subviews>
                                     </stackView>
                                     <searchBar contentMode="redraw" horizontalHuggingPriority="240" verticalHuggingPriority="240" horizontalCompressionResistancePriority="740" verticalCompressionResistancePriority="740" insetsLayoutMarginsFromSafeArea="NO" placeholder="可在此輸入電影名稱搜尋..." translatesAutoresizingMaskIntoConstraints="NO" id="jsL-QR-9Ql">
-                                        <rect key="frame" x="0.0" y="678" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="722" width="390" height="44"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="xpH-fC-uJh"/>
@@ -245,29 +256,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="J6G-CV-ZGT"/>
             </objects>
-            <point key="canvasLocation" x="3092.3076923076924" y="54.739336492890992"/>
+            <point key="canvasLocation" x="4021.5384615384614" y="54.739336492890992"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="fgf-KE-Hat">
+        <!--TakeitViewControllerNav-->
+        <scene sceneID="8Qs-5i-UOI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="odJ-04-RAt" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lq3-1f-Wqy">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LEd-9a-485"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gob-Q0-mWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Storyboard3" referencedIdentifier="TakeitViewControllerNav" id="RgI-Sf-pTl" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="qVv-tZ-zju"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="leg-ei-jo0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2182.608695652174" y="55.580357142857139"/>
+            <point key="canvasLocation" x="4643.0769230769229" y="123.69668246445497"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

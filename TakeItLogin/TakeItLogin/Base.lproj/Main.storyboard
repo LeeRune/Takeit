@@ -43,12 +43,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40" y="65"/>
+            <point key="canvasLocation" x="40" y="64.691943127962077"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="X5e-Wd-26f">
             <objects>
-                <viewController id="MvO-ra-hYg" customClass="LogInViewController" customModule="TakeItLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ccc" id="MvO-ra-hYg" customClass="LogInViewController" customModule="TakeItLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zAt-PE-6Hj">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,16 +162,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDt-YB-tAp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1584.6153846153845" y="64.691943127962077"/>
-        </scene>
-        <!--TakeitViewController-->
-        <scene sceneID="tap-SH-5cS">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Storyboard3" referencedIdentifier="TakeitViewController" id="B83-Ge-58a" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="gRQ-Eb-umU"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LdS-e2-l3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3290" y="-338"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="q9B-GN-2Et">
@@ -321,19 +311,19 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="OZG-1Y-m0g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtU-nl-eCu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3Q-ug-IVY">
                                 <rect key="frame" x="172" y="750" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="B83-Ge-58a" kind="show" id="uIO-xZ-hkJ"/>
+                                    <segue destination="u5E-Xa-doy" kind="presentation" id="Uk5-sS-cJ2"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BeZ-AY-Jrw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="BeZ-AY-Jrw" firstAttribute="bottom" secondItem="JtU-nl-eCu" secondAttribute="bottom" constant="30" id="XmJ-yo-Svc"/>
-                            <constraint firstItem="JtU-nl-eCu" firstAttribute="centerX" secondItem="CD7-ci-qMg" secondAttribute="centerX" id="zj9-YL-bj4"/>
+                            <constraint firstItem="BeZ-AY-Jrw" firstAttribute="bottom" secondItem="n3Q-ug-IVY" secondAttribute="bottom" constant="30" id="5gQ-b8-87z"/>
+                            <constraint firstItem="n3Q-ug-IVY" firstAttribute="centerX" secondItem="CD7-ci-qMg" secondAttribute="centerX" id="h5P-Hh-Unm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xc2-gN-nYd"/>
@@ -344,12 +334,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQ7-Sq-RIK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ykU-uj-bya" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="899"/>
+            <point key="canvasLocation" x="1861.5384615384614" y="898.57819905213262"/>
+        </scene>
+        <!--TakeitViewControllerNav-->
+        <scene sceneID="Utd-80-Ljy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Storyboard3" referencedIdentifier="TakeitViewControllerNav" id="u5E-Xa-doy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DsP-uR-i34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2393" y="1149"/>
         </scene>
         <!--Forget Password View Controller-->
         <scene sceneID="8UF-G0-DBa">
             <objects>
-                <viewController id="32b-2R-Pb5" customClass="ForgetPasswordViewController" customModule="TakeItLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="hhh" id="32b-2R-Pb5" customClass="ForgetPasswordViewController" customModule="TakeItLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GC5-Yq-YPB">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,7 +421,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lky-Lq-60a"/>
+        <segue reference="Zns-Zc-FEl"/>
         <segue reference="3al-n2-798"/>
     </inferredMetricsTieBreakers>
     <resources>

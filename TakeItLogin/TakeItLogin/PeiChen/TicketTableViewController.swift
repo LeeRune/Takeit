@@ -15,12 +15,15 @@ class TicketTableViewController: UITableViewController {
     @IBAction func payTicket(_ sender: Any) {
         /* 建立標題為"Exit"，訊息為"Do you really want to exit?"，樣式為.alert(長得像Alert View)的Alert Controller */
         let alertController = UIAlertController(title: "嗨，", message: "想要兌票嗎?", preferredStyle: .alert)
-        
         /* 建立標題為"Ok"，樣式為.default(預設樣式)的按鈕 */
         let ok = UIAlertAction(title: "我要兌票", style: .default) {
             /* alertAction代表被點擊的按鈕 */
             (alertAction) in
             
+            let storyboard = UIStoryboard(name: "Storyboard3", bundle: nil)
+            var newVC: UIViewController!
+            newVC = (storyboard.instantiateViewController(withIdentifier: "ggg") )
+            self.navigationController?.pushViewController(newVC, animated: true)
             
         }
         /* 建立標題為"Cancel"，樣式為.cancel(取消樣式)的按鈕 */
@@ -33,6 +36,8 @@ class TicketTableViewController: UITableViewController {
 
         /* 呼叫present()才會跳出Alert Controller */
         self.present(alertController, animated: true, completion:nil)
+        
+        
     }
     
     override func viewDidLoad() {

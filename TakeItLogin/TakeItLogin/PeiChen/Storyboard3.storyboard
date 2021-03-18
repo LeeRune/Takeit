@@ -20,6 +20,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="WS3-HK-vyN">
                                 <rect key="frame" x="0.0" y="44" width="390" height="800"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6cD-HV-aWt">
                                 <rect key="frame" x="100" y="119.66666666666666" width="190" height="172"/>
@@ -134,7 +135,7 @@
         <!--會員編輯頁面-->
         <scene sceneID="3is-8o-GyI">
             <objects>
-                <viewController id="aw7-Cj-OCQ" customClass="EditViewController" customModule="TakeItLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QOQ" id="aw7-Cj-OCQ" customClass="EditViewController" customModule="TakeItLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OXM-eE-JWL">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,7 +163,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kfA-fE-5UQ" kind="unwind" unwindAction="unwindToPageAWithSegue:" id="tPE-Wm-WWf"/>
+                                    <segue destination="kfA-fE-5UQ" kind="unwind" unwindAction="unwindToHome:" id="qsN-dJ-li1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvt-tH-JLh">
@@ -173,7 +174,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dhu-RS-l0c" kind="show" id="ZFj-Dv-Rtx"/>
+                                    <action selector="passWordChange:" destination="aw7-Cj-OCQ" eventType="touchUpInside" id="9wh-Pf-x72"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xxg-AN-FLZ">
@@ -186,8 +187,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sky@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwS-kE-aMV">
-                                <rect key="frame" x="141" y="377" width="122" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tackit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwS-kE-aMV">
+                                <rect key="frame" x="171" y="374" width="45" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -268,7 +269,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DKX-D9-kWa" kind="unwind" unwindAction="unwindToPageBWithSegue:" id="yuf-ED-LqT"/>
+                                    <segue destination="DKX-D9-kWa" kind="unwind" unwindAction="unwindToPageBWithSegue:" id="i90-lj-S7l"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -280,7 +281,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNe-Rr-rt2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="DKX-D9-kWa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2629" y="-167"/>
+            <point key="canvasLocation" x="2686" y="-236"/>
+        </scene>
+        <!--QRCode-->
+        <scene sceneID="wdF-hu-MOZ">
+            <objects>
+                <viewController storyboardIdentifier="ggg" id="Tvp-xu-JoC" customClass="PasswordViewController" customModule="TakeItLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pc5-rx-t6V">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="H5e-SW-SJg">
+                                <rect key="frame" x="-4" y="44" width="394" height="800"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1GW-Ss-LOc">
+                                <rect key="frame" x="107" y="563" width="177" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="117"/>
+                                <color key="tintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="☑︎">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BOa-5a-rK7" kind="unwind" unwindAction="unwindToPageBWithSegue:" id="PSH-ET-xvg"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QRCode" translatesAutoresizingMaskIntoConstraints="NO" id="e3p-X0-1z5">
+                                <rect key="frame" x="75" y="194" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="4gE-Oe-WN6"/>
+                                    <constraint firstAttribute="height" constant="240" id="mQp-vn-doi"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="P4J-rV-od7"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e3p-X0-1z5" firstAttribute="centerX" secondItem="pc5-rx-t6V" secondAttribute="centerX" id="dac-R7-Eww"/>
+                            <constraint firstItem="e3p-X0-1z5" firstAttribute="top" secondItem="P4J-rV-od7" secondAttribute="top" constant="150" id="xmq-zM-72c"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="QRCode" id="1cI-Xi-clK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q9D-M2-e2S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="BOa-5a-rK7" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3689" y="-210"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aGE-qb-PMM">
@@ -321,9 +369,9 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJq-4g-bWR">
-                                <rect key="frame" x="15" y="410" width="365" height="400"/>
+                                <rect key="frame" x="15" y="410" width="365" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="5FP-ra-cb9"/>
+                                    <constraint firstAttribute="height" constant="250" id="5FP-ra-cb9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -358,7 +406,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="40" sectionFooterHeight="34" id="eUw-fz-Rzn">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="479"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="200" id="Rlm-1B-C8j" customClass="WwTableViewCell" customModule="TakeItLogin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="390" height="200"/>
@@ -475,7 +523,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="40" sectionFooterHeight="34" id="PjO-A9-XhD">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="479"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableFooterView" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="tXX-Cq-bjL" customClass="CardView" customModule="TakeItLogin" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="256" width="390" height="170"/>
@@ -592,7 +640,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="40" sectionFooterHeight="34" id="2di-PQ-vzs">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="479"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="movieCell" id="mh3-Xl-ILs" customClass="WwTableViewCell" customModule="TakeItLogin" customModuleProvider="target">
@@ -760,7 +808,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eTJ-Ry-sCE"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2M-6D-NCL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1212,6 +1260,7 @@
     </scenes>
     <resources>
         <image name="Default.png" width="320" height="568"/>
+        <image name="QRCode" width="458" height="460"/>
         <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>

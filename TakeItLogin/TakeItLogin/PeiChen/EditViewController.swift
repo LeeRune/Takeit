@@ -13,7 +13,15 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 //        var setImageToTakeitVC: ((UIImage) -> Void)?
 //        var setImageToPickImageVController: ((UIImage) -> Void)?
         @IBOutlet weak var pickImage: UIImageView!
-        override func viewDidLoad() {
+    @IBAction func passWordChange(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var newVC: UIViewController!
+        newVC = (storyboard.instantiateViewController(withIdentifier: "hhh") )
+        self.navigationController?.pushViewController(newVC, animated: true)
+        
+    }
+    override func viewDidLoad() {
             super.viewDidLoad()
 
             

@@ -56,4 +56,10 @@ class ForgetPasswordViewController: UIViewController {
         emailTestField.attributedPlaceholder = NSAttributedString(string: "電子信箱", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)])
         emailTestField.layer.addSublayer(bottomLine)
     }
+    
+    @IBAction func unwindToPageE(segue: UIStoryboardSegue) {
+        
+            print("unwindToPageE...")
+        }
+    
 }

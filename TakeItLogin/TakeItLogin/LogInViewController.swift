@@ -115,6 +115,7 @@ class LogInViewController: UIViewController, GIDSignInDelegate, UITextFieldDeleg
     }
     
     @IBAction func forgetPassword(_ sender: Any) {
+        
     }
     
     @IBAction func signIn(_ sender: Any) {
@@ -184,8 +185,8 @@ class LogInViewController: UIViewController, GIDSignInDelegate, UITextFieldDeleg
         password.layer.addSublayer(bottomLine)
     }
     
-    @IBAction func unwindToPageA(segue: UIStoryboardSegue) {
-            print("unwindToPageA...")
+    @IBAction func unwindToPageC(_ unwindSegue: UIStoryboardSegue) {
+            print("unwindToPageC...")
         }
     
 }

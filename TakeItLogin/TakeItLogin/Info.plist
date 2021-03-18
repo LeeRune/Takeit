@@ -79,7 +79,11 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
+<<<<<<< HEAD
 					<string>Main</string>
+=======
+					<string>Top</string>
+>>>>>>> 1f8c1e18c0111b659148cd80fbec8af82d012aec
 				</dict>
 			</array>
 		</dict>

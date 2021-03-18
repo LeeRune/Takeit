@@ -9,5 +9,5 @@ import UIKit
 
 class CVCell : UICollectionViewCell{
     
-    @IBOutlet weak var CVimageView: UIImageView!
+    @IBOutlet var CVimageView: UIImageView!
 }

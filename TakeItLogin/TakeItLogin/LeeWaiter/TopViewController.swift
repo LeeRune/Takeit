@@ -12,14 +12,19 @@ import FirebaseStorage
 import Firebase
 
 
-class TopViewController: UIViewController, UICollectionViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
+class TopViewController: UIViewController, UICollectionViewDataSource, UISearchResultsUpdating, UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
     var allMovie:[Movie] = []
     var searchedMovie:[Movie] = []
     var db: Firestore!
     var storage: Storage!
+    var currentIndex = 0
+    var timer = Timer()
+    var timerCounting:Bool = false
     
+    @IBOutlet var pageGo: UIPageControl!
     
+    @IBOutlet var segplay: UISegmentedControl!
     @IBOutlet weak var segtime: UISegmentedControl!
     
     @IBOutlet weak var segtype: UISegmentedControl!
@@ -36,32 +41,72 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
     
     @IBOutlet weak var mainSV: UIStackView!
     
-    let imageID = ["001.jpg", "000.jpg", "002.jpg"]
+    let imageID = ["001.jpg", "000.jpg", "002.jpg","003.png","004.png"]
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageID.count
+        pageGo.numberOfPages = imageID.count
+        
+        return pageGo.numberOfPages
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CVCells", for: indexPath) as! CVCell
         cell.CVimageView.image = UIImage(named: imageID[indexPath.item])
+        cell.CVimageView.layer.cornerRadius = 20.0
+        
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        pageGo.currentPage = indexPath.item
+        
+    }
     
-//    let NVsearchBar = UISearchController(searchResultsController: nil)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        topPosterCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .top, animated: true)
+        let width = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height
+        
+        return CGSize(width: width, height: height/4)
+    }
+    
+    @IBAction func pageControl(_ sender: Any) {
+        
+    }
+    
+    
+    func doTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(timeGo), userInfo: nil, repeats: true)
+//        RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
+    }
+    
+    @objc func timeGo(){
+        
+        if currentIndex < imageID.count - 1{
+            currentIndex += 1
+        }else{
+            currentIndex = 0
+        }
+        topPosterCollectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
+    }
+    @objc func timeStop(){
+            timer.invalidate()
+        
+    }
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//
+//        pageGo?.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+//    }
+//
+//    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+//
+//        pageGo?.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+//    }
     
     
     @objc func keyboardWillShow(notification: Notification) {
-        // 能取得鍵盤高度就讓view上移鍵盤高度，否則上移view的1/3高度
-//        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-//            let keyboardRect = keyboardFrame.cgRectValue
-//            let keyboardHeight = keyboardRect.height
-//            mainSV.frame.origin.y = -keyboardHeight
-//        } else {
-//            mainSV.frame.origin.y = -mainSV.frame.height / 4
-//
-//        }
+        
         let keyFrame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
         mainSV.frame.origin.y = keyFrame.origin.y - mainSV.frame.height
     }
@@ -75,21 +120,17 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pageGo.currentPage = 0
         
+        timeStop()
+        
+        TopSearchBar.searchTextField.leftView?.tintColor = UIColor(cgColor: CGColor(red: 0, green: 0.5, blue: 0.4, alpha: 1))
         TopSearchBar.barTintColor = UIColor.black
         TopSearchBar.tintColor = UIColor.white
         TopSearchBar.searchTextField.textColor = .white
         
         db = Firestore.firestore()
         storage = Storage.storage()
-//        filteredData = data
-//
-//        if searchText.isEmpty {
-//              filteredData = data
-//           } else {
-//              filteredData = data.filter{$0.title.range(of: searchText, options: .caseInsensitive) != nil }
-//           }
-//        self.movieTV.reloadData()
         
         
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
@@ -98,11 +139,6 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-//        self.navigationItem.searchController = NVsearchBar
-//        self.navigationItem.searchController?.delegate = self
-//        navigationItem.searchController?.searchBar.delegate = self
-//        NVsearchBar.searchResultsUpdater = self
-//        navigationItem.hidesSearchBarWhenScrolling = false
 
         segStyle()
         getMovies { (movies) in
@@ -114,39 +150,16 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
             self.movieTV.reloadData()
         }
         
-        topPosterCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .top, animated: true)
-        let flowLayout = topPosterCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
-        let width = UIScreen.main.bounds.width
-        let height = UIScreen.main.bounds.height
-        flowLayout?.itemSize = CGSize(width: width, height: height/4)
+//        topPosterCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .top, animated: true)
+//        let flowLayout = topPosterCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+//        let width = UIScreen.main.bounds.width
+//        let height = UIScreen.main.bounds.height
+//        flowLayout?.itemSize = CGSize(width: width, height: height/4)
         
-       
+        
     }
+        
     
-    //navigation searchBar保留keyword
-//    var previousText: String = ""
-//
-//    func willDismissSearchController(_ searchController: UISearchController) {
-//        previousText = searchController.searchBar.searchTextField.text ?? ""
-//    }
-//
-//    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-//        searchBar.searchTextField.text = previousText
-//        return true
-//    }
-//
-//    func isEnabledForSegment(at segment: Int) -> Bool{
-//        return true
-//    }
-    
-//    func getBarState() -> [Bool] {
-//
-//        var states: [Bool] = []
-//        for i in 0..<segmentStyle.count {
-//                states.append(isEnabledForSegment(forSegment: i))
-//            }
-//            return states
-//    }
     func sortNew(){
         
     searchedMovie = searchedMovie.sorted {$0.release > $1.release}
@@ -193,7 +206,6 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
     
     
     func search(){
-        
         let index = segindex.selectedSegmentIndex
         let type = segtype.selectedSegmentIndex
         
@@ -279,11 +291,24 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
         
        
     }
+    @IBAction func segToAD(_ segmentedControl: UISegmentedControl) {
+        
+        switch segmentedControl.selectedSegmentIndex{
+        case 0:
+            timeStop()
+        case 1:
+            doTimer()
+        default:
+            break
+        }
+        
+    }
     
     @IBAction func sortType(_ segmentedControl: UISegmentedControl) {
         
         let time = segtime.selectedSegmentIndex
         let index = segindex.selectedSegmentIndex
+       
         searchedMovie = allMovie
         
         if index == 0 && time == 0{
@@ -398,6 +423,7 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
     @IBAction func sortTimeAndScore(_ segmentedControl: UISegmentedControl) {
@@ -406,18 +432,6 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
         let index = segindex.selectedSegmentIndex
         let time = segtime.selectedSegmentIndex
         
-        switch segmentedControl.selectedSegmentIndex {
-        case 0:
-            segindex.setTitle("最近上映", forSegmentAt: 0)
-            segindex.setTitle("最舊排序", forSegmentAt: 1)
-            
-        case 1:
-            segindex.setTitle("最高分", forSegmentAt: 0)
-            segindex.setTitle("最低分", forSegmentAt: 1)
-            
-        default:
-            break
-        }
         
         movieTV.reloadData()
         if index == 0{
@@ -446,7 +460,7 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
             
         }
         movieTV.reloadData()
-        
+            
     }
     
     @IBAction func sortRelease(_ segmentedControl: UISegmentedControl) {
@@ -487,13 +501,14 @@ class TopViewController: UIViewController, UICollectionViewDataSource, UISearchR
     
     func segStyle(){
         let font = UIFont.systemFont(ofSize: 16)
-//        segtype.backgroundColor =
+//        segtype.backgroundColor = 
         for segment in segmentStyle{
             segment.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .selected)
-            segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
-            segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemTeal], for: .normal)
+            segment.selectedSegmentTintColor = UIColor(cgColor: CGColor(red: 0, green: 0.5, blue: 0.4, alpha: 1))
+            segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+            segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(cgColor: CGColor(red: 0, green: 0.5, blue: 0.4, alpha: 1))], for: .normal)
             segment.layer.borderWidth = 2
-            segment.layer.borderColor = CGColor(red: 0, green: 0.3, blue: 0.5, alpha: 1)
+            segment.layer.borderColor = CGColor(red: 0, green: 0.5, blue: 0.4, alpha: 1)
     
         }
     }
@@ -529,6 +544,7 @@ extension TopViewController: UITableViewDataSource, UITableViewDelegate{
         if showCell.poster.isEmpty{
              cell.imageViewCell.image = UIImage(named: "noimage")
         }else{
+            
 //          cell.imageViewCell.image = showCell.image)
 //            let cell_Image = storage.reference().child(showCell.poster)
 //            print(cell_Image)
@@ -539,6 +555,7 @@ extension TopViewController: UITableViewDataSource, UITableViewDelegate{
 //                    cell.imageViewCell.image = UIImage(named: "noimage")
 //                }
 //            }
+            
             let task = URLSession.shared.dataTask(with:  URL(string: showCell.poster)!) { data, res, err in
                 if let data = data {
                     DispatchQueue.main.async {
@@ -550,11 +567,10 @@ extension TopViewController: UITableViewDataSource, UITableViewDelegate{
             }
             cell.task = task
             task.resume()
-            
 //            cell.imageViewCell.image = try? UIImage(data: Data(contentsOf: URL(string: showCell.poster)!))
+            cell.textViewCell.font = UIFont(name: "System",size: 20)
             cell.textViewCell.text = showCell.info
-            
-            
+//
         }
         return cell
     }

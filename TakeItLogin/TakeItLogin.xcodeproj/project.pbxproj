@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1445A6E625F7A5B800E140E0 /* Storyboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E525F7A5B800E140E0 /* Storyboard2.storyboard */; };
-		1445A6E925F7A5C100E140E0 /* Storyboard3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A6E825F7A5C100E140E0 /* Storyboard3.storyboard */; };
 		1445A74025F7CA7D00E140E0 /* Seat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1445A73F25F7CA7D00E140E0 /* Seat.storyboard */; };
 		1445A74A25F7CB3300E140E0 /* CommentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A74425F7CB3100E140E0 /* CommentDetailVC.swift */; };
 		1445A74B25F7CB3300E140E0 /* OrderRulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445A74525F7CB3200E140E0 /* OrderRulesVC.swift */; };
@@ -59,12 +58,27 @@
 		9B65550C25FBA42A00F536C8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550725FBA42900F536C8 /* Movie.swift */; };
 		9B65550D25FBA42A00F536C8 /* CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550825FBA42900F536C8 /* CVCell.swift */; };
 		9B65550F25FBA42A00F536C8 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65550A25FBA42A00F536C8 /* TopViewController.swift */; };
+<<<<<<< HEAD
+		E746AA5426009FA2005FDB99 /* DetailMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746AA4726009F9F005FDB99 /* DetailMovie.swift */; };
+		E746AA5526009FA2005FDB99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E746AA4826009FA0005FDB99 /* Assets.xcassets */; };
+		E746AA5626009FA2005FDB99 /* WwTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746AA4926009FA1005FDB99 /* WwTableViewCell.swift */; };
+		E746AA5726009FA2005FDB99 /* WwTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746AA4A26009FA1005FDB99 /* WwTableViewController.swift */; };
+		E746AA5826009FA2005FDB99 /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746AA4B26009FA1005FDB99 /* CardTableViewController.swift */; };
+		E746AA5926009FA2005FDB99 /* MovieByPei.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746AA4C26009FA1005FDB99 /* MovieByPei.swift */; };
+		E746AA5A26009FA2005FDB99 /* Storyboard3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E746AA4D26009FA1005FDB99 /* Storyboard3.storyboard */; };
+		E746AA5B26009FA2005FDB99 /* TicketTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746AA4E26009FA1005FDB99 /* TicketTableViewController.swift */; };
+		E746AA5C26009FA2005FDB99 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746AA4F26009FA1005FDB99 /* PasswordViewController.swift */; };
+		E746AA5D26009FA2005FDB99 /* PickImageVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746AA5026009FA2005FDB99 /* PickImageVController.swift */; };
+		E746AA5E26009FA2005FDB99 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746AA5126009FA2005FDB99 /* EditViewController.swift */; };
+		E746AA5F26009FA2005FDB99 /* TakeitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746AA5226009FA2005FDB99 /* TakeitViewController.swift */; };
+		E746AA6026009FA2005FDB99 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746AA5326009FA2005FDB99 /* CardView.swift */; };
+=======
 		9B959B0F2601EFF6009F4AD7 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B959B0E2601EFF6009F4AD7 /* Top.storyboard */; };
+>>>>>>> 1f8c1e18c0111b659148cd80fbec8af82d012aec
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1445A6E525F7A5B800E140E0 /* Storyboard2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard2.storyboard; sourceTree = "<group>"; };
-		1445A6E825F7A5C100E140E0 /* Storyboard3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard3.storyboard; sourceTree = "<group>"; };
 		1445A73F25F7CA7D00E140E0 /* Seat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Seat.storyboard; sourceTree = "<group>"; };
 		1445A74425F7CB3100E140E0 /* CommentDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailVC.swift; sourceTree = "<group>"; };
 		1445A74525F7CB3200E140E0 /* OrderRulesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderRulesVC.swift; sourceTree = "<group>"; };
@@ -116,6 +130,19 @@
 		9B65550A25FBA42A00F536C8 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		9B959B0E2601EFF6009F4AD7 /* Top.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Top.storyboard; sourceTree = "<group>"; };
 		AC75CCB938693BCCE0FA1B93 /* Pods-TakeItLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItLogin.release.xcconfig"; path = "Target Support Files/Pods-TakeItLogin/Pods-TakeItLogin.release.xcconfig"; sourceTree = "<group>"; };
+		E746AA4726009F9F005FDB99 /* DetailMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailMovie.swift; sourceTree = "<group>"; };
+		E746AA4826009FA0005FDB99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E746AA4926009FA1005FDB99 /* WwTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WwTableViewCell.swift; sourceTree = "<group>"; };
+		E746AA4A26009FA1005FDB99 /* WwTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WwTableViewController.swift; sourceTree = "<group>"; };
+		E746AA4B26009FA1005FDB99 /* CardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
+		E746AA4C26009FA1005FDB99 /* MovieByPei.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieByPei.swift; sourceTree = "<group>"; };
+		E746AA4D26009FA1005FDB99 /* Storyboard3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard3.storyboard; sourceTree = "<group>"; };
+		E746AA4E26009FA1005FDB99 /* TicketTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTableViewController.swift; sourceTree = "<group>"; };
+		E746AA4F26009FA1005FDB99 /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		E746AA5026009FA2005FDB99 /* PickImageVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickImageVController.swift; sourceTree = "<group>"; };
+		E746AA5126009FA2005FDB99 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		E746AA5226009FA2005FDB99 /* TakeitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeitViewController.swift; sourceTree = "<group>"; };
+		E746AA5326009FA2005FDB99 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +208,19 @@
 		1488046B25F7A2A800375C30 /* PeiChen */ = {
 			isa = PBXGroup;
 			children = (
-				1445A6E825F7A5C100E140E0 /* Storyboard3.storyboard */,
+				E746AA4826009FA0005FDB99 /* Assets.xcassets */,
+				E746AA4B26009FA1005FDB99 /* CardTableViewController.swift */,
+				E746AA5326009FA2005FDB99 /* CardView.swift */,
+				E746AA4726009F9F005FDB99 /* DetailMovie.swift */,
+				E746AA5126009FA2005FDB99 /* EditViewController.swift */,
+				E746AA4C26009FA1005FDB99 /* MovieByPei.swift */,
+				E746AA4F26009FA1005FDB99 /* PasswordViewController.swift */,
+				E746AA5026009FA2005FDB99 /* PickImageVController.swift */,
+				E746AA4D26009FA1005FDB99 /* Storyboard3.storyboard */,
+				E746AA5226009FA2005FDB99 /* TakeitViewController.swift */,
+				E746AA4E26009FA1005FDB99 /* TicketTableViewController.swift */,
+				E746AA4926009FA1005FDB99 /* WwTableViewCell.swift */,
+				E746AA4A26009FA1005FDB99 /* WwTableViewController.swift */,
 			);
 			path = PeiChen;
 			sourceTree = "<group>";
@@ -337,7 +376,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1445A84125FB3B9700E140E0 /* card_unknown.png in Resources */,
+<<<<<<< HEAD
+				E746AA5A26009FA2005FDB99 /* Storyboard3.storyboard in Resources */,
+=======
 				9B64F59026035E91008EEE16 /* 001.jpg in Resources */,
+>>>>>>> 1f8c1e18c0111b659148cd80fbec8af82d012aec
 				1445A83D25FB3B9700E140E0 /* card_union_pay.png in Resources */,
 				1445A83625FB3B9700E140E0 /* card_jcb.png in Resources */,
 				1445A83C25FB3B9700E140E0 /* card_jcb@3x.png in Resources */,
@@ -355,7 +398,6 @@
 				92FA519F25EFCACC00539D9C /* Main.storyboard in Resources */,
 				1445A83F25FB3B9700E140E0 /* card_unknown@2x.png in Resources */,
 				1445A74025F7CA7D00E140E0 /* Seat.storyboard in Resources */,
-				1445A6E925F7A5C100E140E0 /* Storyboard3.storyboard in Resources */,
 				1445A84425FB3B9700E140E0 /* card_visa@3x.png in Resources */,
 				1445A83B25FB3B9700E140E0 /* card_unknown@3x.png in Resources */,
 				1445A84225FB3B9700E140E0 /* card_mastercard@3x.png in Resources */,
@@ -364,6 +406,7 @@
 				1445A6E625F7A5B800E140E0 /* Storyboard2.storyboard in Resources */,
 				1445A83825FB3B9700E140E0 /* card_visa.png in Resources */,
 				1445A83A25FB3B9700E140E0 /* card_mastercard.png in Resources */,
+				E746AA5526009FA2005FDB99 /* Assets.xcassets in Resources */,
 				1445A84025FB3B9700E140E0 /* card_amex.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,20 +481,31 @@
 				922A557025F3E85C00A38E0E /* SignUpViewController.swift in Sources */,
 				1445A82325FB3B5000E140E0 /* commen.swift in Sources */,
 				1445A74F25F7CB3300E140E0 /* SeatCell.swift in Sources */,
+				E746AA5926009FA2005FDB99 /* MovieByPei.swift in Sources */,
 				1445A74B25F7CB3300E140E0 /* OrderRulesVC.swift in Sources */,
 				1445A74C25F7CB3300E140E0 /* SeatVC.swift in Sources */,
+				E746AA5426009FA2005FDB99 /* DetailMovie.swift in Sources */,
 				92FA519825EFCACC00539D9C /* AppDelegate.swift in Sources */,
 				92FA519A25EFCACC00539D9C /* SceneDelegate.swift in Sources */,
+				E746AA5626009FA2005FDB99 /* WwTableViewCell.swift in Sources */,
 				92FA51CC25EFD7D600539D9C /* ForgetPasswordViewController.swift in Sources */,
 				92FA51C625EFD52F00539D9C /* MemberViewController.swift in Sources */,
 				9B65550F25FBA42A00F536C8 /* TopViewController.swift in Sources */,
 				1445A74E25F7CB3300E140E0 /* CommentDetailCell.swift in Sources */,
+				E746AA6026009FA2005FDB99 /* CardView.swift in Sources */,
+				E746AA5D26009FA2005FDB99 /* PickImageVController.swift in Sources */,
 				92FA51BF25EFD48900539D9C /* HomeViewController.swift in Sources */,
+				E746AA5C26009FA2005FDB99 /* PasswordViewController.swift in Sources */,
+				E746AA5F26009FA2005FDB99 /* TakeitViewController.swift in Sources */,
 				1445A74D25F7CB3300E140E0 /* Comment.swift in Sources */,
+				E746AA5726009FA2005FDB99 /* WwTableViewController.swift in Sources */,
+				E746AA5826009FA2005FDB99 /* CardTableViewController.swift in Sources */,
 				1445A74A25F7CB3300E140E0 /* CommentDetailVC.swift in Sources */,
 				9B65550B25FBA42A00F536C8 /* TVCells.swift in Sources */,
+				E746AA5B26009FA2005FDB99 /* TicketTableViewController.swift in Sources */,
 				9B65550C25FBA42A00F536C8 /* Movie.swift in Sources */,
 				9B65550D25FBA42A00F536C8 /* CVCell.swift in Sources */,
+				E746AA5E26009FA2005FDB99 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

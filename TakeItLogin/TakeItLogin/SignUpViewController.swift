@@ -102,6 +102,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                     }
                     
                     
+                    
                     Auth.auth().signIn(withEmail: emailText, password: passwordText, completion: nil)
                     
                     UserDefaults.standard.set("1", forKey: "user_email_login")
@@ -236,4 +237,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         confirmPassword.attributedPlaceholder = NSAttributedString(string: "確認密碼", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)])
         confirmPassword.layer.addSublayer(bottomLine)
     }
+    
+    @IBAction func unwindToPageD(segue: UIStoryboardSegue) {
+            print("unwindToPageD...")
+        }
+    
 }
